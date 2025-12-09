@@ -137,6 +137,30 @@ html {
   background: linear-gradient(135deg, rgba(154, 217, 160, 0.1) 0%, rgba(155, 203, 255, 0.1) 50%, rgba(255, 184, 140, 0.1) 100%);
 }
 
+/* Animated gradient button */
+.btn-gradient-animated {
+  position: relative;
+  background: linear-gradient(90deg, #9AD9A0 0%, #9BCBFF 50%, #9AD9A0 100%);
+  background-size: 200% 100%;
+  transition: box-shadow 0.3s ease;
+}
+
+.btn-gradient-animated:hover {
+  animation: gradient-flow 10s ease infinite;
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);

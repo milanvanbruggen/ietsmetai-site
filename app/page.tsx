@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#9AD9A0]/10 via-[#9BCBFF]/10 to-[#FFB88C]/10 dark:from-black dark:via-gray-900 dark:to-black">
+      <section id="home" className="min-h-screen flex items-center px-4 sm:px-6 lg:px-8 bg-linear-to-br from-[#9AD9A0]/10 via-[#9BCBFF]/10 to-[#FFB88C]/10 dark:from-black dark:via-gray-900 dark:to-black">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-center">
           <div className="text-left">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
@@ -24,7 +24,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="#services"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-linear-to-r from-[#9AD9A0] to-[#9BCBFF] text-gray-900 rounded-full font-medium hover:from-[#9AD9A0]/90 hover:to-[#9BCBFF]/90 transition-all shadow-lg hover:shadow-xl"
+                className="inline-flex items-center gap-2 px-8 py-3 btn-gradient-animated text-gray-900 rounded-full font-medium shadow-lg hover:shadow-xl"
               >
                 <ListChecks className="w-5 h-5" />
                 Bekijk mijn bewezen aanpak
@@ -104,7 +104,7 @@ export default function Home() {
       </section>
 
       {/* Services/Methodology Section */}
-      <section id="services" className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#FFB88C]/5 via-[#9AD9A0]/5 to-[#9BCBFF]/5 dark:bg-gray-900">
+      <section id="services" className="py-32 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-[#FFB88C]/5 via-[#9AD9A0]/5 to-[#9BCBFF]/5 dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
             Mijn aanpak
@@ -115,8 +115,8 @@ export default function Home() {
           
           {/* Visual Timeline/Flow */}
           <div className="relative mb-16">
-            {/* Connecting line */}
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-linear-to-b from-[#9BCBFF] via-[#9AD9A0] via-[#FFB88C] via-[#9AD9A0] to-[#9BCBFF] transform -translate-x-1/2"></div>
+            {/* Connecting line - starts under first dot, ends under button */}
+            <div className="hidden md:block absolute left-1/2 w-1 bg-linear-to-b from-[#9BCBFF] via-[#9AD9A0] via-[#FFB88C] via-[#9AD9A0] to-[#9BCBFF] transform -translate-x-1/2 z-0" style={{ top: '4.5rem', bottom: '-6rem' }}></div>
             
             <div className="space-y-12">
               {/* Maand 1-2: Kickstart & Analyse */}
@@ -237,13 +237,13 @@ export default function Home() {
           </div>
 
           {/* CTA */}
-          <div className="text-center">
+          <div className="text-center mt-12 relative z-20">
             <Link
               href="/proces"
-              className="inline-flex items-center gap-2 text-gray-900 dark:text-white font-medium hover:underline"
+              className="inline-flex items-center gap-2 px-8 py-3 btn-gradient-animated text-gray-900 rounded-full font-medium shadow-lg hover:shadow-xl"
             >
+              <ListChecks className="w-5 h-5" />
               Bekijk mijn bewezen aanpak
-              <ChevronRight className="w-5 h-5" />
             </Link>
           </div>
 
@@ -263,7 +263,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:info@milanvanbruggen.nl"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-linear-to-r from-[#9AD9A0] to-[#9BCBFF] text-gray-900 rounded-full font-medium hover:from-[#9AD9A0]/90 hover:to-[#9BCBFF]/90 transition-all shadow-lg hover:shadow-xl"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-[#9BCBFF] text-gray-900 rounded-full font-medium hover:brightness-105 transition-all shadow-lg hover:shadow-xl"
             >
               <Mail className="w-5 h-5" />
               Mail Milan
