@@ -6,8 +6,26 @@ export default function Home() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center px-4 sm:px-6 lg:px-8 bg-linear-to-br from-[#9AD9A0]/10 via-[#9BCBFF]/10 to-[#FFB88C]/10 dark:from-black dark:via-gray-900 dark:to-black">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-center">
+      <section id="home" className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#9AD9A0]/10 via-[#9BCBFF]/10 to-[#FFB88C]/10 dark:from-black dark:via-gray-900 dark:to-black overflow-hidden">
+        {/* Pattern background - right top */}
+        <div className="absolute top-0 right-0 w-full h-[120vh] min-w-[1000px] min-h-[1000px] opacity-15 dark:opacity-15 pointer-events-none">
+          <div className="relative w-full h-full">
+            <div 
+              className="absolute inset-0 bg-[#9BCBFF]"
+              style={{
+                maskImage: 'url(/images/patterns/imai-pattern-1.svg)',
+                WebkitMaskImage: 'url(/images/patterns/imai-pattern-1.svg)',
+                maskSize: 'contain',
+                WebkitMaskSize: 'contain',
+                maskPosition: 'top right',
+                WebkitMaskPosition: 'top right',
+                maskRepeat: 'no-repeat',
+                WebkitMaskRepeat: 'no-repeat'
+              }}
+            ></div>
+          </div>
+        </div>
+        <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-center w-full">
           <div className="text-left">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
               Je weet dat je iets met AI moet, maar waar begin je?
@@ -59,7 +77,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <section id="about" className="relative overflow-hidden">
         {/* Blue base background with radial gradients - less intense */}
         <div className="absolute inset-0 bg-[#9BCBFF]/40">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,_rgba(155,203,255,0.4)_0%,_transparent_70%)]"></div>
@@ -67,44 +85,75 @@ export default function Home() {
         </div>
         {/* Subtle dark vignette effect */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_40%,_rgba(0,0,0,0.15)_100%)] pointer-events-none"></div>
-        <div className="relative z-10 max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-left">
-            Over mij
-          </h2>
-          <div className="prose prose-lg max-w-none text-left">
-            <p className="text-gray-900 dark:text-gray-100 mb-4 text-base leading-relaxed max-w-2xl">
-              Na bijna 12 jaar Pixelpillow te hebben opgebouwd, heb ik me gespecialiseerd in het 
-              helpen van bedrijven met AI-implementatie. En eerlijk? Ik zie dagelijks hoe organisaties 
-              worstelen met dezelfde vraag: waar begin je met AI? Welke kansen zijn er? En hoe zorg 
-              je dat het niet bij een experiment blijft, maar echt impact maakt?
-            </p>
-            <p className="text-gray-900 dark:text-gray-100 mb-4 text-base leading-relaxed max-w-2xl">
-              Mijn aanpak is nuchter en praktisch. Geen theoretische frameworks of dikke rapporten 
-              die in een la verdwijnen. Ik onderzoek eerst waar de echte kansen liggen, valideer die 
-              met data, en help je dan prioriteiten te stellen. In 3-4 weken heb je een concreet plan 
-              dat je direct kunt oppakken.
-            </p>
-            <p className="text-gray-900 dark:text-gray-100 mb-8 text-base leading-relaxed max-w-2xl">
-              Daarnaast schrijf ik over AI en business. Mijn boek "Van idee naar impact" gaat over 
-              hoe AI het maken van software fundamenteel verandert, en wat dat betekent voor 
-              ondernemers in 2025. Maar dat is vooral achtergrond - mijn focus ligt op het helpen 
-              van bedrijven die nu, vandaag, iets met AI willen doen.
-            </p>
-            <div className="mt-8 flex justify-start">
-              <Link
-                href="/boek"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl"
-              >
-                Meer over Milan
-                <ChevronRight className="w-5 h-5" />
-              </Link>
+        
+        {/* Image on the left - full height of section */}
+        <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-1/2 z-10">
+          <Image
+            src="/images/milan-samenwerken-ai-adoptie.webp"
+            alt="Milan werkt samen met teams aan AI adoptie"
+            fill
+            className="object-cover"
+            style={{ objectPosition: 'center top' }}
+            priority
+          />
+        </div>
+
+        {/* Content container */}
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-32">
+            {/* Mobile image */}
+            <div className="lg:hidden relative min-h-[300px]">
+        <Image
+                src="/images/milan-samenwerken-ai-adoptie.webp"
+                alt="Milan werkt samen met teams aan AI adoptie"
+                fill
+                className="object-contain"
+          priority
+        />
+            </div>
+            {/* Empty space for left column on desktop */}
+            <div className="hidden lg:block"></div>
+            {/* Text content on the right */}
+            <div>
+              <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-left">
+                Over mij
+              </h2>
+              <div className="prose prose-lg max-w-none text-left">
+                <p className="text-gray-900 dark:text-gray-100 mb-4 text-base leading-relaxed">
+                  Na bijna 12 jaar Pixelpillow te hebben opgebouwd, heb ik me gespecialiseerd in het 
+                  helpen van bedrijven met AI-implementatie. En eerlijk? Ik zie dagelijks hoe organisaties 
+                  worstelen met dezelfde vraag: waar begin je met AI? Welke kansen zijn er? En hoe zorg 
+                  je dat het niet bij een experiment blijft, maar echt impact maakt?
+                </p>
+                <p className="text-gray-900 dark:text-gray-100 mb-4 text-base leading-relaxed">
+                  Mijn aanpak is nuchter en praktisch. Geen theoretische frameworks of dikke rapporten 
+                  die in een la verdwijnen. Ik onderzoek eerst waar de echte kansen liggen, valideer die 
+                  met data, en help je dan prioriteiten te stellen. In 3-4 weken heb je een concreet plan 
+                  dat je direct kunt oppakken.
+                </p>
+                <p className="text-gray-900 dark:text-gray-100 mb-8 text-base leading-relaxed">
+                  Daarnaast schrijf ik over AI en business. Mijn boek "Van idee naar impact" gaat over 
+                  hoe AI het maken van software fundamenteel verandert, en wat dat betekent voor 
+                  ondernemers in 2025. Maar dat is vooral achtergrond - mijn focus ligt op het helpen 
+                  van bedrijven die nu, vandaag, iets met AI willen doen.
+                </p>
+                <div className="mt-8 flex justify-start">
+                  <Link
+                    href="/boek"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl"
+                  >
+                    Meer over Milan
+                    <ChevronRight className="w-5 h-5" />
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services/Methodology Section */}
-      <section id="services" className="py-32 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-[#FFB88C]/5 via-[#9AD9A0]/5 to-[#9BCBFF]/5 dark:bg-gray-900">
+      <section id="services" className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#FFB88C]/5 via-[#9AD9A0]/5 to-[#9BCBFF]/5 dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
             Mijn aanpak
@@ -116,7 +165,7 @@ export default function Home() {
           {/* Visual Timeline/Flow */}
           <div className="relative mb-16">
             {/* Connecting line - starts under first dot, ends under button */}
-            <div className="hidden md:block absolute left-1/2 w-1 bg-linear-to-b from-[#9BCBFF] via-[#9AD9A0] via-[#FFB88C] via-[#9AD9A0] to-[#9BCBFF] transform -translate-x-1/2 z-0" style={{ top: '4.5rem', bottom: '-6rem' }}></div>
+            <div className="hidden md:block absolute left-1/2 w-1 bg-gradient-to-b from-[#9BCBFF] via-[#9AD9A0] via-[#FFB88C] via-[#9AD9A0] to-[#9BCBFF] transform -translate-x-1/2 z-0" style={{ top: '4.5rem', bottom: '-6rem' }}></div>
             
             <div className="space-y-12">
               {/* Maand 1-2: Kickstart & Analyse */}
@@ -181,9 +230,9 @@ export default function Home() {
                     <p className="text-gray-600 dark:text-gray-400 text-sm">
                       Team trainen en kennis borgen. Automatiseringen finetunen. 
                       Eerste evaluatiemoment met jou en het team.
-                    </p>
+          </p>
                   </div>
-                </div>
+        </div>
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-[#FFB88C] border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 <div className="w-full md:w-1/2"></div>
               </div>
@@ -241,7 +290,7 @@ export default function Home() {
             <Link
               href="/proces"
               className="inline-flex items-center gap-2 px-8 py-3 btn-gradient-animated text-gray-900 rounded-full font-medium shadow-lg hover:shadow-xl"
-            >
+          >
               <ListChecks className="w-5 h-5" />
               Bekijk mijn bewezen aanpak
             </Link>
@@ -267,11 +316,11 @@ export default function Home() {
             >
               <Mail className="w-5 h-5" />
               Mail Milan
-            </a>
-            <a
+          </a>
+          <a
               href="https://linkedin.com/in/milanvanbruggen"
-              target="_blank"
-              rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white rounded-full font-medium hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
             >
               <Linkedin className="w-5 h-5" />

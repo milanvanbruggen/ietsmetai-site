@@ -1,15 +1,16 @@
 import Link from 'next/link';
+import { Search, Rocket, Users, BarChart, CheckCircle, ChevronRight } from 'lucide-react';
 
 export default function ProcesPage() {
   return (
     <div className="pt-16 min-h-screen bg-white dark:bg-black">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
-        <div className="mb-12 text-center">
+        <div className="mb-16 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
             Mijn aanpak
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 mb-2">
+          <p className="text-xl text-gray-600 dark:text-gray-400 mb-2 max-w-3xl mx-auto">
             Twee sporen, één doel: marge verhogen én een toekomstbestendig businessmodel
           </p>
           <p className="text-lg text-gray-500 dark:text-gray-500">
@@ -18,7 +19,7 @@ export default function ProcesPage() {
         </div>
 
         {/* Intro */}
-        <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
+        <div className="prose prose-lg dark:prose-invert max-w-none mb-16 max-w-3xl mx-auto">
           <p className="text-gray-700 dark:text-gray-300 text-lg mb-6">
             Je weet dat je iets met AI moet, maar waar begin je? Die vraag hoor ik constant. 
             En eerlijk? Het is een terechte vraag. Want waar liggen de echte kansen? Waar maak 
@@ -37,8 +38,369 @@ export default function ProcesPage() {
           </p>
         </div>
 
-        {/* Two Tracks */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        {/* Visual Timeline with 5 Phases - Extended */}
+        <div className="mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
+            Het traject: 6 maanden in 5 fases
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-400 mb-16 text-center max-w-2xl mx-auto">
+            Een gestructureerde aanpak die quick wins combineert met strategische langetermijnvisie.
+          </p>
+          
+          <div className="relative">
+            {/* Connecting line - starts after first dot, fades out at end */}
+            <div className="hidden md:block absolute left-1/2 w-1 transform -translate-x-1/2 z-0" style={{ top: '6.5rem', bottom: '3rem' }}>
+              <div className="h-full relative">
+                <div className="h-full bg-gradient-to-b from-[#9BCBFF] via-[#9AD9A0] via-[#FFB88C] via-[#9AD9A0] to-[#9BCBFF]"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/80 to-transparent dark:from-black dark:via-black/80 pointer-events-none"></div>
+              </div>
+            </div>
+            
+            <div className="space-y-16">
+              {/* Fase 1: Maand 1-2 - Kickstart & Analyse */}
+              <div className="relative flex flex-col md:flex-row items-center gap-8">
+                <div className="w-full md:w-1/2 flex justify-end md:pr-12">
+                  <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-16 h-16 rounded-full bg-[#9BCBFF] flex items-center justify-center text-white shadow-lg flex-shrink-0">
+                        <Search className="w-8 h-8" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Kickstart & analysefase</h3>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">Maand 1-2</p>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Wat gebeurt er?</h4>
+                      <p className="text-gray-600 dark:text-gray-400 mb-3">
+                        Kick-off met jou en het team. Analyse van externe en interne processen. 
+                        Spotten van verspilling en kansen. Eerste AI-toepassingen verkennen en valideren.
+                      </p>
+                      <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                        <li className="flex items-start">
+                          <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
+                          <span>Interview en analyse van huidige processen</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
+                          <span>Identificeren van verspilling en inefficiënties</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
+                          <span>Eerste AI-toepassingen verkennen en testen</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
+                          <span>Impact/effort analyse voor alle kansen</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-[#9BCBFF] border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="w-full md:w-1/2 flex justify-start md:pl-12">
+                  <div className="bg-[#9BCBFF]/10 dark:bg-[#9BCBFF]/20 p-6 rounded-2xl border border-[#9BCBFF]/30 max-w-lg">
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Output:</p>
+                    <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                      <li className="flex items-start">
+                        <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
+                        <span>Verbeterplan met impact/effort matrix</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
+                        <span>Prioriteitenlijst met quick wins en strategische projecten</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
+                        <span>KPI's en targets voor meetbare resultaten</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
+                        <span>Plan van aanpak voor de komende maanden</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Fase 2: Maand 3-4 - Implementatie & Validatie */}
+              <div className="relative flex flex-col md:flex-row items-center gap-8">
+                <div className="w-full md:w-1/2 flex justify-start md:pl-12">
+                  <div className="bg-[#9AD9A0]/10 dark:bg-[#9AD9A0]/20 p-6 rounded-2xl border border-[#9AD9A0]/30 max-w-lg">
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Output:</p>
+                    <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                      <li className="flex items-start">
+                        <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
+                        <span>Concrete AI-toepassingen in ontwikkeling</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
+                        <span>Bijgestelde roadmap gebaseerd op leerpunten</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
+                        <span>Eerste resultaten zichtbaar en meetbaar</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
+                        <span>Technische documentatie en handleidingen</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-[#9AD9A0] border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="w-full md:w-1/2 flex justify-end md:pr-20">
+                  <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-16 h-16 rounded-full bg-[#9AD9A0] flex items-center justify-center text-white shadow-lg flex-shrink-0">
+                        <Rocket className="w-8 h-8" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Implementatie & validatie</h3>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">Maand 3-4</p>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Wat gebeurt er?</h4>
+                      <p className="text-gray-600 dark:text-gray-400 mb-3">
+                        Plan van aanpak maken voor AI/automation-oplossingen. Meewerken aan oplossingen 
+                        samen met developer. Roadmap bijstellen op basis van voortgang en leerpunten.
+                      </p>
+                      <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                        <li className="flex items-start">
+                          <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
+                          <span>Concrete AI-toepassingen ontwikkelen en implementeren</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
+                          <span>Meewerken aan oplossingen samen met developer</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
+                          <span>Testen en valideren van eerste resultaten</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
+                          <span>Roadmap bijstellen op basis van voortgang</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Fase 3: Maand 4-5 - Trainen & Kennis Borgen */}
+              <div className="relative flex flex-col md:flex-row items-center gap-8">
+                <div className="w-full md:w-1/2 flex justify-end md:pr-12">
+                  <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-16 h-16 rounded-full bg-[#FFB88C] flex items-center justify-center text-white shadow-lg flex-shrink-0">
+                        <Users className="w-8 h-8" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Trainen & kennis borgen</h3>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">Maand 4-5</p>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Wat gebeurt er?</h4>
+                      <p className="text-gray-600 dark:text-gray-400 mb-3">
+                        Training en overdracht aan het team. Automatiseringen finetunen en optimaliseren. 
+                        Eerste evaluatiemoment met jou en het team om feedback te verwerken.
+                      </p>
+                      <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                        <li className="flex items-start">
+                          <span className="text-[#FFB88C] mr-2 font-bold">•</span>
+                          <span>Praktische training van het team op nieuwe tools en processen</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#FFB88C] mr-2 font-bold">•</span>
+                          <span>Automatiseringen finetunen op basis van gebruik</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#FFB88C] mr-2 font-bold">•</span>
+                          <span>Kennis overdragen en documenteren</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#FFB88C] mr-2 font-bold">•</span>
+                          <span>Eerste evaluatiemoment met feedback</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-[#FFB88C] border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="w-full md:w-1/2 flex justify-start md:pl-12">
+                  <div className="bg-[#FFB88C]/10 dark:bg-[#FFB88C]/20 p-6 rounded-2xl border border-[#FFB88C]/30 max-w-lg">
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Output:</p>
+                    <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                      <li className="flex items-start">
+                        <span className="text-[#FFB88C] mr-2 font-bold">•</span>
+                        <span>Team getraind en zelfstandig aan de slag</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#FFB88C] mr-2 font-bold">•</span>
+                        <span>Geoptimaliseerde processen en automatiseringen</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#FFB88C] mr-2 font-bold">•</span>
+                        <span>Eerste evaluatie met feedback en verbeterpunten</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#FFB88C] mr-2 font-bold">•</span>
+                        <span>Training materiaal en documentatie beschikbaar</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Fase 4: Maand 5 - Monitoring & Doorontwikkeling */}
+              <div className="relative flex flex-col md:flex-row items-center gap-8">
+                <div className="w-full md:w-1/2 flex justify-start md:pl-12">
+                  <div className="bg-[#9AD9A0]/10 dark:bg-[#9AD9A0]/20 p-6 rounded-2xl border border-[#9AD9A0]/30 max-w-lg">
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Output:</p>
+                    <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                      <li className="flex items-start">
+                        <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
+                        <span>Verbeterde en geoptimaliseerde processen</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
+                        <span>Meetbare resultaten en KPI-rapportage</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
+                        <span>Evaluatie van impact en resultaten</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
+                        <span>Voorbereiding op overdracht</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-[#9AD9A0] border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="w-full md:w-1/2 flex justify-end md:pr-20">
+                  <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-16 h-16 rounded-full bg-[#9AD9A0] flex items-center justify-center text-white shadow-lg flex-shrink-0">
+                        <BarChart className="w-8 h-8" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Monitoring, eindmeting & doorontwikkeling</h3>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">Maand 5</p>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Wat gebeurt er?</h4>
+                      <p className="text-gray-600 dark:text-gray-400 mb-3">
+                        Feedback verwerken uit de evaluatie. Tweede ronde automatisering en optimalisatie. 
+                        Monitoring van resultaten en impact. Evaluatie richting afronding.
+                      </p>
+                      <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                        <li className="flex items-start">
+                          <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
+                          <span>Feedback verwerken en implementeren</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
+                          <span>Tweede ronde automatisering en optimalisatie</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
+                          <span>Monitoring van KPI's en resultaten</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
+                          <span>Evaluatie richting afronding van het traject</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Fase 5: Maand 6 - Afronding & Overdracht */}
+              <div className="relative flex flex-col md:flex-row items-center gap-8">
+                <div className="w-full md:w-1/2 flex justify-end md:pr-12">
+                  <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-16 h-16 rounded-full bg-[#9BCBFF] flex items-center justify-center text-white shadow-lg flex-shrink-0">
+                        <CheckCircle className="w-8 h-8" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Afronding & overdracht</h3>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">Maand 6</p>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Wat gebeurt er?</h4>
+                      <p className="text-gray-600 dark:text-gray-400 mb-3">
+                        Eindpresentatie voor jou en het team. Advies voor borging en doorontwikkeling. 
+                        Overdracht van documentatie en kennis. KPI's meten en evalueren.
+                      </p>
+                      <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                        <li className="flex items-start">
+                          <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
+                          <span>Eindpresentatie met resultaten en impact</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
+                          <span>Advies voor borging en doorontwikkeling</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
+                          <span>Overdracht documentatie en kennis</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
+                          <span>KPI's meten en finale evaluatie</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-[#9BCBFF] border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="w-full md:w-1/2 flex justify-start md:pl-12">
+                  <div className="bg-[#9BCBFF]/10 dark:bg-[#9BCBFF]/20 p-6 rounded-2xl border border-[#9BCBFF]/30 max-w-lg">
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Output:</p>
+                    <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                      <li className="flex items-start">
+                        <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
+                        <span>Eindpresentatie voor jou en het team</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
+                        <span>Advies voor borging en doorontwikkeling</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
+                        <span>Overdracht documentatie en kennis</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
+                        <span>KPI's gemeten en geëvalueerd</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
+                        <span>Plan voor zelfstandige voortzetting</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Two Tracks Section */}
+        <section className="py-32 px-4 sm:px-6 lg:px-8 mb-16">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+              Twee sporen, één doel
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-gradient-to-br from-[#9BCBFF]/20 to-[#9AD9A0]/20 dark:from-[#9BCBFF]/10 dark:to-[#9AD9A0]/10 p-8 rounded-2xl border border-[#9BCBFF]/30 dark:border-[#9BCBFF]/20">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 rounded-full bg-[#9BCBFF] flex items-center justify-center text-white font-bold text-xl">1</div>
@@ -89,226 +451,122 @@ export default function ProcesPage() {
               </li>
             </ul>
           </div>
-        </div>
-
-        {/* 6-Month Timeline */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-            Het traject: 6 maanden
-          </h2>
-          
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-linear-to-b from-[#9BCBFF] via-[#9AD9A0] to-[#FFB88C] hidden md:block"></div>
-            
-            <div className="space-y-8">
-              {/* Maand 1 */}
-              <div className="relative flex items-start gap-6">
-                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-[#9BCBFF] to-[#9AD9A0] flex items-center justify-center text-white font-bold text-lg shadow-lg z-10">
-                  1
-                </div>
-                <div className="flex-1 bg-white dark:bg-black p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">
-                  <div className="flex items-center gap-3 mb-3">
-                    <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Kickstart & analysefase</h3>
-                    <span className="px-3 py-1 bg-[#9BCBFF]/20 text-[#9BCBFF] rounded-full text-sm font-medium">2 dagen/week</span>
-                  </div>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">
-                    Kick-off met jou en het team. Analyse van externe en interne processen. 
-                    Spotten van quick wins. Eerste AI-toepassingen verkennen.
-                  </p>
-                  <div className="bg-gray-50 dark:bg-gray-900 p-4 rounded-lg">
-                    <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Output:</p>
-                    <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                      <li>• Verbeterplan met impact/effort matrix</li>
-                      <li>• Prioriteitenlijst</li>
-                      <li>• KPI's en targets</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              {/* Maand 2 */}
-              <div className="relative flex items-start gap-6">
-                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-[#9AD9A0] to-[#9BCBFF] flex items-center justify-center text-white font-bold text-lg shadow-lg z-10">
-                  2
-                </div>
-                <div className="flex-1 bg-white dark:bg-black p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">
-                  <div className="flex items-center gap-3 mb-3">
-                    <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Implementatie & validatie</h3>
-                    <span className="px-3 py-1 bg-[#9AD9A0]/20 text-[#9AD9A0] rounded-full text-sm font-medium">1,5 dag/week</span>
-                  </div>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">
-                    Plan van aanpak maken voor AI/automation-oplossingen. Meewerken aan oplossingen 
-                    samen met developer. Roadmap bijstellen op basis van voortgang.
-                  </p>
-                  <div className="bg-gray-50 dark:bg-gray-900 p-4 rounded-lg">
-                    <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Output:</p>
-                    <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                      <li>• Concrete AI-toepassingen in ontwikkeling</li>
-                      <li>• Bijgestelde roadmap</li>
-                      <li>• Eerste resultaten zichtbaar</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              {/* Maand 3 */}
-              <div className="relative flex items-start gap-6">
-                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-[#FFB88C] to-[#9AD9A0] flex items-center justify-center text-white font-bold text-lg shadow-lg z-10">
-                  3
-                </div>
-                <div className="flex-1 bg-white dark:bg-black p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">
-                  <div className="flex items-center gap-3 mb-3">
-                    <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Trainen & kennis borgen</h3>
-                    <span className="px-3 py-1 bg-[#FFB88C]/20 text-[#FFB88C] rounded-full text-sm font-medium">1 dag/week</span>
-                  </div>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">
-                    Training en overdracht aan het team. Automatiseringen finetunen. 
-                    Eerste evaluatiemoment met jou en het team.
-                  </p>
-                  <div className="bg-gray-50 dark:bg-gray-900 p-4 rounded-lg">
-                    <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Output:</p>
-                    <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                      <li>• Team getraind en zelfstandig</li>
-                      <li>• Geoptimaliseerde processen</li>
-                      <li>• Eerste evaluatie en feedback</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              {/* Maand 4-6 */}
-              <div className="relative flex items-start gap-6">
-                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-[#9AD9A0] to-[#FFB88C] flex items-center justify-center text-white font-bold text-lg shadow-lg z-10">
-                  4-6
-                </div>
-                <div className="flex-1 bg-white dark:bg-black p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">
-                  <div className="flex items-center gap-3 mb-3">
-                    <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Coaching & doorontwikkeling</h3>
-                    <span className="px-3 py-1 bg-[#9AD9A0]/20 text-[#9AD9A0] rounded-full text-sm font-medium">0,5 dag/week</span>
-                  </div>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">
-                    Check-ins met teamleden. Knelpunten oplossen. Tweede ronde automatisering 
-                    en optimalisatie. Evaluatie richting afronding. Eindpresentatie en overdracht.
-                  </p>
-                  <div className="bg-gray-50 dark:bg-gray-900 p-4 rounded-lg">
-                    <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Output:</p>
-                    <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                      <li>• Team zelfstandig aan de slag</li>
-                      <li>• Tweede ronde verbeteringen doorgevoerd</li>
-                      <li>• Eindpresentatie en advies voor borging</li>
-                      <li>• KPI's gemeten en geëvalueerd</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* What You Get */}
-        <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm mb-12">
-          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 text-center">
-            Wat ik oplever
-          </h3>
-          <p className="text-gray-600 dark:text-gray-400 mb-6 text-center max-w-2xl mx-auto">
-            Geen adviesrapporten die in een la belanden. Wél tastbare verbeteringen die impact hebben.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#9AD9A0]/20 flex items-center justify-center">
-                <span className="text-[#9AD9A0] font-bold text-xl">1</span>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Analyse van interne verspilling</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-400">In afstemming met jou en het team: waar liggen de kansen?</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#9BCBFF]/20 flex items-center justify-center">
-                <span className="text-[#9BCBFF] font-bold text-xl">2</span>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Plan van aanpak en planning</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-400">AI-toepassingen voor klantwerk en interne processen</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#FFB88C]/20 flex items-center justify-center">
-                <span className="text-[#FFB88C] font-bold text-xl">3</span>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Doorvoeren verbeteringen</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Taakverdeling team, externe developer en mijzelf</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#9AD9A0]/20 flex items-center justify-center">
-                <span className="text-[#9AD9A0] font-bold text-xl">4</span>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Teamcoaching</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Slimmer werken, minder tijd kwijt. Resultaten zichtbaar binnen 4-6 weken</p>
+        <section className="py-32 px-4 sm:px-6 lg:px-8 mb-16 bg-gradient-to-br from-[#FFB88C]/5 via-[#9AD9A0]/5 to-[#9BCBFF]/5 dark:bg-gray-900">
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 text-center">
+                Wat ik oplever
+              </h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-6 text-center max-w-2xl mx-auto">
+                Geen adviesrapporten die in een la belanden. Wél tastbare verbeteringen die impact hebben.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#9AD9A0]/20 flex items-center justify-center">
+                    <span className="text-[#9AD9A0] font-bold text-xl">1</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Analyse van interne verspilling</h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">In afstemming met jou en het team: waar liggen de kansen?</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#9BCBFF]/20 flex items-center justify-center">
+                    <span className="text-[#9BCBFF] font-bold text-xl">2</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Plan van aanpak en planning</h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">AI-toepassingen voor klantwerk en interne processen</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#FFB88C]/20 flex items-center justify-center">
+                    <span className="text-[#FFB88C] font-bold text-xl">3</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Doorvoeren verbeteringen</h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Taakverdeling team, externe developer en mijzelf</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#9AD9A0]/20 flex items-center justify-center">
+                    <span className="text-[#9AD9A0] font-bold text-xl">4</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Teamcoaching</h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Slimmer werken, minder tijd kwijt. Resultaten zichtbaar binnen 4-6 weken</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* Why Me */}
-        <div className="bg-gradient-to-r from-[#9AD9A0]/10 via-[#9BCBFF]/10 to-[#FFB88C]/10 dark:from-[#9AD9A0]/20 dark:via-[#9BCBFF]/20 dark:to-[#FFB88C]/20 border-l-4 border-[#9AD9A0] p-8 rounded-2xl mb-12">
-          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-            Waarom ik?
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="flex items-start gap-4">
-              <span className="text-[#9AD9A0] text-2xl">✓</span>
-              <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Geen externe adviseur</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Wel een ondernemer die meedraait</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <span className="text-[#9BCBFF] text-2xl">✓</span>
-              <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Begrijpt het bureaumodel</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Van binnenuit, door jarenlange ervaring</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <span className="text-[#FFB88C] text-2xl">✓</span>
-              <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Combineert strategie met uitvoer</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Niet alleen praten, ook doen</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <span className="text-[#9AD9A0] text-2xl">✓</span>
-              <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Werkt vanuit rendement</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Niet vanuit uren, maar vanuit resultaat</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4 md:col-span-2">
-              <span className="text-[#9BCBFF] text-2xl">✓</span>
-              <div>
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Doet wat nodig is</h4>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Niet wat "mooi klinkt", maar wat impact heeft</p>
+        <section className="py-32 px-4 sm:px-6 lg:px-8 mb-16">
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-gradient-to-r from-[#9AD9A0]/10 via-[#9BCBFF]/10 to-[#FFB88C]/10 dark:from-[#9AD9A0]/20 dark:via-[#9BCBFF]/20 dark:to-[#FFB88C]/20 border-l-4 border-[#9AD9A0] p-8 rounded-2xl">
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
+                Waarom ik?
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="flex items-start gap-4">
+                  <span className="text-[#9AD9A0] text-2xl">✓</span>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Geen externe adviseur</h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Wel een ondernemer die meedraait</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-[#9BCBFF] text-2xl">✓</span>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Begrijpt het bureaumodel</h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Van binnenuit, door jarenlange ervaring</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-[#FFB88C] text-2xl">✓</span>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Combineert strategie met uitvoer</h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Niet alleen praten, ook doen</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-[#9AD9A0] text-2xl">✓</span>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Werkt vanuit rendement</h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Niet vanuit uren, maar vanuit resultaat</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4 md:col-span-2">
+                  <span className="text-[#9BCBFF] text-2xl">✓</span>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Doet wat nodig is</h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Niet wat "mooi klinkt", maar wat impact heeft</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* CTA */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/#contact"
-            className="px-8 py-3 bg-linear-to-r from-[#9AD9A0] to-[#9BCBFF] text-gray-900 rounded-full font-medium hover:from-[#9AD9A0]/90 hover:to-[#9BCBFF]/90 transition-all shadow-lg hover:shadow-xl text-center"
+            className="inline-flex items-center gap-2 px-8 py-3 btn-gradient-animated text-gray-900 rounded-full font-medium shadow-lg hover:shadow-xl text-center justify-center"
           >
             Laten we praten over jouw organisatie
+            <ChevronRight className="w-5 h-5" />
           </Link>
           <Link
             href="/"
-            className="px-8 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white rounded-full font-medium hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all text-center"
+            className="inline-flex items-center gap-2 px-8 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white rounded-full font-medium hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all text-center justify-center"
           >
             Terug naar home
           </Link>
