@@ -69,8 +69,8 @@ export default function ProcesPage() {
           </div>
           
           <div className="relative">
-            {/* Mobile connecting line - left side with fade out */}
-            <div className="md:hidden absolute left-[0.9375rem] w-0.5 z-0" style={{ top: '1.5rem', bottom: '0' }}>
+            {/* Mobile connecting line - center with fade out */}
+            <div className="md:hidden absolute left-1/2 w-0.5 transform -translate-x-1/2 z-0" style={{ top: '1.5rem', bottom: '0' }}>
               <div className="h-full bg-gradient-to-b from-blue-pastel via-green-pastel via-orange-pastel via-green-pastel to-transparent"></div>
             </div>
             {/* Desktop connecting line - starts under first dot, fades out at end */}
@@ -81,13 +81,13 @@ export default function ProcesPage() {
               </div>
             </div>
             
-            <div className="space-y-8 sm:space-y-12 md:space-y-16">
+            <div className="space-y-8 md:space-y-16">
               {/* Fase 1: Maand 1-2 - Kickstart & Analyse */}
-              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-8">
                 {/* Mobile dot */}
-                <div className="md:hidden absolute left-[0.9375rem] top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-blue-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start md:justify-end pl-8 md:pl-0 md:pr-20 relative z-10">
-                  <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg w-full">
+                <div className="md:hidden absolute left-1/2 top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-blue-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="w-full md:w-1/2 flex justify-start md:justify-end pl-0 md:pl-0 md:pr-20 relative z-10 -mt-0 md:mt-0">
+                  <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-t-2xl rounded-b-none md:rounded-2xl border border-gray-200 dark:border-gray-800 border-b-0 md:border-b shadow-lg max-w-lg w-full">
                     <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
                       <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-blue-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
                         <Search className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
@@ -129,8 +129,8 @@ export default function ProcesPage() {
                 <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-blue-pastel" style={{ top: '50%' }}></div>
                 {/* Desktop dot */}
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-blue-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start pl-8 md:pl-20 relative z-10">
-                  <div className="bg-[#EDF5FF] dark:bg-[#1E3A5F] p-4 sm:p-6 md:p-8 rounded-2xl border border-blue-pastel/30 max-w-lg w-full">
+                <div className="w-full md:w-1/2 flex justify-start pl-0 md:pl-20 relative z-10 -mt-0 md:-mt-8">
+                  <div className="bg-[#EDF5FF] dark:bg-[#1E3A5F] p-4 sm:p-6 md:p-8 rounded-b-2xl rounded-t-none md:rounded-2xl border border-blue-pastel/30 border-t-0 md:border-t max-w-lg w-full shadow-lg">
                     <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">Output:</p>
                     <ul className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-2">
                       <li className="flex items-start">
@@ -155,12 +155,12 @@ export default function ProcesPage() {
               </div>
 
               {/* Fase 2: Maand 3-4 - Implementatie & Validatie */}
-              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-8">
                 {/* Mobile dot */}
-                <div className="md:hidden absolute left-[0.9375rem] top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-green-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="md:hidden absolute left-1/2 top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-green-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 {/* Phase block - order-1 on mobile, order-2 on desktop (right side) */}
-                <div className="order-1 md:order-2 w-full md:w-1/2 flex justify-start pl-8 md:pl-20 relative z-10">
-                  <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg w-full">
+                <div className="order-1 md:order-2 w-full md:w-1/2 flex justify-start pl-0 md:pl-20 relative z-10 -mt-0 md:mt-0">
+                  <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-t-2xl rounded-b-none md:rounded-2xl border border-gray-200 dark:border-gray-800 border-b-0 md:border-b shadow-lg max-w-lg w-full">
                     <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
                       <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-green-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
                         <Rocket className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
@@ -203,8 +203,8 @@ export default function ProcesPage() {
                 {/* Desktop dot */}
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-green-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 {/* Output block - order-2 on mobile, order-1 on desktop (left side) */}
-                <div className="order-2 md:order-1 w-full md:w-1/2 flex justify-start md:justify-end pl-8 md:pl-0 md:pr-20 relative z-10">
-                  <div className="bg-[#EEF7EF] dark:bg-[#1E3F2E] p-4 sm:p-6 md:p-8 rounded-2xl border border-green-pastel/30 max-w-lg w-full">
+                <div className="order-2 md:order-1 w-full md:w-1/2 flex justify-start md:justify-end pl-0 md:pl-0 md:pr-20 relative z-10 -mt-0 md:-mt-8">
+                  <div className="bg-[#EEF7EF] dark:bg-[#1E3F2E] p-4 sm:p-6 md:p-8 rounded-b-2xl rounded-t-none md:rounded-2xl border border-green-pastel/30 border-t-0 md:border-t max-w-lg w-full shadow-lg">
                     <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">Output:</p>
                     <ul className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-2">
                       <li className="flex items-start">
@@ -229,11 +229,11 @@ export default function ProcesPage() {
               </div>
 
               {/* Fase 3: Maand 4-5 - Trainen & Kennis Borgen */}
-              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-8">
                 {/* Mobile dot */}
-                <div className="md:hidden absolute left-[0.9375rem] top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-orange-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start md:justify-end pl-8 md:pl-0 md:pr-20 relative z-10">
-                  <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg w-full">
+                <div className="md:hidden absolute left-1/2 top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-orange-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="w-full md:w-1/2 flex justify-start md:justify-end pl-0 md:pl-0 md:pr-20 relative z-10 -mt-0 md:mt-0">
+                  <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-t-2xl rounded-b-none md:rounded-2xl border border-gray-200 dark:border-gray-800 border-b-0 md:border-b shadow-lg max-w-lg w-full">
                     <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
                       <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-orange-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
                         <Users className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
@@ -275,8 +275,8 @@ export default function ProcesPage() {
                 <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-orange-pastel" style={{ top: '50%' }}></div>
                 {/* Desktop dot */}
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-orange-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start pl-8 md:pl-20 relative z-10">
-                  <div className="bg-[#FFF4ED] dark:bg-[#3F2E1E] p-4 sm:p-6 md:p-8 rounded-2xl border border-orange-pastel/30 max-w-lg w-full">
+                <div className="w-full md:w-1/2 flex justify-start pl-0 md:pl-20 relative z-10 -mt-0 md:-mt-8">
+                  <div className="bg-[#FFF4ED] dark:bg-[#3F2E1E] p-4 sm:p-6 md:p-8 rounded-b-2xl rounded-t-none md:rounded-2xl border border-orange-pastel/30 border-t-0 md:border-t max-w-lg w-full shadow-lg">
                     <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">Output:</p>
                     <ul className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-2">
                       <li className="flex items-start">
@@ -301,12 +301,12 @@ export default function ProcesPage() {
               </div>
 
               {/* Fase 4: Maand 5 - Monitoring & Doorontwikkeling */}
-              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-8">
                 {/* Mobile dot */}
-                <div className="md:hidden absolute left-[0.9375rem] top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-green-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="md:hidden absolute left-1/2 top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-green-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 {/* Phase block - order-1 on mobile, order-2 on desktop (right side) */}
-                <div className="order-1 md:order-2 w-full md:w-1/2 flex justify-start pl-8 md:pl-20 relative z-10">
-                  <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg w-full">
+                <div className="order-1 md:order-2 w-full md:w-1/2 flex justify-start pl-0 md:pl-20 relative z-10">
+                  <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-t-2xl rounded-b-none border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg w-full">
                     <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
                       <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-green-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
                         <BarChart className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
@@ -349,8 +349,8 @@ export default function ProcesPage() {
                 {/* Desktop dot */}
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-green-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 {/* Output block - order-2 on mobile, order-1 on desktop (left side) */}
-                <div className="order-2 md:order-1 w-full md:w-1/2 flex justify-start md:justify-end pl-8 md:pl-0 md:pr-20 relative z-10">
-                  <div className="bg-[#EEF7EF] dark:bg-[#1E3F2E] p-4 sm:p-6 md:p-8 rounded-2xl border border-green-pastel/30 max-w-lg w-full">
+                <div className="order-2 md:order-1 w-full md:w-1/2 flex justify-start md:justify-end pl-0 md:pl-0 md:pr-20 relative z-10 -mt-0 md:-mt-8">
+                  <div className="bg-[#EEF7EF] dark:bg-[#1E3F2E] p-4 sm:p-6 md:p-8 rounded-b-2xl rounded-t-none md:rounded-2xl border border-green-pastel/30 border-t-0 md:border-t max-w-lg w-full shadow-lg">
                     <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">Output:</p>
                     <ul className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-2">
                       <li className="flex items-start">
@@ -375,11 +375,11 @@ export default function ProcesPage() {
               </div>
 
               {/* Fase 5: Maand 6 - Afronding & Overdracht */}
-              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-8">
                 {/* Mobile dot */}
-                <div className="md:hidden absolute left-[0.9375rem] top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-blue-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start md:justify-end pl-8 md:pl-0 md:pr-20 relative z-10">
-                  <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg w-full">
+                <div className="md:hidden absolute left-1/2 top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-blue-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="w-full md:w-1/2 flex justify-start md:justify-end pl-0 md:pl-0 md:pr-20 relative z-10 -mt-0 md:mt-0">
+                  <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-t-2xl rounded-b-none md:rounded-2xl border border-gray-200 dark:border-gray-800 border-b-0 md:border-b shadow-lg max-w-lg w-full">
                     <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
                       <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-blue-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
                         <CheckCircle className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
@@ -421,8 +421,8 @@ export default function ProcesPage() {
                 <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-blue-pastel" style={{ top: '50%' }}></div>
                 {/* Desktop dot */}
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-blue-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start pl-8 md:pl-20 relative z-10">
-                  <div className="bg-[#EDF5FF] dark:bg-[#1E3A5F] p-4 sm:p-6 md:p-8 rounded-2xl border border-blue-pastel/30 max-w-lg w-full">
+                <div className="w-full md:w-1/2 flex justify-start pl-0 md:pl-20 relative z-10 -mt-0 md:-mt-8">
+                  <div className="bg-[#EDF5FF] dark:bg-[#1E3A5F] p-4 sm:p-6 md:p-8 rounded-b-2xl rounded-t-none md:rounded-2xl border border-blue-pastel/30 border-t-0 md:border-t max-w-lg w-full shadow-lg">
                     <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">Output:</p>
                     <ul className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-2">
                       <li className="flex items-start">

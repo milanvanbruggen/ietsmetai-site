@@ -28,7 +28,7 @@ export default function Home() {
         </div>
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6 items-center w-full py-8 md:py-0">
           {/* Mobile: Photo first, then text */}
-          <div className="order-2 md:order-1 text-left">
+          <div className="order-2 md:order-1 text-center md:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 leading-none">
               Iets met AI – Breng je organisatie verder met AI
             </h1>
@@ -38,10 +38,10 @@ export default function Home() {
             <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-4 sm:mb-6">
               Ik help je met een nuchtere, resultaatgerichte aanpak die ik zelf jarenlang in mijn agency toepaste.
             </p>
-            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-8 sm:mb-10 max-w-2xl">
+            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-8 sm:mb-10 max-w-2xl mx-auto md:mx-0">
               Geen dikke rapporten, maar een praktisch plan waarmee je vol vertrouwen kunt beginnen om je doelen te verwezenlijken.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
               <Link
                 href="#services"
                 className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 btn-gradient-animated text-gray-900 rounded-full font-medium shadow-lg hover:shadow-xl text-sm sm:text-base"
@@ -170,8 +170,8 @@ export default function Home() {
           
           {/* Visual Timeline/Flow */}
           <div className="relative mb-12 sm:mb-16">
-            {/* Mobile connecting line - left side with fade out */}
-            <div className="md:hidden absolute left-[0.9375rem] w-0.5 z-0" style={{ top: '1.5rem', bottom: '0' }}>
+            {/* Mobile connecting line - center with fade out */}
+            <div className="md:hidden absolute left-1/2 w-0.5 transform -translate-x-1/2 z-0" style={{ top: '1.5rem', bottom: '0' }}>
               <div className="h-full bg-gradient-to-b from-blue-pastel via-green-pastel via-orange-pastel via-green-pastel to-transparent"></div>
             </div>
             {/* Desktop connecting line - center */}
@@ -183,8 +183,8 @@ export default function Home() {
               {/* Maand 1-2: Kickstart & Analyse */}
               <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
                 {/* Mobile dot */}
-                <div className="md:hidden absolute left-[0.9375rem] top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-blue-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start md:justify-end pl-8 md:pl-0 md:pr-20 relative z-10">
+                <div className="md:hidden absolute left-1/2 top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-blue-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="w-full md:w-1/2 flex justify-start md:justify-end pl-0 md:pl-0 md:pr-20 relative z-10">
                   <div className="bg-white dark:bg-black p-4 sm:p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-md w-full">
                     <div className="flex items-center gap-3 mb-3 sm:mb-4">
                       <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
@@ -211,8 +211,8 @@ export default function Home() {
               {/* Maand 3-4: Implementatie & Validatie */}
               <div className="relative flex flex-col md:flex-row-reverse items-start md:items-center gap-4 md:gap-8">
                 {/* Mobile dot */}
-                <div className="md:hidden absolute left-[0.9375rem] top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-green-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start md:justify-start pl-8 md:pl-20 relative z-10">
+                <div className="md:hidden absolute left-1/2 top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-green-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="w-full md:w-1/2 flex justify-start md:justify-start pl-0 md:pl-20 relative z-10">
                   <div className="bg-white dark:bg-black p-4 sm:p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-md w-full">
                     <div className="flex items-center gap-3 mb-3 sm:mb-4">
                       <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
@@ -239,8 +239,8 @@ export default function Home() {
               {/* Maand 4-5: Trainen & Kennis Borgen */}
               <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
                 {/* Mobile dot */}
-                <div className="md:hidden absolute left-[0.9375rem] top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-orange-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start md:justify-end pl-8 md:pl-0 md:pr-20 relative z-10">
+                <div className="md:hidden absolute left-1/2 top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-orange-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="w-full md:w-1/2 flex justify-start md:justify-end pl-0 md:pl-0 md:pr-20 relative z-10">
                   <div className="bg-white dark:bg-black p-4 sm:p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-md w-full">
                     <div className="flex items-center gap-3 mb-3 sm:mb-4">
                       <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-orange-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
@@ -267,8 +267,8 @@ export default function Home() {
               {/* Maand 5: Monitoring & Doorontwikkeling */}
               <div className="relative flex flex-col md:flex-row-reverse items-start md:items-center gap-4 md:gap-8">
                 {/* Mobile dot */}
-                <div className="md:hidden absolute left-[0.9375rem] top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-green-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start md:justify-start pl-8 md:pl-20 relative z-10">
+                <div className="md:hidden absolute left-1/2 top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-green-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="w-full md:w-1/2 flex justify-start md:justify-start pl-0 md:pl-20 relative z-10">
                   <div className="bg-white dark:bg-black p-4 sm:p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-md w-full">
                     <div className="flex items-center gap-3 mb-3 sm:mb-4">
                       <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0 overflow-hidden">
@@ -295,8 +295,8 @@ export default function Home() {
               {/* Maand 6: Afronding & Overdracht */}
               <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
                 {/* Mobile dot */}
-                <div className="md:hidden absolute left-[0.9375rem] top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-blue-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start md:justify-end pl-8 md:pl-0 md:pr-20 relative z-10">
+                <div className="md:hidden absolute left-1/2 top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-blue-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="w-full md:w-1/2 flex justify-start md:justify-end pl-0 md:pl-0 md:pr-20 relative z-10">
                   <div className="bg-white dark:bg-black p-4 sm:p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-md w-full">
                     <div className="flex items-center gap-3 mb-3 sm:mb-4">
                       <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
