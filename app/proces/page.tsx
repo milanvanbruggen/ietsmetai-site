@@ -1,55 +1,68 @@
 import Link from 'next/link';
-import { Search, Rocket, Users, BarChart, CheckCircle, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
+import { Search, Rocket, Users, BarChart, CheckCircle, ChevronRight, Zap, Target, ClipboardList, Map, TrendingUp } from 'lucide-react';
 
 export default function ProcesPage() {
   return (
     <div className="pt-16 min-h-screen bg-white dark:bg-black">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Header */}
-        <div className="mb-16 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+        <div className="mb-8 text-left">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
             Mijn aanpak
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 mb-2 max-w-3xl mx-auto">
-            Twee sporen, één doel: marge verhogen én een toekomstbestendig businessmodel
-          </p>
-          <p className="text-lg text-gray-500 dark:text-gray-500">
-            Een praktische aanpak | 6 maanden traject
-          </p>
         </div>
 
-        {/* Intro */}
-        <div className="prose prose-lg dark:prose-invert max-w-none mb-16 max-w-3xl mx-auto">
-          <p className="text-gray-700 dark:text-gray-300 text-lg mb-6">
-            Je weet dat je iets met AI moet, maar waar begin je? Die vraag hoor ik constant. 
-            En eerlijk? Het is een terechte vraag. Want waar liggen de echte kansen? Waar maak 
-            je de grootste impact? En hoe zorg je dat het niet bij een experiment blijft, maar 
-            echt iets oplevert?
-          </p>
-          <p className="text-gray-700 dark:text-gray-300 text-lg mb-6">
-            Mijn aanpak is nuchter en praktisch. Geen theoretische frameworks of dikke 
-            rapporten die in een la verdwijnen. Ik werk vanuit rendement, niet vanuit uren. 
-            En ik doe wat nodig is, niet wat "mooi klinkt".
-          </p>
-          <p className="text-gray-700 dark:text-gray-300 text-lg mb-6">
-            Ik ben geen externe adviseur. Ik ben een ondernemer die meedraait. Die het 
-            bureaumodel van binnenuit begrijpt. Die strategie combineert met directe uitvoer. 
-            En die altijd op zoek is naar verspilling en optimalisatie.
-          </p>
+        {/* Intro with Photo */}
+        <div className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="prose prose-lg dark:prose-invert max-w-none text-left">
+            <p className="text-gray-700 dark:text-gray-300 text-lg mb-6">
+              Je weet dat je iets met AI moet, maar waar begin je? Die vraag hoor ik constant. 
+              En eerlijk? Het is een terechte vraag. Want waar liggen de echte kansen? Waar maak 
+              je de grootste impact? En hoe zorg je dat het niet bij een experiment blijft, maar 
+              echt iets oplevert?
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 text-lg mb-6">
+              Mijn aanpak is nuchter en praktisch. Geen theoretische frameworks of dikke 
+              rapporten die in een la verdwijnen. Ik werk vanuit rendement, niet vanuit uren. 
+              En ik doe wat nodig is, niet wat "mooi klinkt".
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 text-lg mb-6">
+              Ik ben geen externe adviseur. Ik ben een ondernemer die meedraait. Die het 
+              bureaumodel van binnenuit begrijpt. Die strategie combineert met directe uitvoer. 
+              En die altijd op zoek is naar verspilling en optimalisatie.
+            </p>
+          </div>
+          <div className="hidden lg:block">
+            <div className="relative w-full aspect-[3/2] rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="/images/milan-ai-fun.webp"
+                alt="Milan van Bruggen"
+                fill
+                className="object-cover"
+                style={{ objectPosition: 'right top' }}
+              />
+            </div>
+          </div>
         </div>
+
+        {/* Separator */}
+        <div className="border-t border-gray-200 dark:border-gray-800 my-16"></div>
 
         {/* Visual Timeline with 5 Phases - Extended */}
         <div className="mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
             Het traject: 6 maanden in 5 fases
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 mb-16 text-center max-w-2xl mx-auto">
-            Een gestructureerde aanpak die quick wins combineert met strategische langetermijnvisie.
-          </p>
+          <div className="prose prose-lg max-w-2xl mx-auto text-center mb-16">
+            <p className="text-xl text-gray-600 dark:text-gray-400">
+              Een gestructureerde aanpak die quick wins combineert met strategische langetermijnvisie.
+            </p>
+          </div>
           
           <div className="relative">
-            {/* Connecting line - starts after first dot, fades out at end */}
-            <div className="hidden md:block absolute left-1/2 w-1 transform -translate-x-1/2 z-0" style={{ top: '6.5rem', bottom: '3rem' }}>
+            {/* Connecting line - starts under first dot, fades out at end */}
+            <div className="hidden md:block absolute left-1/2 w-1 transform -translate-x-1/2 z-0" style={{ top: '12.5rem', bottom: '-12rem' }}>
               <div className="h-full relative">
                 <div className="h-full bg-gradient-to-b from-[#9BCBFF] via-[#9AD9A0] via-[#FFB88C] via-[#9AD9A0] to-[#9BCBFF]"></div>
                 <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/80 to-transparent dark:from-black dark:via-black/80 pointer-events-none"></div>
@@ -59,7 +72,7 @@ export default function ProcesPage() {
             <div className="space-y-16">
               {/* Fase 1: Maand 1-2 - Kickstart & Analyse */}
               <div className="relative flex flex-col md:flex-row items-center gap-8">
-                <div className="w-full md:w-1/2 flex justify-end md:pr-12">
+                <div className="w-full md:w-1/2 flex justify-end md:pr-20 relative z-10">
                   <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg">
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-16 h-16 rounded-full bg-[#9BCBFF] flex items-center justify-center text-white shadow-lg flex-shrink-0">
@@ -97,11 +110,14 @@ export default function ProcesPage() {
                     </div>
                   </div>
                 </div>
+                {/* Connector lines - dashed, extending to cards */}
+                <div className="hidden md:block absolute right-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-[#9BCBFF]" style={{ top: '50%' }}></div>
+                <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-[#9BCBFF]" style={{ top: '50%' }}></div>
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-[#9BCBFF] border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start md:pl-12">
-                  <div className="bg-[#9BCBFF]/10 dark:bg-[#9BCBFF]/20 p-6 rounded-2xl border border-[#9BCBFF]/30 max-w-lg">
-                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Output:</p>
-                    <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                <div className="w-full md:w-1/2 flex justify-start md:pl-20 relative z-10">
+                  <div className="bg-[#EDF5FF] dark:bg-[#1E3A5F] p-8 rounded-2xl border border-[#9BCBFF]/30 max-w-lg">
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-4">Output:</p>
+                    <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-2">
                       <li className="flex items-start">
                         <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
                         <span>Verbeterplan met impact/effort matrix</span>
@@ -125,10 +141,10 @@ export default function ProcesPage() {
 
               {/* Fase 2: Maand 3-4 - Implementatie & Validatie */}
               <div className="relative flex flex-col md:flex-row items-center gap-8">
-                <div className="w-full md:w-1/2 flex justify-start md:pl-12">
-                  <div className="bg-[#9AD9A0]/10 dark:bg-[#9AD9A0]/20 p-6 rounded-2xl border border-[#9AD9A0]/30 max-w-lg">
-                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Output:</p>
-                    <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                <div className="w-full md:w-1/2 flex justify-end md:pr-20 relative z-10">
+                  <div className="bg-[#EEF7EF] dark:bg-[#1E3F2E] p-8 rounded-2xl border border-[#9AD9A0]/30 max-w-lg">
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-4">Output:</p>
+                    <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-2">
                       <li className="flex items-start">
                         <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
                         <span>Concrete AI-toepassingen in ontwikkeling</span>
@@ -148,8 +164,11 @@ export default function ProcesPage() {
                     </ul>
                   </div>
                 </div>
+                {/* Connector lines - dashed, extending to cards */}
+                <div className="hidden md:block absolute right-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-[#9AD9A0]" style={{ top: '50%' }}></div>
+                <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-[#9AD9A0]" style={{ top: '50%' }}></div>
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-[#9AD9A0] border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-end md:pr-20">
+                <div className="w-full md:w-1/2 flex justify-start md:pl-20 relative z-10">
                   <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg">
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-16 h-16 rounded-full bg-[#9AD9A0] flex items-center justify-center text-white shadow-lg flex-shrink-0">
@@ -191,7 +210,7 @@ export default function ProcesPage() {
 
               {/* Fase 3: Maand 4-5 - Trainen & Kennis Borgen */}
               <div className="relative flex flex-col md:flex-row items-center gap-8">
-                <div className="w-full md:w-1/2 flex justify-end md:pr-12">
+                <div className="w-full md:w-1/2 flex justify-end md:pr-20 relative z-10">
                   <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg">
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-16 h-16 rounded-full bg-[#FFB88C] flex items-center justify-center text-white shadow-lg flex-shrink-0">
@@ -229,11 +248,14 @@ export default function ProcesPage() {
                     </div>
                   </div>
                 </div>
+                {/* Connector lines - dashed, extending to cards */}
+                <div className="hidden md:block absolute right-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-[#FFB88C]" style={{ top: '50%' }}></div>
+                <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-[#FFB88C]" style={{ top: '50%' }}></div>
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-[#FFB88C] border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start md:pl-12">
-                  <div className="bg-[#FFB88C]/10 dark:bg-[#FFB88C]/20 p-6 rounded-2xl border border-[#FFB88C]/30 max-w-lg">
-                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Output:</p>
-                    <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                <div className="w-full md:w-1/2 flex justify-start md:pl-20 relative z-10">
+                  <div className="bg-[#FFF4ED] dark:bg-[#3F2E1E] p-8 rounded-2xl border border-[#FFB88C]/30 max-w-lg">
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-4">Output:</p>
+                    <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-2">
                       <li className="flex items-start">
                         <span className="text-[#FFB88C] mr-2 font-bold">•</span>
                         <span>Team getraind en zelfstandig aan de slag</span>
@@ -257,10 +279,10 @@ export default function ProcesPage() {
 
               {/* Fase 4: Maand 5 - Monitoring & Doorontwikkeling */}
               <div className="relative flex flex-col md:flex-row items-center gap-8">
-                <div className="w-full md:w-1/2 flex justify-start md:pl-12">
-                  <div className="bg-[#9AD9A0]/10 dark:bg-[#9AD9A0]/20 p-6 rounded-2xl border border-[#9AD9A0]/30 max-w-lg">
-                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Output:</p>
-                    <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                <div className="w-full md:w-1/2 flex justify-end md:pr-20 relative z-10">
+                  <div className="bg-[#EEF7EF] dark:bg-[#1E3F2E] p-8 rounded-2xl border border-[#9AD9A0]/30 max-w-lg">
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-4">Output:</p>
+                    <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-2">
                       <li className="flex items-start">
                         <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
                         <span>Verbeterde en geoptimaliseerde processen</span>
@@ -280,8 +302,11 @@ export default function ProcesPage() {
                     </ul>
                   </div>
                 </div>
+                {/* Connector lines - dashed, extending to cards */}
+                <div className="hidden md:block absolute right-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-[#9AD9A0]" style={{ top: '50%' }}></div>
+                <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-[#9AD9A0]" style={{ top: '50%' }}></div>
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-[#9AD9A0] border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-end md:pr-20">
+                <div className="w-full md:w-1/2 flex justify-start md:pl-20 relative z-10">
                   <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg">
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-16 h-16 rounded-full bg-[#9AD9A0] flex items-center justify-center text-white shadow-lg flex-shrink-0">
@@ -323,7 +348,7 @@ export default function ProcesPage() {
 
               {/* Fase 5: Maand 6 - Afronding & Overdracht */}
               <div className="relative flex flex-col md:flex-row items-center gap-8">
-                <div className="w-full md:w-1/2 flex justify-end md:pr-12">
+                <div className="w-full md:w-1/2 flex justify-end md:pr-20 relative z-10">
                   <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg">
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-16 h-16 rounded-full bg-[#9BCBFF] flex items-center justify-center text-white shadow-lg flex-shrink-0">
@@ -361,11 +386,14 @@ export default function ProcesPage() {
                     </div>
                   </div>
                 </div>
+                {/* Connector lines - dashed, extending to cards */}
+                <div className="hidden md:block absolute right-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-[#9BCBFF]" style={{ top: '50%' }}></div>
+                <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-[#9BCBFF]" style={{ top: '50%' }}></div>
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-[#9BCBFF] border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start md:pl-12">
-                  <div className="bg-[#9BCBFF]/10 dark:bg-[#9BCBFF]/20 p-6 rounded-2xl border border-[#9BCBFF]/30 max-w-lg">
-                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Output:</p>
-                    <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-2">
+                <div className="w-full md:w-1/2 flex justify-start md:pl-20 relative z-10">
+                  <div className="bg-[#EDF5FF] dark:bg-[#1E3A5F] p-8 rounded-2xl border border-[#9BCBFF]/30 max-w-lg">
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-4">Output:</p>
+                    <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-2">
                       <li className="flex items-start">
                         <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
                         <span>Eindpresentatie voor jou en het team</span>
@@ -393,144 +421,207 @@ export default function ProcesPage() {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Two Tracks Section */}
-        <section className="py-32 px-4 sm:px-6 lg:px-8 mb-16">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-              Twee sporen, één doel
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-gradient-to-br from-[#9BCBFF]/20 to-[#9AD9A0]/20 dark:from-[#9BCBFF]/10 dark:to-[#9AD9A0]/10 p-8 rounded-2xl border border-[#9BCBFF]/30 dark:border-[#9BCBFF]/20">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-[#9BCBFF] flex items-center justify-center text-white font-bold text-xl">1</div>
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Korte termijn</h3>
-            </div>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
-              Huidige processen optimaliseren met AI. Quick wins die direct impact hebben op je 
-              marge en efficiëntie. Resultaten zichtbaar binnen 4-6 weken.
-            </p>
-            <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-              <li className="flex items-start">
-                <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
-                <span>Handmatig werk automatiseren</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
-                <span>Interne processen en communicatie versnellen</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
-                <span>Meer standaardisatie voor schaalbaarheid</span>
-              </li>
-            </ul>
-          </div>
+      {/* Timeline CTA */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-32 flex justify-center text-center relative z-20">
+        <Link
+          href="/#contact"
+          className="inline-flex items-center gap-2 px-8 py-3 btn-gradient-animated text-gray-900 rounded-full font-semibold shadow-lg hover:shadow-xl"
+        >
+          Morgen aan de slag?
+          <ChevronRight className="w-5 h-5" />
+        </Link>
+      </div>
 
-          <div className="bg-gradient-to-br from-[#9AD9A0]/20 to-[#FFB88C]/20 dark:from-[#9AD9A0]/10 dark:to-[#FFB88C]/10 p-8 rounded-2xl border border-[#9AD9A0]/30 dark:border-[#9AD9A0]/20">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-[#9AD9A0] flex items-center justify-center text-white font-bold text-xl">2</div>
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Lange termijn</h3>
-            </div>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
-              Nadenken over nieuwe proposities en verdienmodellen. Strategische keuzes die je 
-              organisatie toekomstbestendig maken. Meebewegen met AI in plaats van erdoor 
-              ingehaald worden.
-            </p>
-            <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-              <li className="flex items-start">
-                <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
-                <span>Nieuwe proposities ontwikkelen</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
-                <span>Verdienmodellen herzien</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
-                <span>Toekomstbestendig businessmodel</span>
-              </li>
-            </ul>
-          </div>
-            </div>
-          </div>
-        </section>
-
-        {/* What You Get */}
-        <section className="py-32 px-4 sm:px-6 lg:px-8 mb-16 bg-gradient-to-br from-[#FFB88C]/5 via-[#9AD9A0]/5 to-[#9BCBFF]/5 dark:bg-gray-900">
-          <div className="max-w-6xl mx-auto">
-            <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 text-center">
-                Wat ik oplever
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 text-center max-w-2xl mx-auto">
-                Geen adviesrapporten die in een la belanden. Wél tastbare verbeteringen die impact hebben.
+      {/* Two Tracks Section */}
+      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#9AD9A0]/10 via-[#9BCBFF]/10 to-[#FFB88C]/10 dark:from-black dark:via-gray-900 dark:to-black">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-left">
+            Twee sporen, één doel
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] items-stretch gap-6">
+            {/* Spoor 1 */}
+            <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg flex flex-col">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 min-w-[3rem] min-h-[3rem] rounded-full bg-[#9BCBFF] flex items-center justify-center text-white flex-shrink-0">
+                  <Zap className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Quick wins & Standaardisatie</h3>
+              </div>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
+                Huidige processen optimaliseren met AI. Quick wins die direct impact hebben op je 
+                marge en efficiëntie. Resultaten zichtbaar binnen 4-6 weken.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#9AD9A0]/20 flex items-center justify-center">
-                    <span className="text-[#9AD9A0] font-bold text-xl">1</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Analyse van interne verspilling</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">In afstemming met jou en het team: waar liggen de kansen?</p>
-                  </div>
+              <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <li className="flex items-start">
+                  <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
+                  <span>Handmatig werk automatiseren</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
+                  <span>Interne processen en communicatie versnellen</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#9BCBFF] mr-2 font-bold">•</span>
+                  <span>Meer standaardisatie voor schaalbaarheid</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Plus */}
+            <div className="hidden lg:flex items-center justify-center text-4xl font-bold text-gray-400 dark:text-gray-500">
+              +
+            </div>
+
+            {/* Spoor 2 */}
+            <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg flex flex-col">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 min-w-[3rem] min-h-[3rem] rounded-full bg-[#9AD9A0] flex items-center justify-center text-white flex-shrink-0">
+                  <Target className="w-6 h-6" />
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#9BCBFF]/20 flex items-center justify-center">
-                    <span className="text-[#9BCBFF] font-bold text-xl">2</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Plan van aanpak en planning</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">AI-toepassingen voor klantwerk en interne processen</p>
-                  </div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Strategische groei</h3>
+              </div>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
+                Nadenken over nieuwe proposities en verdienmodellen. Strategische keuzes die je 
+                organisatie toekomstbestendig maken. Meebewegen met AI in plaats van erdoor 
+                ingehaald worden.
+              </p>
+              <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <li className="flex items-start">
+                  <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
+                  <span>Nieuwe proposities ontwikkelen</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
+                  <span>Verdienmodellen herzien</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#9AD9A0] mr-2 font-bold">•</span>
+                  <span>Toekomstbestendig businessmodel</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Equals */}
+            <div className="hidden lg:flex items-center justify-center text-4xl font-bold text-gray-400 dark:text-gray-500">
+              =
+            </div>
+
+            {/* Uitkomst */}
+            <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg flex flex-col">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 min-w-[3rem] min-h-[3rem] rounded-full bg-[#FFB88C] flex items-center justify-center text-white flex-shrink-0">
+                  <CheckCircle className="w-6 h-6" />
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#FFB88C]/20 flex items-center justify-center">
-                    <span className="text-[#FFB88C] font-bold text-xl">3</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Doorvoeren verbeteringen</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Taakverdeling team, externe developer en mijzelf</p>
-                  </div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Je mist de boot niet</h3>
+              </div>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
+                Je weet precies waar je moet beginnen. Je groeit mee met AI in plaats van erdoor 
+                ingehaald te worden. Vol vertrouwen aan de slag.
+              </p>
+              <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <li className="flex items-start">
+                  <span className="text-[#FFB88C] mr-2 font-bold">•</span>
+                  <span>Groei in je business</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#FFB88C] mr-2 font-bold">•</span>
+                  <span>Meer werkplezier</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#FFB88C] mr-2 font-bold">•</span>
+                  <span>Hogere kwaliteit</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What You Get Section */}
+      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#1a3d2e] via-[#1f4a38] to-[#163528]">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-white mb-6 text-left">
+            Wat ik oplever
+          </h2>
+          <p className="text-lg text-[#9AD9A0]/80 mb-12 text-left max-w-2xl">
+            Geen adviesrapporten die in een la belanden. Wél tastbare verbeteringen die impact hebben.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/15 transition-all">
+              <div className="flex flex-col gap-4">
+                <div className="w-12 h-12 rounded-full bg-[#9AD9A0] flex items-center justify-center text-[#1a3d2e]">
+                  <ClipboardList className="w-6 h-6" />
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#9AD9A0]/20 flex items-center justify-center">
-                    <span className="text-[#9AD9A0] font-bold text-xl">4</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Teamcoaching</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Slimmer werken, minder tijd kwijt. Resultaten zichtbaar binnen 4-6 weken</p>
-                  </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-2">Interviews & adoptiemeting</h4>
+                  <p className="text-sm text-gray-300">Interviews + medewerkerssurvey: processen in kaart, knelpunten, en AI-adoptiefase per team.</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/15 transition-all">
+              <div className="flex flex-col gap-4">
+                <div className="w-12 h-12 rounded-full bg-[#9AD9A0] flex items-center justify-center text-[#1a3d2e]">
+                  <Target className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-2">Top 5 initiatieven & Impact/Effort</h4>
+                  <p className="text-sm text-gray-300">Brainstorm op input uit interviews & survey → geprioriteerde top 5 + Impact/Effort-matrix (Quick Wins, Strategisch, etc.).</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/15 transition-all">
+              <div className="flex flex-col gap-4">
+                <div className="w-12 h-12 rounded-full bg-[#9AD9A0] flex items-center justify-center text-[#1a3d2e]">
+                  <Map className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-2">Gameplans & masterplan</h4>
+                  <p className="text-sm text-gray-300">Per initiatief een gameplan met tijdlijn; één masterplan dat alles samenbrengt.</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/15 transition-all">
+              <div className="flex flex-col gap-4">
+                <div className="w-12 h-12 rounded-full bg-[#9AD9A0] flex items-center justify-center text-[#1a3d2e]">
+                  <TrendingUp className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-2">Implementatie & metingen</h4>
+                  <p className="text-sm text-gray-300">Start- en eindmeting, advies per initiatief, welke doorpakken, plus sessies voor draagvlak en training.</p>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Why Me */}
-        <section className="py-32 px-4 sm:px-6 lg:px-8 mb-16">
-          <div className="max-w-6xl mx-auto">
-            <div className="bg-gradient-to-r from-[#9AD9A0]/10 via-[#9BCBFF]/10 to-[#FFB88C]/10 dark:from-[#9AD9A0]/20 dark:via-[#9BCBFF]/20 dark:to-[#FFB88C]/20 border-l-4 border-[#9AD9A0] p-8 rounded-2xl">
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
+      {/* Why Me Section */}
+      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#9AD9A0]/10 via-[#9BCBFF]/10 to-[#FFB88C]/10 dark:from-black dark:via-gray-900 dark:to-black">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-10 text-left">
                 Waarom ik?
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              </h2>
+              <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <span className="text-[#9AD9A0] text-2xl">✓</span>
                   <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Geen externe adviseur</h4>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Niet zomaar een adviseur</h4>
                     <p className="text-sm text-gray-600 dark:text-gray-400">Wel een ondernemer die meedraait</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="text-[#9BCBFF] text-2xl">✓</span>
+                  <span className="text-[#9AD9A0] text-2xl">✓</span>
                   <div>
                     <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Begrijpt het bureaumodel</h4>
                     <p className="text-sm text-gray-600 dark:text-gray-400">Van binnenuit, door jarenlange ervaring</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="text-[#FFB88C] text-2xl">✓</span>
+                  <span className="text-[#9AD9A0] text-2xl">✓</span>
                   <div>
                     <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Combineert strategie met uitvoer</h4>
                     <p className="text-sm text-gray-600 dark:text-gray-400">Niet alleen praten, ook doen</p>
@@ -543,35 +634,38 @@ export default function ProcesPage() {
                     <p className="text-sm text-gray-600 dark:text-gray-400">Niet vanuit uren, maar vanuit resultaat</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 md:col-span-2">
-                  <span className="text-[#9BCBFF] text-2xl">✓</span>
+                <div className="flex items-start gap-4">
+                  <span className="text-[#9AD9A0] text-2xl">✓</span>
                   <div>
                     <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Doet wat nodig is</h4>
                     <p className="text-sm text-gray-600 dark:text-gray-400">Niet wat "mooi klinkt", maar wat impact heeft</p>
                   </div>
                 </div>
+                <div className="pt-10">
+                  <Link
+                    href="/#contact"
+                    className="inline-flex items-center gap-2 px-8 py-3 btn-gradient-animated text-gray-900 rounded-full font-semibold shadow-lg hover:shadow-xl"
+                  >
+                    Keer kennismaken?
+                    <ChevronRight className="w-5 h-5" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="hidden lg:block">
+              <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-lg">
+                <Image
+                  src="/images/milan-ai-funki-pops.webp"
+                  alt="Milan van Bruggen"
+                  fill
+                  className="object-cover"
+                  style={{ objectPosition: 'center top' }}
+                />
               </div>
             </div>
           </div>
-        </section>
-
-        {/* CTA */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            href="/#contact"
-            className="inline-flex items-center gap-2 px-8 py-3 btn-gradient-animated text-gray-900 rounded-full font-medium shadow-lg hover:shadow-xl text-center justify-center"
-          >
-            Laten we praten over jouw organisatie
-            <ChevronRight className="w-5 h-5" />
-          </Link>
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 px-8 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white rounded-full font-medium hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all text-center justify-center"
-          >
-            Terug naar home
-          </Link>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

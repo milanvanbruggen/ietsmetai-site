@@ -3,10 +3,10 @@ import Link from 'next/link';
 export default function BoekPage() {
   return (
     <div className="pt-16 min-h-screen bg-white dark:bg-black">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Header */}
         <div className="mb-12 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Over mij
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 mb-2">
@@ -15,7 +15,7 @@ export default function BoekPage() {
         </div>
 
         {/* Main Story */}
-        <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
+        <div className="prose prose-lg dark:prose-invert max-w-2xl mb-12">
           <p className="text-gray-700 dark:text-gray-300 text-lg mb-6">
             Ik was 13 of 14 jaar oud toen ik voor het eerst een website online zette. Niet omdat ik nou zo gefascineerd was door websites op zich, maar omdat ik een clan site wilde maken voor de groep vrienden waarmee ik Quake speelde. We noemden onszelf [RM] - Ruthless Minds. En natuurlijk hadden we een website nodig. Dat hoorde er gewoon bij.
           </p>

@@ -155,22 +155,26 @@ export default function Home() {
       {/* Services/Methodology Section */}
       <section id="services" className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#FFB88C]/5 via-[#9AD9A0]/5 to-[#9BCBFF]/5 dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-left">
             Mijn aanpak
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 mb-16 text-center max-w-2xl mx-auto">
-            Twee sporen, één doel: marge verhogen én een toekomstbestendig businessmodel. Geen dikke rapporten, maar tastbare verbeteringen.
-          </p>
+          <div className="prose prose-lg max-w-none text-left mb-16">
+            <p className="text-xl text-gray-600 dark:text-gray-400">
+              Twee sporen, één doel: marge verhogen én een toekomstbestendig businessmodel. Geen dikke rapporten, maar tastbare verbeteringen.
+            </p>
+          </div>
           
           {/* Visual Timeline/Flow */}
           <div className="relative mb-16">
-            {/* Connecting line - starts under first dot, ends under button */}
-            <div className="hidden md:block absolute left-1/2 w-1 bg-gradient-to-b from-[#9BCBFF] via-[#9AD9A0] via-[#FFB88C] via-[#9AD9A0] to-[#9BCBFF] transform -translate-x-1/2 z-0" style={{ top: '4.5rem', bottom: '-6rem' }}></div>
+            {/* Connecting line - starts under first dot, fades out at bottom */}
+            <div className="hidden md:block absolute left-1/2 w-1 transform -translate-x-1/2 z-0" style={{ top: '4.5rem', bottom: '-12rem' }}>
+              <div className="h-full bg-gradient-to-b from-[#9BCBFF] via-[#9AD9A0] via-[#FFB88C] via-[#9AD9A0] via-[#9BCBFF] to-transparent"></div>
+            </div>
             
             <div className="space-y-12">
               {/* Maand 1-2: Kickstart & Analyse */}
               <div className="relative flex flex-col md:flex-row items-center gap-8">
-                <div className="w-full md:w-1/2 flex justify-end md:pr-12">
+                <div className="w-full md:w-1/2 flex justify-end md:pr-20 relative z-10">
                   <div className="bg-white dark:bg-black p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-md">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-12 h-12 rounded-full bg-[#9BCBFF] flex items-center justify-center text-white shadow-lg flex-shrink-0">
@@ -187,13 +191,15 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
+                {/* Connector line left - dashed */}
+                <div className="hidden md:block absolute right-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-[#9BCBFF]" style={{ top: '50%' }}></div>
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-[#9BCBFF] border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 <div className="w-full md:w-1/2"></div>
               </div>
 
               {/* Maand 3-4: Implementatie & Validatie */}
               <div className="relative flex flex-col md:flex-row-reverse items-center gap-8">
-                <div className="w-full md:w-1/2 flex justify-start md:pl-12">
+                <div className="w-full md:w-1/2 flex justify-start md:pl-20 relative z-10">
                   <div className="bg-white dark:bg-black p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-md">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-12 h-12 rounded-full bg-[#9AD9A0] flex items-center justify-center text-white shadow-lg flex-shrink-0">
@@ -210,13 +216,15 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
+                {/* Connector line right - dashed */}
+                <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-[#9AD9A0]" style={{ top: '50%' }}></div>
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-[#9AD9A0] border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 <div className="w-full md:w-1/2"></div>
               </div>
 
               {/* Maand 4-5: Trainen & Kennis Borgen */}
               <div className="relative flex flex-col md:flex-row items-center gap-8">
-                <div className="w-full md:w-1/2 flex justify-end md:pr-12">
+                <div className="w-full md:w-1/2 flex justify-end md:pr-20 relative z-10">
                   <div className="bg-white dark:bg-black p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-md">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-12 h-12 rounded-full bg-[#FFB88C] flex items-center justify-center text-white shadow-lg flex-shrink-0">
@@ -230,16 +238,18 @@ export default function Home() {
                     <p className="text-gray-600 dark:text-gray-400 text-sm">
                       Team trainen en kennis borgen. Automatiseringen finetunen. 
                       Eerste evaluatiemoment met jou en het team.
-          </p>
+                    </p>
                   </div>
-        </div>
+                </div>
+                {/* Connector line left - dashed */}
+                <div className="hidden md:block absolute right-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-[#FFB88C]" style={{ top: '50%' }}></div>
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-[#FFB88C] border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 <div className="w-full md:w-1/2"></div>
               </div>
 
               {/* Maand 5: Monitoring & Doorontwikkeling */}
               <div className="relative flex flex-col md:flex-row-reverse items-center gap-8">
-                <div className="w-full md:w-1/2 flex justify-start md:pl-12">
+                <div className="w-full md:w-1/2 flex justify-start md:pl-20 relative z-10">
                   <div className="bg-white dark:bg-black p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-md">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-12 h-12 rounded-full bg-[#9AD9A0] flex items-center justify-center text-white shadow-lg flex-shrink-0 overflow-hidden">
@@ -256,13 +266,15 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
+                {/* Connector line right - dashed */}
+                <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-[#9AD9A0]" style={{ top: '50%' }}></div>
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-[#9AD9A0] border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 <div className="w-full md:w-1/2"></div>
               </div>
 
               {/* Maand 6: Afronding & Overdracht */}
               <div className="relative flex flex-col md:flex-row items-center gap-8">
-                <div className="w-full md:w-1/2 flex justify-end md:pr-12">
+                <div className="w-full md:w-1/2 flex justify-end md:pr-20 relative z-10">
                   <div className="bg-white dark:bg-black p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-md">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-12 h-12 rounded-full bg-[#9BCBFF] flex items-center justify-center text-white shadow-lg flex-shrink-0">
@@ -279,6 +291,8 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
+                {/* Connector line left - dashed */}
+                <div className="hidden md:block absolute right-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-[#9BCBFF]" style={{ top: '50%' }}></div>
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-[#9BCBFF] border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 <div className="w-full md:w-1/2"></div>
               </div>
@@ -290,7 +304,7 @@ export default function Home() {
             <Link
               href="/proces"
               className="inline-flex items-center gap-2 px-8 py-3 btn-gradient-animated text-gray-900 rounded-full font-medium shadow-lg hover:shadow-xl"
-          >
+            >
               <ListChecks className="w-5 h-5" />
               Bekijk mijn bewezen aanpak
             </Link>
@@ -330,12 +344,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-        <div className="max-w-6xl mx-auto text-center text-gray-600 dark:text-gray-400">
-          <p>&copy; {new Date().getFullYear()} ietsmetai. Alle rechten voorbehouden.</p>
-        </div>
-      </footer>
     </div>
   );
 }
