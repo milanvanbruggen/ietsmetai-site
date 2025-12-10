@@ -1,6 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Search, Rocket, Users, BarChart, CheckCircle, ChevronRight, Zap, Target, ClipboardList, Map, TrendingUp } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Mijn aanpak – Iets met AI',
+  description: 'Een nuchtere, resultaatgerichte aanpak om je organisatie verder te brengen met AI. 6 maanden traject in 5 fases.',
+};
 
 export default function ProcesPage() {
   return (

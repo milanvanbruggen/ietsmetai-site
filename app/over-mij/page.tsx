@@ -2,6 +2,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronRight } from 'lucide-react';
 import GitHubProjects from '@/components/GitHubProjects';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Over mij – Iets met AI',
+  description: 'Van 13-jarige met een Quake clan site naar AI-adviseur. Mijn verhaal over Pixelpillow, AI-ontdekkingen en waar ik nu sta.',
+};
 
 export default function OverMijPage() {
   return (
