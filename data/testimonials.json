@@ -1,0 +1,37 @@
+{
+  "testimonials": [
+    {
+      "id": 1765377961798,
+      "clientName": "SEO-bureau Onder",
+      "personName": "Martijn Hoving",
+      "personRole": "Founder",
+      "personPhoto": "https://onder.nl/site/uploads/2022/11/Martijn-Hoving-1-e1722587079417-1100x822.jpg",
+      "focalPoint": "center",
+      "testimonial": "Milan heeft ons geholpen om AI op een praktische manier in onze organisatie te implementeren. Zijn nuchtere aanpak en focus op directe resultaten was precies wat we nodig hadden. We zien nu al significante tijdswinst in onze dagelijkse processen. Het traject was duidelijk, overzichtelijk en leverde direct concrete waarde.",
+      "visible": true,
+      "order": 0
+    },
+    {
+      "id": 1765378404322,
+      "clientName": "Online Plastics Group",
+      "personName": "Jonathan Opdam",
+      "personRole": "Founder en CEO",
+      "personPhoto": "https://onlineplasticsgroup.com/wp-content/uploads/2024/07/2024_07_OPG_ARNHEM_32.jpg",
+      "focalPoint": "top-center",
+      "testimonial": "Uitstekend werk! Milan begrijpt echt wat er nodig is om AI succesvol in te zetten. Nog meer tekst om ervoor te zorgen dat de testimonials mooi uitgelijnd worden.",
+      "visible": true,
+      "order": 1
+    },
+    {
+      "id": 1765378404323,
+      "clientName": "Online Plastics Group",
+      "personName": "Jonathan Opdam",
+      "personRole": "Founder en CEO",
+      "personPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-saGppS731BTJ_WpMVqf3E6fqel8fcaIKlA&s",
+      "focalPoint": "center",
+      "testimonial": "De samenwerking met Milan verliep zeer soepel. Hij heeft ons team begeleid door het hele AI-traject en zorgde ervoor dat we niet alleen de techniek begrepen, maar ook hoe we het in de praktijk kunnen toepassen. Zijn praktische benadering sluit perfect aan bij hoe wij werken.",
+      "visible": true,
+      "order": 2
+    }
+  ]
+}

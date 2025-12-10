@@ -55,8 +55,7 @@ export default async function GitHubProjects() {
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900/50">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-3 mb-8">
-          <Github className="w-8 h-8 text-gray-900 dark:text-white" />
+        <div className="mb-8">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
             Waar ik aan werk
           </h2>

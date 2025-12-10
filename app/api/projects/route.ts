@@ -46,11 +46,20 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
     
+    // Ensure data directory exists
+    const dataDir = path.dirname(dataFilePath);
+    try {
+      await fs.access(dataDir);
+    } catch {
+      await fs.mkdir(dataDir, { recursive: true });
+    }
+    
     const data: ProjectsData = { projects };
-    await fs.writeFile(dataFilePath, JSON.stringify(data, null, 2));
+    await fs.writeFile(dataFilePath, JSON.stringify(data, null, 2), 'utf-8');
     
     return NextResponse.json({ success: true });
   } catch (error) {
+    console.error('Error saving projects:', error);
     return NextResponse.json({ error: 'Failed to save projects' }, { status: 500 });
   }
 }

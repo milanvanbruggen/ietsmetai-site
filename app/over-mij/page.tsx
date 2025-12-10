@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronRight } from 'lucide-react';
+import { ListChecks, MessageCircle } from 'lucide-react';
 import GitHubProjects from '@/components/GitHubProjects';
+import CurrentRoles from '@/components/CurrentRoles';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -208,8 +209,8 @@ export default function OverMijPage() {
         </div>
       </section>
 
-      {/* GitHub Projects */}
-      <GitHubProjects />
+      {/* Current Roles */}
+      <CurrentRoles />
 
       {/* CTA Section */}
       <section className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
@@ -227,21 +228,25 @@ export default function OverMijPage() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link
                 href="/proces"
-                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 btn-gradient-animated text-gray-900 rounded-full font-semibold shadow-lg hover:shadow-xl text-sm sm:text-base"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 btn-gradient-animated text-gray-900 rounded-full font-medium shadow-lg hover:shadow-xl text-sm sm:text-base"
               >
-                Bekijk mijn aanpak
-                <ChevronRight className="w-5 h-5" />
+                <ListChecks className="w-5 h-5" />
+                Bekijk mijn bewezen aanpak
               </Link>
               <Link
-                href="/#contact"
-                className="px-6 sm:px-8 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white rounded-full font-semibold hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all text-center text-sm sm:text-base"
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white rounded-full font-medium hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all text-sm sm:text-base"
               >
+                <MessageCircle className="w-5 h-5" />
                 Laten we praten
               </Link>
             </div>
           </div>
         </div>
       </section>
+
+      {/* GitHub Projects */}
+      <GitHubProjects />
     </div>
   );
 }

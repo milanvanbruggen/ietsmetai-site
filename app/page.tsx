@@ -1,12 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Search, Rocket, Users, BarChart, CheckCircle, ChevronRight, ListChecks, MessageCircle, Mail, Linkedin } from 'lucide-react';
+import { Search, Rocket, Users, BarChart, CheckCircle, ChevronRight, ListChecks, MessageCircle, Mail } from 'lucide-react';
+import Testimonials from '@/components/Testimonials';
 
 export default function Home() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-pastel/10 via-blue-pastel/10 to-orange-pastel/10 dark:from-black dark:via-gray-900 dark:to-black overflow-hidden">
+      <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-green-pastel/10 via-blue-pastel/10 to-orange-pastel/10 dark:from-black dark:via-gray-900 dark:to-black overflow-hidden">
         {/* Pattern background - right top, hidden on mobile */}
         <div className="hidden sm:block absolute top-0 right-0 w-full h-[120vh] sm:min-w-[600px] md:min-w-[800px] lg:min-w-[1000px] sm:min-h-[600px] md:min-h-[800px] lg:min-h-[1000px] opacity-20 sm:opacity-25 lg:opacity-30 dark:opacity-30 pointer-events-none">
           <div className="relative w-full h-full">
@@ -25,14 +26,14 @@ export default function Home() {
             ></div>
           </div>
         </div>
-        <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6 items-center w-full py-8 md:py-0">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-6 items-center w-full py-8 md:py-0">
           {/* Mobile: Photo first, then text */}
           <div className="order-2 md:order-1 text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 leading-none">
               Iets met AI – Breng je organisatie verder met AI
             </h1>
-            <div className="inline-flex items-center bg-white/90 dark:bg-gray-900/90 border border-gray-200/60 dark:border-gray-800/60 rounded-full px-4 py-2 shadow-lg mb-6">
-              <span className="text-sm text-gray-700 dark:text-gray-300">Wat als je de boot mist?</span>
+            <div className="inline-flex items-center bg-white dark:bg-gray-900 px-4 py-2.5 rounded-lg shadow-lg mb-6 transform -rotate-1 hover:rotate-0 transition-transform duration-200">
+              <span className="text-sm font-semibold text-orange-pastel">Wat als je de boot mist?</span>
             </div>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-4 sm:mb-6">
               Ik help je met een nuchtere, resultaatgerichte aanpak die ik zelf jarenlang in mijn agency toepaste.
@@ -46,10 +47,10 @@ export default function Home() {
                 className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 btn-gradient-animated text-gray-900 rounded-full font-medium shadow-lg hover:shadow-xl text-sm sm:text-base"
               >
                 <ListChecks className="w-5 h-5" />
-                Bekijk mijn bewezen aanpak
+                Mijn aanpak in vogelvlucht
               </Link>
               <Link
-                href="#contact"
+                href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white rounded-full font-medium hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all text-sm sm:text-base"
               >
                 <MessageCircle className="w-5 h-5" />
@@ -105,14 +106,14 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-32">
             {/* Mobile image - only on small screens */}
             <div className="md:hidden relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
-              <Image
+        <Image
                 src="/images/milan-samenwerken-ai-adoptie.webp"
                 alt="Milan werkt samen met teams aan AI adoptie"
                 fill
                 className="object-cover"
                 style={{ objectPosition: 'center top' }}
-                priority
-              />
+          priority
+        />
             </div>
             {/* Empty space for left column on tablet/desktop */}
             <div className="hidden md:block"></div>
@@ -158,11 +159,11 @@ export default function Home() {
       {/* Services/Methodology Section */}
       <section id="services" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-pastel/5 via-green-pastel/5 to-blue-pastel/5 dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 text-left">
-            Mijn aanpak
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8 text-center">
+            Mijn aanpak in vogelvlucht
           </h2>
-          <div className="prose prose-lg max-w-none text-left mb-10 sm:mb-16">
-            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400">
+          <div className="prose prose-lg max-w-none text-center mb-10 sm:mb-16">
+            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400">
               Twee sporen, één doel: marge verhogen én een toekomstbestendig businessmodel. Geen dikke rapporten, maar tastbare verbeteringen.
             </p>
           </div>
@@ -261,7 +262,7 @@ export default function Home() {
                 {/* Desktop dot */}
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-orange-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 <div className="hidden md:block w-full md:w-1/2"></div>
-              </div>
+        </div>
 
               {/* Maand 5: Monitoring & Doorontwikkeling */}
               <div className="relative flex flex-col md:flex-row-reverse items-start md:items-center gap-4 md:gap-8">
@@ -335,6 +336,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <Testimonials />
+
       {/* Contact Section */}
       <section id="contact" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black">
         <div className="max-w-2xl mx-auto text-center">
@@ -346,22 +350,20 @@ export default function Home() {
             Neem gerust contact op. Geen verkooppraatje, gewoon een gesprek.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <a
-              href="mailto:info@milanvanbruggen.nl"
+            <Link
+              href="/contact"
               className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 bg-blue-pastel text-gray-900 rounded-full font-medium hover:brightness-105 transition-all shadow-lg hover:shadow-xl text-sm sm:text-base"
             >
               <Mail className="w-5 h-5" />
-              Mail Milan
-            </a>
-            <a
-              href="https://linkedin.com/in/milanvanbruggen"
-              target="_blank"
-              rel="noopener noreferrer"
+              Neem contact op
+            </Link>
+            <Link
+              href="/contact"
               className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white rounded-full font-medium hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all text-sm sm:text-base"
             >
-              <Linkedin className="w-5 h-5" />
-              Connect op LinkedIn
-            </a>
+              <MessageCircle className="w-5 h-5" />
+              Stuur een bericht
+            </Link>
           </div>
         </div>
       </section>

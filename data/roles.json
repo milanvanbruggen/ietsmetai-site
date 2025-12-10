@@ -1,0 +1,53 @@
+{
+  "roles": [
+    {
+      "id": 1,
+      "title": "AI consultant",
+      "organization": "SEO-bureau Onder",
+      "description": "Help organisaties met AI-strategie en implementatie",
+      "type": "hoofdactiviteit",
+      "startDate": "2025-11",
+      "endDate": null,
+      "visible": true,
+      "order": 0,
+      "clientName": null,
+      "clientPhoto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd3wj04LwKjNw1uvQorDAofVhOGmPNRv-E_jnxsoSMSsXGe7j7AfuHvBM_O6MWou53d7o&usqp=CAU"
+    },
+    {
+      "id": 1765375753127,
+      "title": "Bestuurslid",
+      "organization": "Digital District Zwolle",
+      "description": "Ik hou me bij DDZ vooral bezig met marketing en mijn rol als ambassadeur naar buiten in mijn netwerk.",
+      "clientName": null,
+      "clientPhoto": "https://www.upgradejezelfregiozwolle.nl/wp-content/uploads/Blog-site-afbeelding-8-1024x683.png",
+      "startDate": "2023-05",
+      "endDate": null,
+      "visible": true,
+      "order": 1
+    },
+    {
+      "id": 1765375916702,
+      "title": "Bestuurslid",
+      "organization": "Digital Dialogues",
+      "description": "Bij Digital Dialogues ben ik algemeen bestuurslid. We organiseren 4 keer per jaar een event met digital thema in Hedon Zwolle.",
+      "clientName": null,
+      "clientPhoto": "https://i.postimg.cc/FsNvpyQj/Digital-Dialogues-Logo-RGB-72ppi.jpg",
+      "startDate": "2022-12",
+      "endDate": null,
+      "visible": true,
+      "order": 2
+    },
+    {
+      "id": 1765377116487,
+      "title": "Founder",
+      "organization": "Pixelpillow",
+      "description": "",
+      "clientName": null,
+      "clientPhoto": "https://media.licdn.com/dms/image/v2/C4D0BAQEiuRQrHPU4_Q/company-logo_100_100/company-logo_100_100/0/1630454448805/pixelpillow_logo?e=1767225600&v=beta&t=ozbTKNP9Fz0MLOm-QXOaxSnZqZxCWzQFzZJVd2Wbh9Y",
+      "startDate": "2013-01",
+      "endDate": "2025-05",
+      "visible": true,
+      "order": 3
+    }
+  ]
+}

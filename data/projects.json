@@ -5,6 +5,7 @@
       "name": "ietsmetai-site",
       "description": null,
       "language": "TypeScript",
+      "isPrivate": false,
       "visible": false,
       "order": 0
     },
@@ -13,6 +14,7 @@
       "name": "digital-district-refresh",
       "description": null,
       "language": "TypeScript",
+      "isPrivate": true,
       "visible": false,
       "order": 1
     },
@@ -21,15 +23,8 @@
       "name": "opendeck-akp05",
       "description": null,
       "language": "Rust",
-      "visible": false,
-      "order": 1
-    },
-    {
-      "id": 1088333900,
-      "name": "whocalledme",
-      "description": null,
-      "language": "TypeScript",
-      "visible": false,
+      "isPrivate": false,
+      "visible": true,
       "order": 2
     },
     {
@@ -37,6 +32,7 @@
       "name": "godtier-community",
       "description": null,
       "language": "TypeScript",
+      "isPrivate": true,
       "visible": true,
       "order": 3
     },
@@ -45,14 +41,25 @@
       "name": "propositio",
       "description": null,
       "language": "JavaScript",
+      "isPrivate": true,
       "visible": true,
       "order": 4
+    },
+    {
+      "id": 1088333900,
+      "name": "whocalledme",
+      "description": null,
+      "language": "TypeScript",
+      "isPrivate": false,
+      "visible": false,
+      "order": 5
     },
     {
       "id": 1081961189,
       "name": "bonusan-product-image-generator",
       "description": "Bonusan Product Image Generator",
       "language": "TypeScript",
+      "isPrivate": true,
       "visible": false,
       "order": 6
     },
@@ -61,6 +68,7 @@
       "name": "bonusan-functions",
       "description": null,
       "language": "JavaScript",
+      "isPrivate": true,
       "visible": false,
       "order": 7
     },
@@ -69,7 +77,8 @@
       "name": "stemwijs-ai",
       "description": null,
       "language": "TypeScript",
-      "visible": false,
+      "isPrivate": true,
+      "visible": true,
       "order": 8
     },
     {
@@ -77,6 +86,7 @@
       "name": "lock-it",
       "description": null,
       "language": "TypeScript",
+      "isPrivate": true,
       "visible": false,
       "order": 9
     },
@@ -85,6 +95,7 @@
       "name": "hello-cal",
       "description": "Created with Builder.io",
       "language": "TypeScript",
+      "isPrivate": true,
       "visible": true,
       "order": 10
     },
@@ -93,7 +104,8 @@
       "name": "ai-roi-calculator",
       "description": null,
       "language": "TypeScript",
-      "visible": false,
+      "isPrivate": true,
+      "visible": true,
       "order": 11
     },
     {
@@ -101,6 +113,7 @@
       "name": "content-assistent",
       "description": null,
       "language": "TypeScript",
+      "isPrivate": true,
       "visible": true,
       "order": 12
     },
@@ -109,6 +122,7 @@
       "name": "stock-predict0r",
       "description": null,
       "language": "Python",
+      "isPrivate": true,
       "visible": false,
       "order": 13
     },
@@ -117,6 +131,7 @@
       "name": "rekey-visual",
       "description": null,
       "language": "TypeScript",
+      "isPrivate": true,
       "visible": false,
       "order": 14
     },
@@ -125,6 +140,7 @@
       "name": "competitor-price-watcher",
       "description": null,
       "language": "HTML",
+      "isPrivate": true,
       "visible": true,
       "order": 15
     },
@@ -133,6 +149,7 @@
       "name": "email-analyzer",
       "description": null,
       "language": "TypeScript",
+      "isPrivate": true,
       "visible": true,
       "order": 16
     },
@@ -141,6 +158,7 @@
       "name": "site-spy",
       "description": null,
       "language": "Python",
+      "isPrivate": true,
       "visible": false,
       "order": 17
     },
@@ -149,6 +167,7 @@
       "name": "chrome-code-injector",
       "description": null,
       "language": "JavaScript",
+      "isPrivate": true,
       "visible": false,
       "order": 18
     },
@@ -157,6 +176,7 @@
       "name": "travel-organizer-app",
       "description": null,
       "language": "TypeScript",
+      "isPrivate": true,
       "visible": false,
       "order": 19
     },
@@ -165,6 +185,7 @@
       "name": "tower-defence-adventure",
       "description": null,
       "language": "TypeScript",
+      "isPrivate": true,
       "visible": false,
       "order": 20
     },
@@ -173,6 +194,7 @@
       "name": "leads-to-deals",
       "description": null,
       "language": "TypeScript",
+      "isPrivate": true,
       "visible": true,
       "order": 21
     },
@@ -181,6 +203,7 @@
       "name": "filterlink-messenger",
       "description": null,
       "language": "TypeScript",
+      "isPrivate": true,
       "visible": false,
       "order": 22
     },
@@ -189,6 +212,7 @@
       "name": "tag-images",
       "description": null,
       "language": "Python",
+      "isPrivate": false,
       "visible": false,
       "order": 23
     },
@@ -197,6 +221,7 @@
       "name": "uxify",
       "description": null,
       "language": "Python",
+      "isPrivate": true,
       "visible": true,
       "order": 24
     },
@@ -205,6 +230,7 @@
       "name": "chattify",
       "description": null,
       "language": "JavaScript",
+      "isPrivate": true,
       "visible": false,
       "order": 25
     },
@@ -213,6 +239,7 @@
       "name": "csrdashboard",
       "description": null,
       "language": "JavaScript",
+      "isPrivate": true,
       "visible": false,
       "order": 26
     },
@@ -221,7 +248,8 @@
       "name": "phone-booth-availability",
       "description": null,
       "language": "JavaScript",
-      "visible": false,
+      "isPrivate": true,
+      "visible": true,
       "order": 27
     },
     {
@@ -229,6 +257,7 @@
       "name": "website-calculator",
       "description": null,
       "language": "JavaScript",
+      "isPrivate": true,
       "visible": false,
       "order": 28
     },
@@ -237,6 +266,7 @@
       "name": "eventbrite-checkin-dymo-labelwriter",
       "description": "Print a label when a visitor is checked in with Eventbrite.",
       "language": "HTML",
+      "isPrivate": false,
       "visible": false,
       "order": 29
     },
@@ -245,6 +275,7 @@
       "name": "linkedin-contact-suite",
       "description": null,
       "language": "JavaScript",
+      "isPrivate": true,
       "visible": true,
       "order": 30
     },
@@ -253,6 +284,7 @@
       "name": "pixelpillow-copycat",
       "description": null,
       "language": "Python",
+      "isPrivate": false,
       "visible": false,
       "order": 31
     },
@@ -261,6 +293,7 @@
       "name": "fut-tax-calculator",
       "description": null,
       "language": "CSS",
+      "isPrivate": true,
       "visible": false,
       "order": 32
     },
@@ -269,6 +302,7 @@
       "name": "pandadoc-quotation-to-exact",
       "description": "PandaDoc Approved Quotation to Exact Online",
       "language": "PHP",
+      "isPrivate": true,
       "visible": false,
       "order": 33
     }

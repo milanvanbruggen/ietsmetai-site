@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Search, Rocket, Users, BarChart, CheckCircle, ChevronRight, Zap, Target, ClipboardList, Map, TrendingUp } from 'lucide-react';
+import Testimonials from '@/components/Testimonials';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -456,7 +457,7 @@ export default function ProcesPage() {
       {/* Timeline CTA */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 sm:mt-12 mb-16 sm:mb-24 lg:mb-32 flex justify-center text-center relative z-20">
         <Link
-          href="/#contact"
+          href="/contact"
           className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 btn-gradient-animated text-gray-900 rounded-full font-semibold shadow-lg hover:shadow-xl text-sm sm:text-base"
         >
           Morgen aan de slag?
@@ -464,10 +465,13 @@ export default function ProcesPage() {
         </Link>
       </div>
 
+      {/* Testimonials Section */}
+      <Testimonials />
+
       {/* Two Tracks Section */}
       <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-pastel/10 via-blue-pastel/10 to-orange-pastel/10 dark:from-black dark:via-gray-900 dark:to-black">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-8 sm:mb-12 text-left">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-8 sm:mb-12 text-center">
             Twee sporen, één doel
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] items-stretch gap-4 sm:gap-6">
@@ -572,10 +576,10 @@ export default function ProcesPage() {
       {/* What You Get Section */}
       <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#1a3d2e] via-[#1f4a38] to-[#163528]">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6 text-left">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6 text-center">
             Wat ik oplever
           </h2>
-          <p className="text-base sm:text-lg text-green-pastel/80 mb-8 sm:mb-12 text-left max-w-2xl">
+          <p className="text-base sm:text-lg text-green-pastel/80 mb-8 sm:mb-12 text-center max-w-2xl mx-auto">
             Geen adviesrapporten die in een la belanden. Wél tastbare verbeteringen die impact hebben.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
@@ -685,7 +689,7 @@ export default function ProcesPage() {
                 </div>
                 <div className="pt-6 sm:pt-10">
                   <Link
-                    href="/#contact"
+                    href="/contact"
                     className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 btn-gradient-animated text-gray-900 rounded-full font-semibold shadow-lg hover:shadow-xl text-sm sm:text-base"
                   >
                     Keer kennismaken?
