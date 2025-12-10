@@ -10,6 +10,7 @@ interface Project {
   language: string | null;
   visible: boolean;
   order: number;
+  isPrivate?: boolean;
 }
 
 interface GitHubRepo {
@@ -17,6 +18,7 @@ interface GitHubRepo {
   name: string;
   description: string | null;
   language: string | null;
+  isPrivate?: boolean;
 }
 
 export default function AdminProjectsPage() {
@@ -51,13 +53,14 @@ export default function AdminProjectsPage() {
       // Merge: keep saved project settings, add new repos
       const mergedProjects: Project[] = githubData.map((repo: GitHubRepo, index: number) => {
         const existing = savedProjects.find((p: Project) => p.id === repo.id);
-        return existing || {
+        return {
           id: repo.id,
           name: repo.name,
           description: repo.description,
           language: repo.language,
-          visible: false,
-          order: index,
+          isPrivate: repo.isPrivate,
+          visible: existing?.visible || false,
+          order: existing?.order ?? index,
         };
       });
 
@@ -272,9 +275,16 @@ export default function AdminProjectsPage() {
                   </div>
                   
                   <div className="flex-1">
-                    <h3 className="font-semibold text-gray-900 dark:text-white">
-                      {project.name}
-                    </h3>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-semibold text-gray-900 dark:text-white">
+                        {project.name}
+                      </h3>
+                      {project.isPrivate && (
+                        <span className="text-xs px-2 py-0.5 bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-full">
+                          private
+                        </span>
+                      )}
+                    </div>
                     {project.description && (
                       <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-1">
                         {project.description}
