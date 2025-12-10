@@ -22,6 +22,15 @@ const unbounded = Unbounded({
 export const metadata: Metadata = {
   title: "ietsmetai - Portfolio",
   description: "Portfolio website van Milan van Bruggen",
+  manifest: "/favicon/site.webmanifest",
+  icons: {
+    icon: [
+      "/favicon/favicon-32x32.png",
+      "/favicon/favicon-16x16.png",
+    ],
+    apple: "/favicon/apple-touch-icon.png",
+    shortcut: "/favicon/favicon.ico",
+  },
 };
 
 export default function RootLayout({
