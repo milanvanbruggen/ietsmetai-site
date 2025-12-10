@@ -4,33 +4,44 @@ export default function BoekPage() {
   return (
     <div className="pt-16 min-h-screen bg-white dark:bg-black">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        {/* Header */}
-        <div className="mb-12 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Over mij
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 mb-2">
-            Van 13-jarige met een Quake clan site naar AI-adviseur
-          </p>
-        </div>
+        {/* Hero-like intro aligned with Mijn aanpak */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
+          <div className="text-left">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+              Over mij
+            </h1>
+            <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">
+              Van 13-jarige met een Quake clan site naar AI-adviseur
+            </p>
+            <div className="prose prose-lg dark:prose-invert max-w-none">
+              <p className="text-gray-700 dark:text-gray-300 text-lg mb-6">
+                Ik was 13 of 14 jaar oud toen ik voor het eerst een website online zette. Niet omdat ik nou zo gefascineerd was door websites op zich, maar omdat ik een clan site wilde maken voor de groep vrienden waarmee ik Quake speelde. We noemden onszelf [RM] - Ruthless Minds. En natuurlijk hadden we een website nodig. Dat hoorde er gewoon bij.
+              </p>
+              
+              <p className="text-gray-700 dark:text-gray-300 text-lg mb-6">
+                Ik had geen flauw idee wat ik aan het doen was. Ik googelde dingen als "hoe maak je een website" en "html voor beginners" en probeerde vooral veel uit. Trial and error. Copy-paste van voorbeeldcode die ik ergens vond. En dan even kijken of het werkte.
+              </p>
 
-        {/* Main Story */}
-        <div className="prose prose-lg dark:prose-invert max-w-2xl mb-12">
-          <p className="text-gray-700 dark:text-gray-300 text-lg mb-6">
-            Ik was 13 of 14 jaar oud toen ik voor het eerst een website online zette. Niet omdat ik nou zo gefascineerd was door websites op zich, maar omdat ik een clan site wilde maken voor de groep vrienden waarmee ik Quake speelde. We noemden onszelf [RM] - Ruthless Minds. En natuurlijk hadden we een website nodig. Dat hoorde er gewoon bij.
-          </p>
-          
-          <p className="text-gray-700 dark:text-gray-300 text-lg mb-6">
-            Ik had geen flauw idee wat ik aan het doen was. Ik googelde dingen als "hoe maak je een website" en "html voor beginners" en probeerde vooral veel uit. Trial and error. Copy-paste van voorbeeldcode die ik ergens vond. En dan even kijken of het werkte.
-          </p>
+              <p className="text-gray-700 dark:text-gray-300 text-lg mb-6">
+                Toen die site voor het eerst online stond - met onze clan kleuren, een forum waar we over tactiek konden praten, en een overzicht van al onze leden - voelde ik iets wat ik eigenlijk heel moeilijk kan omschrijven. Trots, ja. Maar vooral een soort vervulling. Het gevoel van: ik had een idee, en nu bestaat het echt.
+              </p>
 
-          <p className="text-gray-700 dark:text-gray-300 text-lg mb-6">
-            Toen die site voor het eerst online stond - met onze clan kleuren, een forum waar we over tactiek konden praten, en een overzicht van al onze leden - voelde ik iets wat ik eigenlijk heel moeilijk kan omschrijven. Trots, ja. Maar vooral een soort vervulling. Het gevoel van: ik had een idee, en nu bestaat het echt.
-          </p>
-
-          <p className="text-gray-700 dark:text-gray-300 text-lg mb-6">
-            Dat gevoel ben ik blijven zoeken. In mijn carrière als designer, als ondernemer, als iemand die altijd te veel ideeën heeft en te weinig tijd. En vanaf ongeveer anderhalf jaar geleden voel ik dat gevoel bijna dagelijks weer. Omdat ik weer die 13-jarige ben die dingen online zet. Alleen gaat het nu niet om een Quake clan site, maar om tools die échte problemen oplossen.
-          </p>
+              <p className="text-gray-700 dark:text-gray-300 text-lg mb-0">
+                Dat gevoel ben ik blijven zoeken. In mijn carrière als designer, als ondernemer, als iemand die altijd te veel ideeën heeft en te weinig tijd. En vanaf ongeveer anderhalf jaar geleden voel ik dat gevoel bijna dagelijks weer. Omdat ik weer die 13-jarige ben die dingen online zet. Alleen gaat het nu niet om een Quake clan site, maar om tools die échte problemen oplossen.
+              </p>
+            </div>
+          </div>
+          <div className="hidden lg:block">
+            <div className="relative w-full aspect-[3/2] rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="/images/milan-ai-fun.webp"
+                alt="Milan van Bruggen"
+                fill
+                className="object-cover"
+                style={{ objectPosition: 'right top' }}
+              />
+            </div>
+          </div>
         </div>
 
         {/* Pixelpillow Section */}
