@@ -28,7 +28,7 @@ export default function Home() {
         <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-center w-full">
           <div className="text-left">
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
-              Je weet dat je iets met AI moet, maar waar begin je?
+              Iets met AI – Breng je organisatie verder met AI
             </h1>
             <div className="inline-flex items-center bg-white/90 dark:bg-gray-900/90 border border-gray-200/60 dark:border-gray-800/60 rounded-full px-4 py-2 shadow-lg mb-6">
               <span className="text-sm text-gray-700 dark:text-gray-300">Wat als je de boot mist?</span>
