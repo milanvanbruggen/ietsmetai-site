@@ -20,8 +20,9 @@ const unbounded = Unbounded({
 });
 
 export const metadata: Metadata = {
-  title: "ietsmetai - Portfolio",
-  description: "Portfolio website van Milan van Bruggen",
+  title: "Iets met AI – Nuchter, resultaatgericht plan om vol vertrouwen te starten",
+  description:
+    "Je weet dat je iets met AI moet, maar waar begin je? Wat als je de boot mist? Ik help je met een nuchtere, resultaatgerichte aanpak uit mijn agency-ervaring: geen dikke rapporten, maar een praktisch plan waarmee je vol vertrouwen je doelen haalt.",
   manifest: "/favicon/site.webmanifest",
   icons: {
     icon: [
