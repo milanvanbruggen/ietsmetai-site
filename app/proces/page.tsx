@@ -11,35 +11,36 @@ export const metadata: Metadata = {
 export default function ProcesPage() {
   return (
     <div className="pt-16 min-h-screen bg-white dark:bg-black">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         {/* Header */}
-        <div className="mb-8 text-left">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+        <div className="mb-6 sm:mb-8 text-left">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
             Mijn aanpak
           </h1>
         </div>
 
         {/* Intro with Photo */}
-        <div className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <div className="prose prose-lg dark:prose-invert max-w-none text-left">
-            <p className="text-gray-700 dark:text-gray-300 text-lg mb-6">
+        <div className="mb-10 sm:mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+          <div className="prose prose-lg dark:prose-invert max-w-none text-left order-2 md:order-1">
+            <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg mb-4 sm:mb-6">
               Je weet dat je iets met AI moet, maar waar begin je? Die vraag hoor ik constant. 
               En eerlijk? Het is een terechte vraag. Want waar liggen de echte kansen? Waar maak 
               je de grootste impact? En hoe zorg je dat het niet bij een experiment blijft, maar 
               echt iets oplevert?
             </p>
-            <p className="text-gray-700 dark:text-gray-300 text-lg mb-6">
+            <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg mb-4 sm:mb-6">
               Mijn aanpak is nuchter en praktisch. Geen theoretische frameworks of dikke 
               rapporten die in een la verdwijnen. Ik werk vanuit rendement, niet vanuit uren. 
-              En ik doe wat nodig is, niet wat "mooi klinkt".
+              En ik doe wat nodig is, niet wat &ldquo;mooi klinkt&rdquo;.
             </p>
-            <p className="text-gray-700 dark:text-gray-300 text-lg mb-6">
+            <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg mb-0">
               Ik ben geen externe adviseur. Ik ben een ondernemer die meedraait. Die het 
               bureaumodel van binnenuit begrijpt. Die strategie combineert met directe uitvoer. 
               En die altijd op zoek is naar verspilling en optimalisatie.
             </p>
           </div>
-          <div className="hidden lg:block">
+          {/* Photo - visible on tablet and up */}
+          <div className="order-1 md:order-2">
             <div className="relative w-full aspect-[3/2] rounded-2xl overflow-hidden shadow-lg">
               <Image
                 src="/images/milan-ai-fun.webp"
@@ -53,21 +54,25 @@ export default function ProcesPage() {
         </div>
 
         {/* Separator */}
-        <div className="border-t border-gray-200 dark:border-gray-800 my-16"></div>
+        <div className="border-t border-gray-200 dark:border-gray-800 my-10 sm:my-16"></div>
 
         {/* Visual Timeline with 5 Phases - Extended */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+        <div className="mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-8 text-center">
             Het traject: 6 maanden in 5 fases
           </h2>
-          <div className="prose prose-lg max-w-2xl mx-auto text-center mb-16">
-            <p className="text-xl text-gray-600 dark:text-gray-400">
+          <div className="prose prose-lg max-w-2xl mx-auto text-center mb-10 sm:mb-16">
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400">
               Een gestructureerde aanpak die quick wins combineert met strategische langetermijnvisie.
             </p>
           </div>
           
           <div className="relative">
-            {/* Connecting line - starts under first dot, fades out at end */}
+            {/* Mobile connecting line - left side with fade out */}
+            <div className="md:hidden absolute left-[0.9375rem] w-0.5 z-0" style={{ top: '1.5rem', bottom: '0' }}>
+              <div className="h-full bg-gradient-to-b from-blue-pastel via-green-pastel via-orange-pastel via-green-pastel to-transparent"></div>
+            </div>
+            {/* Desktop connecting line - starts under first dot, fades out at end */}
             <div className="hidden md:block absolute left-1/2 w-1 transform -translate-x-1/2 z-0" style={{ top: '12.5rem', bottom: '-12rem' }}>
               <div className="h-full relative">
                 <div className="h-full bg-gradient-to-b from-blue-pastel via-green-pastel via-orange-pastel via-green-pastel to-blue-pastel"></div>
@@ -75,27 +80,29 @@ export default function ProcesPage() {
               </div>
             </div>
             
-            <div className="space-y-16">
+            <div className="space-y-8 sm:space-y-12 md:space-y-16">
               {/* Fase 1: Maand 1-2 - Kickstart & Analyse */}
-              <div className="relative flex flex-col md:flex-row items-center gap-8">
-                <div className="w-full md:w-1/2 flex justify-end md:pr-20 relative z-10">
-                  <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-16 h-16 rounded-full bg-blue-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
-                        <Search className="w-8 h-8" />
+              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+                {/* Mobile dot */}
+                <div className="md:hidden absolute left-[0.9375rem] top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-blue-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="w-full md:w-1/2 flex justify-start md:justify-end pl-8 md:pl-0 md:pr-20 relative z-10">
+                  <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg w-full">
+                    <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-blue-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
+                        <Search className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
                       </div>
                       <div>
-                        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Kickstart & analysefase</h3>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">Maand 1-2</p>
+                        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-white">Kickstart & analysefase</h3>
+                        <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Maand 1-2</p>
                       </div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Wat gebeurt er?</h4>
-                      <p className="text-gray-600 dark:text-gray-400 mb-3">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm sm:text-base">Wat gebeurt er?</h4>
+                      <p className="text-gray-600 dark:text-gray-400 mb-3 text-xs sm:text-sm">
                         Kick-off met jou en het team. Analyse van externe en interne processen. 
                         Spotten van verspilling en kansen. Eerste AI-toepassingen verkennen en valideren.
                       </p>
-                      <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                      <ul className="space-y-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                         <li className="flex items-start">
                           <span className="text-blue-pastel mr-2 font-bold">•</span>
                           <span>Interview en analyse van huidige processen</span>
@@ -116,14 +123,15 @@ export default function ProcesPage() {
                     </div>
                   </div>
                 </div>
-                {/* Connector lines - dashed, extending to cards */}
+                {/* Desktop connector lines - dashed, extending to cards */}
                 <div className="hidden md:block absolute right-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-blue-pastel" style={{ top: '50%' }}></div>
                 <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-blue-pastel" style={{ top: '50%' }}></div>
+                {/* Desktop dot */}
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-blue-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start md:pl-20 relative z-10">
-                  <div className="bg-[#EDF5FF] dark:bg-[#1E3A5F] p-8 rounded-2xl border border-blue-pastel/30 max-w-lg">
-                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-4">Output:</p>
-                    <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-2">
+                <div className="w-full md:w-1/2 flex justify-start pl-8 md:pl-20 relative z-10">
+                  <div className="bg-[#EDF5FF] dark:bg-[#1E3A5F] p-4 sm:p-6 md:p-8 rounded-2xl border border-blue-pastel/30 max-w-lg w-full">
+                    <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">Output:</p>
+                    <ul className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-2">
                       <li className="flex items-start">
                         <span className="text-blue-pastel mr-2 font-bold">•</span>
                         <span>Verbeterplan met impact/effort matrix</span>
@@ -134,7 +142,7 @@ export default function ProcesPage() {
                       </li>
                       <li className="flex items-start">
                         <span className="text-blue-pastel mr-2 font-bold">•</span>
-                        <span>KPI's en targets voor meetbare resultaten</span>
+                        <span>KPI&apos;s en targets voor meetbare resultaten</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-blue-pastel mr-2 font-bold">•</span>
@@ -146,52 +154,28 @@ export default function ProcesPage() {
               </div>
 
               {/* Fase 2: Maand 3-4 - Implementatie & Validatie */}
-              <div className="relative flex flex-col md:flex-row items-center gap-8">
-                <div className="w-full md:w-1/2 flex justify-end md:pr-20 relative z-10">
-                  <div className="bg-[#EEF7EF] dark:bg-[#1E3F2E] p-8 rounded-2xl border border-green-pastel/30 max-w-lg">
-                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-4">Output:</p>
-                    <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-2">
-                      <li className="flex items-start">
-                        <span className="text-green-pastel mr-2 font-bold">•</span>
-                        <span>Concrete AI-toepassingen in ontwikkeling</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-green-pastel mr-2 font-bold">•</span>
-                        <span>Bijgestelde roadmap gebaseerd op leerpunten</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-green-pastel mr-2 font-bold">•</span>
-                        <span>Eerste resultaten zichtbaar en meetbaar</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-green-pastel mr-2 font-bold">•</span>
-                        <span>Technische documentatie en handleidingen</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                {/* Connector lines - dashed, extending to cards */}
-                <div className="hidden md:block absolute right-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-green-pastel" style={{ top: '50%' }}></div>
-                <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-green-pastel" style={{ top: '50%' }}></div>
-                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-green-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start md:pl-20 relative z-10">
-                  <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-16 h-16 rounded-full bg-green-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
-                        <Rocket className="w-8 h-8" />
+              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+                {/* Mobile dot */}
+                <div className="md:hidden absolute left-[0.9375rem] top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-green-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                {/* Phase block - order-1 on mobile, order-2 on desktop (right side) */}
+                <div className="order-1 md:order-2 w-full md:w-1/2 flex justify-start pl-8 md:pl-20 relative z-10">
+                  <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg w-full">
+                    <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-green-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
+                        <Rocket className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
                       </div>
                       <div>
-                        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Implementatie & validatie</h3>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">Maand 3-4</p>
+                        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-white">Implementatie & validatie</h3>
+                        <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Maand 3-4</p>
                       </div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Wat gebeurt er?</h4>
-                      <p className="text-gray-600 dark:text-gray-400 mb-3">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm sm:text-base">Wat gebeurt er?</h4>
+                      <p className="text-gray-600 dark:text-gray-400 mb-3 text-xs sm:text-sm">
                         Plan van aanpak maken voor AI/automation-oplossingen. Meewerken aan oplossingen 
                         samen met developer. Roadmap bijstellen op basis van voortgang en leerpunten.
                       </p>
-                      <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                      <ul className="space-y-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                         <li className="flex items-start">
                           <span className="text-green-pastel mr-2 font-bold">•</span>
                           <span>Concrete AI-toepassingen ontwikkelen en implementeren</span>
@@ -212,28 +196,59 @@ export default function ProcesPage() {
                     </div>
                   </div>
                 </div>
+                {/* Desktop connector lines */}
+                <div className="hidden md:block absolute right-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-green-pastel" style={{ top: '50%' }}></div>
+                <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-green-pastel" style={{ top: '50%' }}></div>
+                {/* Desktop dot */}
+                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-green-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                {/* Output block - order-2 on mobile, order-1 on desktop (left side) */}
+                <div className="order-2 md:order-1 w-full md:w-1/2 flex justify-start md:justify-end pl-8 md:pl-0 md:pr-20 relative z-10">
+                  <div className="bg-[#EEF7EF] dark:bg-[#1E3F2E] p-4 sm:p-6 md:p-8 rounded-2xl border border-green-pastel/30 max-w-lg w-full">
+                    <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">Output:</p>
+                    <ul className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-2">
+                      <li className="flex items-start">
+                        <span className="text-green-pastel mr-2 font-bold">•</span>
+                        <span>Concrete AI-toepassingen in ontwikkeling</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-pastel mr-2 font-bold">•</span>
+                        <span>Bijgestelde roadmap gebaseerd op leerpunten</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-pastel mr-2 font-bold">•</span>
+                        <span>Eerste resultaten zichtbaar en meetbaar</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-green-pastel mr-2 font-bold">•</span>
+                        <span>Technische documentatie en handleidingen</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
 
               {/* Fase 3: Maand 4-5 - Trainen & Kennis Borgen */}
-              <div className="relative flex flex-col md:flex-row items-center gap-8">
-                <div className="w-full md:w-1/2 flex justify-end md:pr-20 relative z-10">
-                  <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-16 h-16 rounded-full bg-orange-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
-                        <Users className="w-8 h-8" />
+              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+                {/* Mobile dot */}
+                <div className="md:hidden absolute left-[0.9375rem] top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-orange-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="w-full md:w-1/2 flex justify-start md:justify-end pl-8 md:pl-0 md:pr-20 relative z-10">
+                  <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg w-full">
+                    <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-orange-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
+                        <Users className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
                       </div>
                       <div>
-                        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Trainen & kennis borgen</h3>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">Maand 4-5</p>
+                        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-white">Trainen & kennis borgen</h3>
+                        <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Maand 4-5</p>
                       </div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Wat gebeurt er?</h4>
-                      <p className="text-gray-600 dark:text-gray-400 mb-3">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm sm:text-base">Wat gebeurt er?</h4>
+                      <p className="text-gray-600 dark:text-gray-400 mb-3 text-xs sm:text-sm">
                         Training en overdracht aan het team. Automatiseringen finetunen en optimaliseren. 
                         Eerste evaluatiemoment met jou en het team om feedback te verwerken.
                       </p>
-                      <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                      <ul className="space-y-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                         <li className="flex items-start">
                           <span className="text-orange-pastel mr-2 font-bold">•</span>
                           <span>Praktische training van het team op nieuwe tools en processen</span>
@@ -254,14 +269,15 @@ export default function ProcesPage() {
                     </div>
                   </div>
                 </div>
-                {/* Connector lines - dashed, extending to cards */}
+                {/* Desktop connector lines */}
                 <div className="hidden md:block absolute right-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-orange-pastel" style={{ top: '50%' }}></div>
                 <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-orange-pastel" style={{ top: '50%' }}></div>
+                {/* Desktop dot */}
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-orange-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start md:pl-20 relative z-10">
-                  <div className="bg-[#FFF4ED] dark:bg-[#3F2E1E] p-8 rounded-2xl border border-orange-pastel/30 max-w-lg">
-                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-4">Output:</p>
-                    <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-2">
+                <div className="w-full md:w-1/2 flex justify-start pl-8 md:pl-20 relative z-10">
+                  <div className="bg-[#FFF4ED] dark:bg-[#3F2E1E] p-4 sm:p-6 md:p-8 rounded-2xl border border-orange-pastel/30 max-w-lg w-full">
+                    <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">Output:</p>
+                    <ul className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-2">
                       <li className="flex items-start">
                         <span className="text-orange-pastel mr-2 font-bold">•</span>
                         <span>Team getraind en zelfstandig aan de slag</span>
@@ -284,11 +300,58 @@ export default function ProcesPage() {
               </div>
 
               {/* Fase 4: Maand 5 - Monitoring & Doorontwikkeling */}
-              <div className="relative flex flex-col md:flex-row items-center gap-8">
-                <div className="w-full md:w-1/2 flex justify-end md:pr-20 relative z-10">
-                  <div className="bg-[#EEF7EF] dark:bg-[#1E3F2E] p-8 rounded-2xl border border-green-pastel/30 max-w-lg">
-                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-4">Output:</p>
-                    <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-2">
+              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+                {/* Mobile dot */}
+                <div className="md:hidden absolute left-[0.9375rem] top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-green-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                {/* Phase block - order-1 on mobile, order-2 on desktop (right side) */}
+                <div className="order-1 md:order-2 w-full md:w-1/2 flex justify-start pl-8 md:pl-20 relative z-10">
+                  <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg w-full">
+                    <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-green-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
+                        <BarChart className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-white">Monitoring & doorontwikkeling</h3>
+                        <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Maand 5</p>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm sm:text-base">Wat gebeurt er?</h4>
+                      <p className="text-gray-600 dark:text-gray-400 mb-3 text-xs sm:text-sm">
+                        Feedback verwerken uit de evaluatie. Tweede ronde automatisering en optimalisatie. 
+                        Monitoring van resultaten en impact. Evaluatie richting afronding.
+                      </p>
+                      <ul className="space-y-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+                        <li className="flex items-start">
+                          <span className="text-green-pastel mr-2 font-bold">•</span>
+                          <span>Feedback verwerken en implementeren</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-green-pastel mr-2 font-bold">•</span>
+                          <span>Tweede ronde automatisering en optimalisatie</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-green-pastel mr-2 font-bold">•</span>
+                          <span>Monitoring van KPI&apos;s en resultaten</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-green-pastel mr-2 font-bold">•</span>
+                          <span>Evaluatie richting afronding van het traject</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                {/* Desktop connector lines */}
+                <div className="hidden md:block absolute right-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-green-pastel" style={{ top: '50%' }}></div>
+                <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-green-pastel" style={{ top: '50%' }}></div>
+                {/* Desktop dot */}
+                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-green-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                {/* Output block - order-2 on mobile, order-1 on desktop (left side) */}
+                <div className="order-2 md:order-1 w-full md:w-1/2 flex justify-start md:justify-end pl-8 md:pl-0 md:pr-20 relative z-10">
+                  <div className="bg-[#EEF7EF] dark:bg-[#1E3F2E] p-4 sm:p-6 md:p-8 rounded-2xl border border-green-pastel/30 max-w-lg w-full">
+                    <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">Output:</p>
+                    <ul className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-2">
                       <li className="flex items-start">
                         <span className="text-green-pastel mr-2 font-bold">•</span>
                         <span>Verbeterde en geoptimaliseerde processen</span>
@@ -308,70 +371,30 @@ export default function ProcesPage() {
                     </ul>
                   </div>
                 </div>
-                {/* Connector lines - dashed, extending to cards */}
-                <div className="hidden md:block absolute right-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-green-pastel" style={{ top: '50%' }}></div>
-                <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-green-pastel" style={{ top: '50%' }}></div>
-                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-green-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start md:pl-20 relative z-10">
-                  <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-16 h-16 rounded-full bg-green-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
-                        <BarChart className="w-8 h-8" />
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Monitoring, eindmeting & doorontwikkeling</h3>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">Maand 5</p>
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Wat gebeurt er?</h4>
-                      <p className="text-gray-600 dark:text-gray-400 mb-3">
-                        Feedback verwerken uit de evaluatie. Tweede ronde automatisering en optimalisatie. 
-                        Monitoring van resultaten en impact. Evaluatie richting afronding.
-                      </p>
-                      <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                        <li className="flex items-start">
-                          <span className="text-green-pastel mr-2 font-bold">•</span>
-                          <span>Feedback verwerken en implementeren</span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-green-pastel mr-2 font-bold">•</span>
-                          <span>Tweede ronde automatisering en optimalisatie</span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-green-pastel mr-2 font-bold">•</span>
-                          <span>Monitoring van KPI's en resultaten</span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-green-pastel mr-2 font-bold">•</span>
-                          <span>Evaluatie richting afronding van het traject</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
               </div>
 
               {/* Fase 5: Maand 6 - Afronding & Overdracht */}
-              <div className="relative flex flex-col md:flex-row items-center gap-8">
-                <div className="w-full md:w-1/2 flex justify-end md:pr-20 relative z-10">
-                  <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-16 h-16 rounded-full bg-blue-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
-                        <CheckCircle className="w-8 h-8" />
+              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+                {/* Mobile dot */}
+                <div className="md:hidden absolute left-[0.9375rem] top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-blue-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="w-full md:w-1/2 flex justify-start md:justify-end pl-8 md:pl-0 md:pr-20 relative z-10">
+                  <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg w-full">
+                    <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                      <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-blue-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
+                        <CheckCircle className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
                       </div>
                       <div>
-                        <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Afronding & overdracht</h3>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">Maand 6</p>
+                        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 dark:text-white">Afronding & overdracht</h3>
+                        <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Maand 6</p>
                       </div>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Wat gebeurt er?</h4>
-                      <p className="text-gray-600 dark:text-gray-400 mb-3">
+                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2 text-sm sm:text-base">Wat gebeurt er?</h4>
+                      <p className="text-gray-600 dark:text-gray-400 mb-3 text-xs sm:text-sm">
                         Eindpresentatie voor jou en het team. Advies voor borging en doorontwikkeling. 
-                        Overdracht van documentatie en kennis. KPI's meten en evalueren.
+                        Overdracht van documentatie en kennis. KPI&apos;s meten en evalueren.
                       </p>
-                      <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                      <ul className="space-y-2 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                         <li className="flex items-start">
                           <span className="text-blue-pastel mr-2 font-bold">•</span>
                           <span>Eindpresentatie met resultaten en impact</span>
@@ -386,20 +409,21 @@ export default function ProcesPage() {
                         </li>
                         <li className="flex items-start">
                           <span className="text-blue-pastel mr-2 font-bold">•</span>
-                          <span>KPI's meten en finale evaluatie</span>
+                          <span>KPI&apos;s meten en finale evaluatie</span>
                         </li>
                       </ul>
                     </div>
                   </div>
                 </div>
-                {/* Connector lines - dashed, extending to cards */}
+                {/* Desktop connector lines */}
                 <div className="hidden md:block absolute right-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-blue-pastel" style={{ top: '50%' }}></div>
                 <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-blue-pastel" style={{ top: '50%' }}></div>
+                {/* Desktop dot */}
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-blue-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start md:pl-20 relative z-10">
-                  <div className="bg-[#EDF5FF] dark:bg-[#1E3A5F] p-8 rounded-2xl border border-blue-pastel/30 max-w-lg">
-                    <p className="text-sm font-semibold text-gray-900 dark:text-white mb-4">Output:</p>
-                    <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-2">
+                <div className="w-full md:w-1/2 flex justify-start pl-8 md:pl-20 relative z-10">
+                  <div className="bg-[#EDF5FF] dark:bg-[#1E3A5F] p-4 sm:p-6 md:p-8 rounded-2xl border border-blue-pastel/30 max-w-lg w-full">
+                    <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">Output:</p>
+                    <ul className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-2">
                       <li className="flex items-start">
                         <span className="text-blue-pastel mr-2 font-bold">•</span>
                         <span>Eindpresentatie voor jou en het team</span>
@@ -414,7 +438,7 @@ export default function ProcesPage() {
                       </li>
                       <li className="flex items-start">
                         <span className="text-blue-pastel mr-2 font-bold">•</span>
-                        <span>KPI's gemeten en geëvalueerd</span>
+                        <span>KPI&apos;s gemeten en geëvalueerd</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-blue-pastel mr-2 font-bold">•</span>
@@ -430,10 +454,10 @@ export default function ProcesPage() {
       </div>
 
       {/* Timeline CTA */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-32 flex justify-center text-center relative z-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 sm:mt-12 mb-16 sm:mb-24 lg:mb-32 flex justify-center text-center relative z-20">
         <Link
           href="/#contact"
-          className="inline-flex items-center gap-2 px-8 py-3 btn-gradient-animated text-gray-900 rounded-full font-semibold shadow-lg hover:shadow-xl"
+          className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 btn-gradient-animated text-gray-900 rounded-full font-semibold shadow-lg hover:shadow-xl text-sm sm:text-base"
         >
           Morgen aan de slag?
           <ChevronRight className="w-5 h-5" />
@@ -441,25 +465,25 @@ export default function ProcesPage() {
       </div>
 
       {/* Two Tracks Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-pastel/10 via-blue-pastel/10 to-orange-pastel/10 dark:from-black dark:via-gray-900 dark:to-black">
+      <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-pastel/10 via-blue-pastel/10 to-orange-pastel/10 dark:from-black dark:via-gray-900 dark:to-black">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-left">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-8 sm:mb-12 text-left">
             Twee sporen, één doel
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] items-stretch gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] items-stretch gap-4 sm:gap-6">
             {/* Spoor 1 */}
-            <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg flex flex-col">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 min-w-[3rem] min-h-[3rem] rounded-full bg-blue-pastel flex items-center justify-center text-white flex-shrink-0">
-                  <Zap className="w-6 h-6" />
+            <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg flex flex-col">
+              <div className="flex items-center gap-3 mb-3 sm:mb-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 min-w-[2.5rem] min-h-[2.5rem] sm:min-w-[3rem] sm:min-h-[3rem] rounded-full bg-blue-pastel flex items-center justify-center text-white flex-shrink-0">
+                  <Zap className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Quick wins & Standaardisatie</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">Quick wins & Standaardisatie</h3>
               </div>
-              <p className="text-gray-700 dark:text-gray-300 mb-4">
+              <p className="text-gray-700 dark:text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">
                 Huidige processen optimaliseren met AI. Quick wins die direct impact hebben op je 
                 marge en efficiëntie. Resultaten zichtbaar binnen 4-6 weken.
               </p>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+              <ul className="space-y-2 text-gray-600 dark:text-gray-400 text-sm sm:text-base">
                 <li className="flex items-start">
                   <span className="text-blue-pastel mr-2 font-bold">•</span>
                   <span>Handmatig werk automatiseren</span>
@@ -476,24 +500,24 @@ export default function ProcesPage() {
             </div>
 
             {/* Plus */}
-            <div className="hidden lg:flex items-center justify-center text-4xl font-bold text-gray-400 dark:text-gray-500">
+            <div className="flex items-center justify-center text-3xl sm:text-4xl font-bold text-gray-400 dark:text-gray-500 py-2 lg:py-0">
               +
             </div>
 
             {/* Spoor 2 */}
-            <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg flex flex-col">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 min-w-[3rem] min-h-[3rem] rounded-full bg-green-pastel flex items-center justify-center text-white flex-shrink-0">
-                  <Target className="w-6 h-6" />
+            <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg flex flex-col">
+              <div className="flex items-center gap-3 mb-3 sm:mb-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 min-w-[2.5rem] min-h-[2.5rem] sm:min-w-[3rem] sm:min-h-[3rem] rounded-full bg-green-pastel flex items-center justify-center text-white flex-shrink-0">
+                  <Target className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Strategische groei</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">Strategische groei</h3>
               </div>
-              <p className="text-gray-700 dark:text-gray-300 mb-4">
+              <p className="text-gray-700 dark:text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">
                 Nadenken over nieuwe proposities en verdienmodellen. Strategische keuzes die je 
                 organisatie toekomstbestendig maken. Meebewegen met AI in plaats van erdoor 
                 ingehaald worden.
               </p>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+              <ul className="space-y-2 text-gray-600 dark:text-gray-400 text-sm sm:text-base">
                 <li className="flex items-start">
                   <span className="text-green-pastel mr-2 font-bold">•</span>
                   <span>Nieuwe proposities ontwikkelen</span>
@@ -510,23 +534,23 @@ export default function ProcesPage() {
             </div>
 
             {/* Equals */}
-            <div className="hidden lg:flex items-center justify-center text-4xl font-bold text-gray-400 dark:text-gray-500">
+            <div className="flex items-center justify-center text-3xl sm:text-4xl font-bold text-gray-400 dark:text-gray-500 py-2 lg:py-0">
               =
             </div>
 
             {/* Uitkomst */}
-            <div className="bg-white dark:bg-black p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg flex flex-col">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 min-w-[3rem] min-h-[3rem] rounded-full bg-orange-pastel flex items-center justify-center text-white flex-shrink-0">
-                  <CheckCircle className="w-6 h-6" />
+            <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg flex flex-col">
+              <div className="flex items-center gap-3 mb-3 sm:mb-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 min-w-[2.5rem] min-h-[2.5rem] sm:min-w-[3rem] sm:min-h-[3rem] rounded-full bg-orange-pastel flex items-center justify-center text-white flex-shrink-0">
+                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Je mist de boot niet</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">Je mist de boot niet</h3>
               </div>
-              <p className="text-gray-700 dark:text-gray-300 mb-4">
+              <p className="text-gray-700 dark:text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">
                 Je weet precies waar je moet beginnen. Je groeit mee met AI in plaats van erdoor 
                 ingehaald te worden. Vol vertrouwen aan de slag.
               </p>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+              <ul className="space-y-2 text-gray-600 dark:text-gray-400 text-sm sm:text-base">
                 <li className="flex items-start">
                   <span className="text-orange-pastel mr-2 font-bold">•</span>
                   <span>Groei in je business</span>
@@ -546,56 +570,56 @@ export default function ProcesPage() {
       </section>
 
       {/* What You Get Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#1a3d2e] via-[#1f4a38] to-[#163528]">
+      <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#1a3d2e] via-[#1f4a38] to-[#163528]">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-white mb-6 text-left">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6 text-left">
             Wat ik oplever
           </h2>
-          <p className="text-lg text-green-pastel/80 mb-12 text-left max-w-2xl">
+          <p className="text-base sm:text-lg text-green-pastel/80 mb-8 sm:mb-12 text-left max-w-2xl">
             Geen adviesrapporten die in een la belanden. Wél tastbare verbeteringen die impact hebben.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/15 transition-all">
-              <div className="flex flex-col gap-4">
-                <div className="w-12 h-12 rounded-full bg-green-pastel flex items-center justify-center text-[#1a3d2e]">
-                  <ClipboardList className="w-6 h-6" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+            <div className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-2xl hover:bg-white/15 transition-all">
+              <div className="flex flex-col gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-pastel flex items-center justify-center text-[#1a3d2e]">
+                  <ClipboardList className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white mb-2">Interviews & adoptiemeting</h4>
-                  <p className="text-sm text-gray-300">Interviews + medewerkerssurvey: processen in kaart, knelpunten, en AI-adoptiefase per team.</p>
+                  <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Interviews & adoptiemeting</h4>
+                  <p className="text-xs sm:text-sm text-gray-300">Interviews + medewerkerssurvey: processen in kaart, knelpunten, en AI-adoptiefase per team.</p>
                 </div>
               </div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/15 transition-all">
-              <div className="flex flex-col gap-4">
-                <div className="w-12 h-12 rounded-full bg-green-pastel flex items-center justify-center text-[#1a3d2e]">
-                  <Target className="w-6 h-6" />
+            <div className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-2xl hover:bg-white/15 transition-all">
+              <div className="flex flex-col gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-pastel flex items-center justify-center text-[#1a3d2e]">
+                  <Target className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white mb-2">Top 5 initiatieven & Impact/Effort</h4>
-                  <p className="text-sm text-gray-300">Brainstorm op input uit interviews & survey → geprioriteerde top 5 + Impact/Effort-matrix (Quick Wins, Strategisch, etc.).</p>
+                  <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Top 5 initiatieven & Impact/Effort</h4>
+                  <p className="text-xs sm:text-sm text-gray-300">Brainstorm op input uit interviews & survey → geprioriteerde top 5 + Impact/Effort-matrix.</p>
                 </div>
               </div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/15 transition-all">
-              <div className="flex flex-col gap-4">
-                <div className="w-12 h-12 rounded-full bg-green-pastel flex items-center justify-center text-[#1a3d2e]">
-                  <Map className="w-6 h-6" />
+            <div className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-2xl hover:bg-white/15 transition-all">
+              <div className="flex flex-col gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-pastel flex items-center justify-center text-[#1a3d2e]">
+                  <Map className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white mb-2">Gameplans & masterplan</h4>
-                  <p className="text-sm text-gray-300">Per initiatief een gameplan met tijdlijn; één masterplan dat alles samenbrengt.</p>
+                  <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Gameplans & masterplan</h4>
+                  <p className="text-xs sm:text-sm text-gray-300">Per initiatief een gameplan met tijdlijn; één masterplan dat alles samenbrengt.</p>
                 </div>
               </div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl hover:bg-white/15 transition-all">
-              <div className="flex flex-col gap-4">
-                <div className="w-12 h-12 rounded-full bg-green-pastel flex items-center justify-center text-[#1a3d2e]">
-                  <TrendingUp className="w-6 h-6" />
+            <div className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-2xl hover:bg-white/15 transition-all">
+              <div className="flex flex-col gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-pastel flex items-center justify-center text-[#1a3d2e]">
+                  <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white mb-2">Implementatie & metingen</h4>
-                  <p className="text-sm text-gray-300">Start- en eindmeting, advies per initiatief, welke doorpakken, plus sessies voor draagvlak en training.</p>
+                  <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">Implementatie & metingen</h4>
+                  <p className="text-xs sm:text-sm text-gray-300">Start- en eindmeting, advies per initiatief, welke doorpakken, plus sessies voor draagvlak en training.</p>
                 </div>
               </div>
             </div>
@@ -604,62 +628,12 @@ export default function ProcesPage() {
       </section>
 
       {/* Why Me Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-pastel/10 via-blue-pastel/10 to-orange-pastel/10 dark:from-black dark:via-gray-900 dark:to-black">
+      <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-pastel/10 via-blue-pastel/10 to-orange-pastel/10 dark:from-black dark:via-gray-900 dark:to-black">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-10 text-left">
-                Waarom ik?
-              </h2>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <span className="text-green-pastel text-2xl">✓</span>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Niet zomaar een adviseur</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Wel een ondernemer die meedraait</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <span className="text-green-pastel text-2xl">✓</span>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Begrijpt het bureaumodel</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Van binnenuit, door jarenlange ervaring</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <span className="text-green-pastel text-2xl">✓</span>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Combineert strategie met uitvoer</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Niet alleen praten, ook doen</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <span className="text-green-pastel text-2xl">✓</span>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Werkt vanuit rendement</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Niet vanuit uren, maar vanuit resultaat</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <span className="text-green-pastel text-2xl">✓</span>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Doet wat nodig is</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Niet wat "mooi klinkt", maar wat impact heeft</p>
-                  </div>
-                </div>
-                <div className="pt-10">
-                  <Link
-                    href="/#contact"
-                    className="inline-flex items-center gap-2 px-8 py-3 btn-gradient-animated text-gray-900 rounded-full font-semibold shadow-lg hover:shadow-xl"
-                  >
-                    Keer kennismaken?
-                    <ChevronRight className="w-5 h-5" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="hidden lg:block">
-              <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            {/* Photo - visible on tablet and up, order first on mobile */}
+            <div className="order-1 md:order-2">
+              <div className="relative w-full aspect-square max-w-sm mx-auto md:max-w-none rounded-2xl overflow-hidden shadow-lg">
                 <Image
                   src="/images/milan-ai-funki-pops.webp"
                   alt="Milan van Bruggen"
@@ -667,6 +641,57 @@ export default function ProcesPage() {
                   className="object-cover"
                   style={{ objectPosition: 'center top' }}
                 />
+              </div>
+            </div>
+            <div className="order-2 md:order-1">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-10 text-left">
+                Waarom ik?
+              </h2>
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <span className="text-green-pastel text-xl sm:text-2xl">✓</span>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm sm:text-base">Niet zomaar een adviseur</h4>
+                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Wel een ondernemer die meedraait</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <span className="text-green-pastel text-xl sm:text-2xl">✓</span>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm sm:text-base">Begrijpt het bureaumodel</h4>
+                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Van binnenuit, door jarenlange ervaring</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <span className="text-green-pastel text-xl sm:text-2xl">✓</span>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm sm:text-base">Combineert strategie met uitvoer</h4>
+                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Niet alleen praten, ook doen</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <span className="text-green-pastel text-xl sm:text-2xl">✓</span>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm sm:text-base">Werkt vanuit rendement</h4>
+                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Niet vanuit uren, maar vanuit resultaat</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <span className="text-green-pastel text-xl sm:text-2xl">✓</span>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm sm:text-base">Doet wat nodig is</h4>
+                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Niet wat &ldquo;mooi klinkt&rdquo;, maar wat impact heeft</p>
+                  </div>
+                </div>
+                <div className="pt-6 sm:pt-10">
+                  <Link
+                    href="/#contact"
+                    className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 btn-gradient-animated text-gray-900 rounded-full font-semibold shadow-lg hover:shadow-xl text-sm sm:text-base"
+                  >
+                    Keer kennismaken?
+                    <ChevronRight className="w-5 h-5" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
