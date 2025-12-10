@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronRight } from 'lucide-react';
+import GitHubProjects from '@/components/GitHubProjects';
 
 export default function OverMijPage() {
   return (
@@ -25,13 +26,13 @@ export default function OverMijPage() {
             </div>
           </div>
           <div className="hidden lg:block">
-            <div className="relative w-full aspect-[3/2] rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/images/milan-ai-fun.webp"
+                src="/images/imai-milan-avatar.png"
                 alt="Milan van Bruggen"
                 fill
                 className="object-cover"
-                style={{ objectPosition: 'right top' }}
+                style={{ objectPosition: 'center top' }}
               />
             </div>
           </div>
@@ -186,6 +187,9 @@ export default function OverMijPage() {
           </div>
         </div>
       </section>
+
+      {/* GitHub Projects */}
+      <GitHubProjects />
 
       {/* CTA Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8">
