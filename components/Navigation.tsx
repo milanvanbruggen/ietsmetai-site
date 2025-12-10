@@ -14,7 +14,7 @@ export default function Navigation() {
   const navItems = [
     { href: '/', label: 'Home' },
     { href: '/proces', label: 'Mijn aanpak' },
-    { href: '/boek', label: 'Over mij' },
+    { href: '/over-mij', label: 'Over mij' },
     { href: '/#contact', label: 'Contact' },
   ];
 

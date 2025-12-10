@@ -139,7 +139,7 @@ export default function Home() {
                 </p>
                 <div className="mt-8 flex justify-start">
                   <Link
-                    href="/boek"
+                  href="/over-mij"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl"
                   >
                     Meer over Milan
