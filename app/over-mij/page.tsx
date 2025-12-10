@@ -32,7 +32,7 @@ export default function OverMijPage() {
             </div>
           </div>
           <div className="hidden lg:block">
-            <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative w-3/4 aspect-square rounded-2xl overflow-hidden shadow-lg">
               <Image
                 src="/images/imai-milan-avatar.png"
                 alt="Milan van Bruggen"
@@ -55,7 +55,7 @@ export default function OverMijPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-[120px_1fr] gap-8 lg:gap-16">
             <div className="flex flex-col">
-              <span className="text-7xl lg:text-8xl font-bold text-[#9BCBFF]/30 dark:text-[#9BCBFF]/20 leading-none">2013</span>
+              <span className="text-7xl lg:text-8xl font-bold text-blue-pastel/30 dark:text-blue-pastel/20 leading-none">2013</span>
             </div>
             <div className="prose prose-lg dark:prose-invert max-w-2xl">
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-0">
@@ -73,11 +73,11 @@ export default function OverMijPage() {
       </section>
 
       {/* Chapter 2: 2021 - Jasper */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#9BCBFF]/5 via-transparent to-transparent">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-pastel/5 via-transparent to-transparent">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-[120px_1fr] gap-8 lg:gap-16">
             <div className="flex flex-col">
-              <span className="text-7xl lg:text-8xl font-bold text-[#9BCBFF]/30 dark:text-[#9BCBFF]/20 leading-none">2021</span>
+              <span className="text-7xl lg:text-8xl font-bold text-blue-pastel/30 dark:text-blue-pastel/20 leading-none">2021</span>
             </div>
             <div className="prose prose-lg dark:prose-invert max-w-2xl">
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-0">
@@ -99,7 +99,7 @@ export default function OverMijPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-[120px_1fr] gap-8 lg:gap-16">
             <div className="flex flex-col">
-              <span className="text-7xl lg:text-8xl font-bold text-[#9AD9A0]/30 dark:text-[#9AD9A0]/20 leading-none">2022</span>
+              <span className="text-7xl lg:text-8xl font-bold text-green-pastel/30 dark:text-green-pastel/20 leading-none">2022</span>
             </div>
             <div className="prose prose-lg dark:prose-invert max-w-2xl">
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-0">
@@ -117,11 +117,11 @@ export default function OverMijPage() {
       </section>
 
       {/* Chapter 4: 2023 - Vibe Coding */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#FFB88C]/5 via-transparent to-transparent">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-pastel/5 via-transparent to-transparent">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-[120px_1fr] gap-8 lg:gap-16">
             <div className="flex flex-col">
-              <span className="text-7xl lg:text-8xl font-bold text-[#FFB88C]/30 dark:text-[#FFB88C]/20 leading-none">2023</span>
+              <span className="text-7xl lg:text-8xl font-bold text-orange-pastel/30 dark:text-orange-pastel/20 leading-none">2023</span>
             </div>
             <div className="prose prose-lg dark:prose-invert max-w-2xl">
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-0">
@@ -146,7 +146,7 @@ export default function OverMijPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-[120px_1fr] gap-8 lg:gap-16">
             <div className="flex flex-col">
-              <span className="text-7xl lg:text-8xl font-bold text-[#9AD9A0]/30 dark:text-[#9AD9A0]/20 leading-none">2024</span>
+              <span className="text-7xl lg:text-8xl font-bold text-green-pastel/30 dark:text-green-pastel/20 leading-none">2024</span>
             </div>
             <div className="prose prose-lg dark:prose-invert max-w-2xl">
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-0">
@@ -167,11 +167,11 @@ export default function OverMijPage() {
       </section>
 
       {/* Chapter 6: Nu - AI Advisory */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#9BCBFF]/5 via-[#9AD9A0]/5 to-transparent">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-pastel/5 via-green-pastel/5 to-transparent">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-[120px_1fr] gap-8 lg:gap-16">
             <div className="flex flex-col">
-              <span className="text-7xl lg:text-8xl font-bold text-[#9BCBFF]/30 dark:text-[#9BCBFF]/20 leading-none">Nu</span>
+              <span className="text-7xl lg:text-8xl font-bold text-blue-pastel/30 dark:text-blue-pastel/20 leading-none">Nu</span>
             </div>
             <div className="prose prose-lg dark:prose-invert max-w-2xl">
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 mt-0">
@@ -200,7 +200,7 @@ export default function OverMijPage() {
       {/* CTA Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="bg-gradient-to-r from-[#9AD9A0]/10 via-[#9BCBFF]/10 to-[#FFB88C]/10 dark:from-[#9AD9A0]/20 dark:via-[#9BCBFF]/20 dark:to-[#FFB88C]/20 p-12 rounded-2xl text-center">
+          <div className="bg-gradient-to-r from-green-pastel/10 via-blue-pastel/10 to-orange-pastel/10 dark:from-green-pastel/20 dark:via-blue-pastel/20 dark:to-orange-pastel/20 p-12 rounded-2xl text-center">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
               Waarom ik bedrijven help met AI
             </h2>

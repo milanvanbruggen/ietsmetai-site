@@ -74,17 +74,17 @@ export default function Navigation() {
                   onMouseLeave={handleMouseLeave}
                   className={`relative transition-all duration-300 group font-semibold ${
                     active
-                      ? 'text-[#5BA3F5] dark:text-[#9BCBFF]'
+                      ? 'text-blue-pastel dark:text-blue-pastel'
                       : isHovered
-                      ? 'text-[#5BA3F5] dark:text-[#9BCBFF]'
-                      : 'text-gray-700 dark:text-gray-300 hover:text-[#5BA3F5] dark:hover:text-[#9BCBFF]'
+                      ? 'text-blue-pastel dark:text-blue-pastel'
+                      : 'text-gray-700 dark:text-gray-300 hover:text-blue-pastel dark:hover:text-blue-pastel'
                   }`}
                 >
                   {item.label}
                   {/* Active underline - animates out when hovering over other items */}
                   {active && (
                     <span 
-                      className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r from-[#9AD9A0] via-[#9BCBFF] to-[#FFB88C] rounded-full transition-transform duration-300 ${
+                      className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r from-green-pastel via-blue-pastel to-orange-pastel rounded-full transition-transform duration-300 ${
                         isOtherHovered ? 'scale-x-0' : 'scale-x-100'
                       } ${hoveredItem && hoveredItem !== item.href ? (hoverDirection === 'left' ? 'origin-right' : 'origin-left') : ''}`}
                     ></span>
@@ -92,7 +92,7 @@ export default function Navigation() {
                   {/* Hover underline - animates in on hover for non-active items */}
                   {!active && (
                     <span 
-                      className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r from-[#9AD9A0] via-[#9BCBFF] to-[#FFB88C] rounded-full transition-transform duration-300 ease-out ${
+                      className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-linear-to-r from-green-pastel via-blue-pastel to-orange-pastel rounded-full transition-transform duration-300 ease-out ${
                         isHovered 
                           ? 'scale-x-100' 
                           : 'scale-x-0'
@@ -139,8 +139,8 @@ export default function Navigation() {
                   href={item.href}
                   className={`block transition-colors pl-3 py-2 rounded-lg font-semibold ${
                     active
-                      ? 'text-[#5BA3F5] dark:text-[#9BCBFF] bg-linear-to-r from-[#9AD9A0]/10 to-[#9BCBFF]/10 border-l-4 border-[#9BCBFF]'
-                      : 'text-gray-700 dark:text-gray-300 hover:text-[#5BA3F5] dark:hover:text-[#9BCBFF] hover:bg-gray-50 dark:hover:bg-gray-900'
+                      ? 'text-blue-pastel dark:text-blue-pastel bg-linear-to-r from-green-pastel/10 to-blue-pastel/10 border-l-4 border-blue-pastel'
+                      : 'text-gray-700 dark:text-gray-300 hover:text-blue-pastel dark:hover:text-blue-pastel hover:bg-gray-50 dark:hover:bg-gray-900'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >

@@ -165,7 +165,7 @@ export default function AdminProjectsPage() {
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center p-4">
         <div className="bg-white dark:bg-black p-8 rounded-2xl shadow-lg max-w-md w-full border border-gray-200 dark:border-gray-800">
           <div className="flex items-center gap-3 mb-6">
-            <Lock className="w-6 h-6 text-[#9BCBFF]" />
+            <Lock className="w-6 h-6 text-blue-pastel" />
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Admin Login</h1>
           </div>
           
@@ -175,7 +175,7 @@ export default function AdminProjectsPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Wachtwoord"
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white mb-4 focus:outline-none focus:ring-2 focus:ring-[#9BCBFF]"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white mb-4 focus:outline-none focus:ring-2 focus:ring-blue-pastel"
             />
             
             {passwordError && (
@@ -184,7 +184,7 @@ export default function AdminProjectsPage() {
             
             <button
               type="submit"
-              className="w-full px-4 py-3 bg-[#9BCBFF] text-gray-900 rounded-xl font-semibold hover:brightness-105 transition-all"
+              className="w-full px-4 py-3 bg-blue-pastel text-gray-900 rounded-xl font-semibold hover:brightness-105 transition-all"
             >
               Inloggen
             </button>
@@ -207,10 +207,10 @@ export default function AdminProjectsPage() {
               disabled={saving}
               className={`inline-flex items-center gap-2 px-6 py-2 rounded-full font-semibold transition-all ${
                 saveStatus === 'success'
-                  ? 'bg-[#9AD9A0] text-white'
+                  ? 'bg-green-pastel text-white'
                   : saveStatus === 'error'
                   ? 'bg-red-500 text-white'
-                  : 'bg-[#9BCBFF] text-gray-900 hover:brightness-105'
+                  : 'bg-blue-pastel text-gray-900 hover:brightness-105'
               }`}
             >
               {saveStatus === 'success' ? (
@@ -252,7 +252,7 @@ export default function AdminProjectsPage() {
                 key={project.id}
                 className={`bg-white dark:bg-black p-4 rounded-xl border transition-all ${
                   project.visible
-                    ? 'border-[#9AD9A0] shadow-md'
+                    ? 'border-green-pastel shadow-md'
                     : 'border-gray-200 dark:border-gray-800 opacity-60'
                 }`}
               >
@@ -301,7 +301,7 @@ export default function AdminProjectsPage() {
                     onClick={() => toggleVisibility(project.id)}
                     className={`p-2 rounded-lg transition-all ${
                       project.visible
-                        ? 'bg-[#9AD9A0]/20 text-[#9AD9A0]'
+                        ? 'bg-green-pastel/20 text-green-pastel'
                         : 'bg-gray-100 dark:bg-gray-800 text-gray-400'
                     }`}
                   >

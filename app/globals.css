@@ -56,7 +56,12 @@
   --font-heading: var(--font-unbounded), system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono);
 
-  /* Brand colors */
+  /* Brand colors - Tailwind utilities */
+  --color-brand-green: var(--green-pastel);
+  --color-brand-orange: var(--orange-pastel);
+  --color-brand-blue: var(--blue-pastel);
+  
+  /* Legacy aliases for backward compatibility */
   --color-green-pastel: var(--green-pastel);
   --color-orange-pastel: var(--orange-pastel);
   --color-blue-pastel: var(--blue-pastel);
@@ -140,7 +145,7 @@ html {
 /* Animated gradient button */
 .btn-gradient-animated {
   position: relative;
-  background: linear-gradient(90deg, #9AD9A0 0%, #9BCBFF 50%, #9AD9A0 100%);
+  background: linear-gradient(90deg, var(--green-pastel) 0%, var(--blue-pastel) 50%, var(--green-pastel) 100%);
   background-size: 200% 100%;
   transition: box-shadow 0.3s ease;
 }

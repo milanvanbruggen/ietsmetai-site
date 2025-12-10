@@ -6,15 +6,15 @@ export default function Home() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#9AD9A0]/10 via-[#9BCBFF]/10 to-[#FFB88C]/10 dark:from-black dark:via-gray-900 dark:to-black overflow-hidden">
+      <section id="home" className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-pastel/10 via-blue-pastel/10 to-orange-pastel/10 dark:from-black dark:via-gray-900 dark:to-black overflow-hidden">
         {/* Pattern background - right top */}
-        <div className="absolute top-0 right-0 w-full h-[120vh] min-w-[1000px] min-h-[1000px] opacity-15 dark:opacity-15 pointer-events-none">
+        <div className="absolute top-0 right-0 w-full h-[120vh] min-w-[1000px] min-h-[1000px] opacity-30 dark:opacity-30 pointer-events-none">
           <div className="relative w-full h-full">
             <div 
-              className="absolute inset-0 bg-[#9BCBFF]"
+              className="absolute inset-0 bg-blue-pastel"
               style={{
-                maskImage: 'url(/images/patterns/imai-pattern-1.svg)',
-                WebkitMaskImage: 'url(/images/patterns/imai-pattern-1.svg)',
+                maskImage: 'url(/images/patterns/imai-pattern-1-outline.svg)',
+                WebkitMaskImage: 'url(/images/patterns/imai-pattern-1-outline.svg)',
                 maskSize: 'contain',
                 WebkitMaskSize: 'contain',
                 maskPosition: 'top right',
@@ -27,7 +27,7 @@ export default function Home() {
         </div>
         <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 items-center w-full">
           <div className="text-left">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 leading-none">
               Iets met AI – Breng je organisatie verder met AI
             </h1>
             <div className="inline-flex items-center bg-white/90 dark:bg-gray-900/90 border border-gray-200/60 dark:border-gray-800/60 rounded-full px-4 py-2 shadow-lg mb-6">
@@ -59,8 +59,8 @@ export default function Home() {
 
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="absolute -top-6 -left-6 w-20 h-20 bg-[#9AD9A0]/30 blur-3xl rounded-full"></div>
-              <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-[#9BCBFF]/30 blur-3xl rounded-full"></div>
+              <div className="absolute -top-6 -left-6 w-20 h-20 bg-green-pastel/30 blur-3xl rounded-full"></div>
+              <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-blue-pastel/30 blur-3xl rounded-full"></div>
               <div className="relative">
                 <Image
                   src="/images/imai-milan-avatar.png"
@@ -79,9 +79,9 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="relative overflow-hidden">
         {/* Blue base background with radial gradients - less intense */}
-        <div className="absolute inset-0 bg-[#9BCBFF]/40">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,_rgba(155,203,255,0.4)_0%,_transparent_70%)]"></div>
-          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,_rgba(154,217,160,0.4)_0%,_transparent_75%)]"></div>
+        <div className="absolute inset-0 bg-blue-pastel/40">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,_var(--blue-pastel) / 0.4_0%,_transparent_70%)]"></div>
+          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,_var(--green-pastel) / 0.4_0%,_transparent_75%)]"></div>
         </div>
         {/* Subtle dark vignette effect */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_40%,_rgba(0,0,0,0.15)_100%)] pointer-events-none"></div>
@@ -153,7 +153,7 @@ export default function Home() {
       </section>
 
       {/* Services/Methodology Section */}
-      <section id="services" className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#FFB88C]/5 via-[#9AD9A0]/5 to-[#9BCBFF]/5 dark:bg-gray-900">
+      <section id="services" className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-pastel/5 via-green-pastel/5 to-blue-pastel/5 dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-left">
             Mijn aanpak
@@ -168,7 +168,7 @@ export default function Home() {
           <div className="relative mb-16">
             {/* Connecting line - starts under first dot, fades out at bottom */}
             <div className="hidden md:block absolute left-1/2 w-1 transform -translate-x-1/2 z-0" style={{ top: '4.5rem', bottom: '-12rem' }}>
-              <div className="h-full bg-gradient-to-b from-[#9BCBFF] via-[#9AD9A0] via-[#FFB88C] via-[#9AD9A0] via-[#9BCBFF] to-transparent"></div>
+              <div className="h-full bg-gradient-to-b from-blue-pastel via-green-pastel via-orange-pastel via-green-pastel via-blue-pastel to-transparent"></div>
             </div>
             
             <div className="space-y-12">
@@ -177,7 +177,7 @@ export default function Home() {
                 <div className="w-full md:w-1/2 flex justify-end md:pr-20 relative z-10">
                   <div className="bg-white dark:bg-black p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-md">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 rounded-full bg-[#9BCBFF] flex items-center justify-center text-white shadow-lg flex-shrink-0">
+                      <div className="w-12 h-12 rounded-full bg-blue-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
                         <Search className="w-6 h-6" />
                       </div>
                       <div>
@@ -192,8 +192,8 @@ export default function Home() {
                   </div>
                 </div>
                 {/* Connector line left - dashed */}
-                <div className="hidden md:block absolute right-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-[#9BCBFF]" style={{ top: '50%' }}></div>
-                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-[#9BCBFF] border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="hidden md:block absolute right-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-blue-pastel" style={{ top: '50%' }}></div>
+                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-blue-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 <div className="w-full md:w-1/2"></div>
               </div>
 
@@ -202,7 +202,7 @@ export default function Home() {
                 <div className="w-full md:w-1/2 flex justify-start md:pl-20 relative z-10">
                   <div className="bg-white dark:bg-black p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-md">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 rounded-full bg-[#9AD9A0] flex items-center justify-center text-white shadow-lg flex-shrink-0">
+                      <div className="w-12 h-12 rounded-full bg-green-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
                         <Rocket className="w-6 h-6" />
                       </div>
                       <div>
@@ -217,8 +217,8 @@ export default function Home() {
                   </div>
                 </div>
                 {/* Connector line right - dashed */}
-                <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-[#9AD9A0]" style={{ top: '50%' }}></div>
-                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-[#9AD9A0] border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-green-pastel" style={{ top: '50%' }}></div>
+                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-green-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 <div className="w-full md:w-1/2"></div>
               </div>
 
@@ -227,7 +227,7 @@ export default function Home() {
                 <div className="w-full md:w-1/2 flex justify-end md:pr-20 relative z-10">
                   <div className="bg-white dark:bg-black p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-md">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 rounded-full bg-[#FFB88C] flex items-center justify-center text-white shadow-lg flex-shrink-0">
+                      <div className="w-12 h-12 rounded-full bg-orange-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
                         <Users className="w-6 h-6" />
                       </div>
                       <div>
@@ -242,8 +242,8 @@ export default function Home() {
                   </div>
                 </div>
                 {/* Connector line left - dashed */}
-                <div className="hidden md:block absolute right-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-[#FFB88C]" style={{ top: '50%' }}></div>
-                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-[#FFB88C] border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="hidden md:block absolute right-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-orange-pastel" style={{ top: '50%' }}></div>
+                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-orange-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 <div className="w-full md:w-1/2"></div>
               </div>
 
@@ -252,7 +252,7 @@ export default function Home() {
                 <div className="w-full md:w-1/2 flex justify-start md:pl-20 relative z-10">
                   <div className="bg-white dark:bg-black p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-md">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 rounded-full bg-[#9AD9A0] flex items-center justify-center text-white shadow-lg flex-shrink-0 overflow-hidden">
+                      <div className="w-12 h-12 rounded-full bg-green-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0 overflow-hidden">
                         <BarChart className="w-6 h-6" />
                       </div>
                       <div>
@@ -267,8 +267,8 @@ export default function Home() {
                   </div>
                 </div>
                 {/* Connector line right - dashed */}
-                <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-[#9AD9A0]" style={{ top: '50%' }}></div>
-                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-[#9AD9A0] border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-green-pastel" style={{ top: '50%' }}></div>
+                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-green-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 <div className="w-full md:w-1/2"></div>
               </div>
 
@@ -277,7 +277,7 @@ export default function Home() {
                 <div className="w-full md:w-1/2 flex justify-end md:pr-20 relative z-10">
                   <div className="bg-white dark:bg-black p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg max-w-md">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-12 h-12 rounded-full bg-[#9BCBFF] flex items-center justify-center text-white shadow-lg flex-shrink-0">
+                      <div className="w-12 h-12 rounded-full bg-blue-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
                         <CheckCircle className="w-6 h-6" />
                       </div>
                       <div>
@@ -292,8 +292,8 @@ export default function Home() {
                   </div>
                 </div>
                 {/* Connector line left - dashed */}
-                <div className="hidden md:block absolute right-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-[#9BCBFF]" style={{ top: '50%' }}></div>
-                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-[#9BCBFF] border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
+                <div className="hidden md:block absolute right-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-blue-pastel" style={{ top: '50%' }}></div>
+                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-blue-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 <div className="w-full md:w-1/2"></div>
               </div>
             </div>
@@ -326,7 +326,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:info@milanvanbruggen.nl"
-              className="inline-flex items-center gap-2 px-8 py-3 bg-[#9BCBFF] text-gray-900 rounded-full font-medium hover:brightness-105 transition-all shadow-lg hover:shadow-xl"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-blue-pastel text-gray-900 rounded-full font-medium hover:brightness-105 transition-all shadow-lg hover:shadow-xl"
             >
               <Mail className="w-5 h-5" />
               Mail Milan
