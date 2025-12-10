@@ -8,27 +8,46 @@ interface GitHubRepo {
   updated_at: string;
 }
 
-// GET: Fetch all repos from GitHub for admin selection
+// GET: Fetch ALL repos from GitHub for admin selection (with pagination)
 export async function GET() {
   try {
-    const res = await fetch(
-      'https://api.github.com/users/milanvanbruggen/repos?sort=updated&per_page=100&type=public',
-      {
-        headers: {
-          Accept: 'application/vnd.github.v3+json',
-        },
-        next: { revalidate: 60 }, // Cache for 1 minute
-      }
-    );
+    const allRepos: GitHubRepo[] = [];
+    let page = 1;
+    let hasMore = true;
 
-    if (!res.ok) {
-      return NextResponse.json({ error: 'Failed to fetch repos' }, { status: 500 });
+    // Fetch all pages
+    while (hasMore) {
+      const res = await fetch(
+        `https://api.github.com/users/milanvanbruggen/repos?sort=updated&per_page=100&page=${page}&type=public`,
+        {
+          headers: {
+            Accept: 'application/vnd.github.v3+json',
+          },
+          next: { revalidate: 60 }, // Cache for 1 minute
+        }
+      );
+
+      if (!res.ok) {
+        break;
+      }
+
+      const repos: GitHubRepo[] = await res.json();
+      
+      if (repos.length === 0) {
+        hasMore = false;
+      } else {
+        allRepos.push(...repos);
+        page++;
+        
+        // Safety limit to prevent infinite loops
+        if (page > 10) {
+          hasMore = false;
+        }
+      }
     }
 
-    const repos: GitHubRepo[] = await res.json();
-    
     // Filter out .github repos and map to simpler format
-    const filteredRepos = repos
+    const filteredRepos = allRepos
       .filter((repo) => !repo.name.includes('.github'))
       .map((repo) => ({
         id: repo.id,
@@ -42,4 +61,3 @@ export async function GET() {
     return NextResponse.json({ error: 'Failed to fetch repos' }, { status: 500 });
   }
 }
-
