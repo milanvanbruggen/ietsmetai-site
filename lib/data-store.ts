@@ -38,7 +38,7 @@ async function writeEdgeConfigValue<T>(key: string, value: T): Promise<boolean> 
     // So we always use the Vercel API endpoint, regardless of token type
     const apiUrl = `https://api.vercel.com/v1/edge-config/${edgeConfigId}/items`;
 
-    console.log(`Using Vercel API for write operation with token type: ${edgeConfigToken.startsWith('vercel_') ? 'Vercel API Token' : 'Edge Config Token'}`);
+    console.log(`Using Vercel API for write operation with token type: ${edgeConfigToken?.startsWith('vercel_') ? 'Vercel API Token' : 'Edge Config Token'}`);
 
     const res = await fetch(apiUrl, {
       method: 'PATCH',
