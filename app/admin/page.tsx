@@ -25,11 +25,11 @@ export default function AdminPage() {
     setPasswordError('');
     
     try {
-      // Test the password by trying to access an admin endpoint
-      const res = await fetch('/api/projects', {
+      // Verify password via dedicated auth endpoint (no write needed)
+      const res = await fetch('/api/auth/verify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password: password.trim(), projects: [] }),
+        body: JSON.stringify({ password: password.trim() }),
       });
       
       if (res.ok) {
