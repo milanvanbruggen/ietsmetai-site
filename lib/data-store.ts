@@ -90,10 +90,18 @@ export async function writeData<T>(
   value: T,
   fallbackFilePath: string
 ): Promise<boolean> {
-  // In production attempt to persist to Edge Config; in dev we only touch the local JSON
-  const wroteEdge = hasEdgeConfig ? await writeEdgeConfigValue(key, value) : false;
+  // Production: write to Edge Config; do not attempt filesystem writes (read-only in serverless)
+  if (hasEdgeConfig) {
+    const wroteEdge = await writeEdgeConfigValue(key, value);
+    if (!wroteEdge) {
+      throw new Error('Failed to write to Edge Config');
+    }
+    return true;
+  }
+
+  // Development: write locally
   await writeFileValue(fallbackFilePath, value);
-  return wroteEdge;
+  return false;
 }
 
 
