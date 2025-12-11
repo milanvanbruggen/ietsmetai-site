@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Eye, EyeOff, GripVertical, Save, Check, X, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import { ImportExportButtons } from '@/components/admin/ImportExportButtons';
 import {
   DndContext,
   closestCenter,
@@ -221,14 +222,14 @@ export default function AdminProjectsPage() {
   const saveProjects = async () => {
     setSaving(true);
     setSaveStatus('idle');
-    
+
     try {
       const res = await fetch('/api/projects', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ password, projects }),
       });
-      
+
       if (res.ok) {
         setSaveStatus('success');
         setTimeout(() => setSaveStatus('idle'), 3000);
@@ -238,8 +239,29 @@ export default function AdminProjectsPage() {
     } catch {
       setSaveStatus('error');
     }
-    
+
     setSaving(false);
+  };
+
+  const handleImport = (importedData: Project[], mode: 'replace' | 'append') => {
+    if (mode === 'replace') {
+      // Replace all projects with imported data, re-assign order
+      const reorderedData = importedData.map((p, index) => ({
+        ...p,
+        order: index,
+      }));
+      setProjects(reorderedData);
+    } else {
+      // Append imported data to existing projects
+      const maxOrder = projects.length > 0 ? Math.max(...projects.map(p => p.order)) : -1;
+      const newProjects = importedData.map((p, index) => ({
+        ...p,
+        id: Date.now() + index, // Generate new IDs to avoid conflicts
+        order: maxOrder + index + 1,
+      }));
+      setProjects([...projects, ...newProjects]);
+    }
+    setSaveStatus('idle');
   };
 
   // Redirect to main admin if not authenticated
@@ -272,38 +294,45 @@ export default function AdminProjectsPage() {
           </Link>
         </div>
 
-        <div className="flex items-center justify-between mb-10">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+        <div className="mb-10">
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
             Projecten Beheren
           </h1>
-          <button
-            onClick={saveProjects}
-            disabled={saving}
-            className={`inline-flex items-center gap-2 px-6 py-2 rounded-full font-semibold transition-all ${
-              saveStatus === 'success'
-                ? 'bg-green-pastel text-white'
-                : saveStatus === 'error'
-                ? 'bg-red-500 text-white'
-                : 'bg-blue-pastel text-gray-900 hover:brightness-105'
-            }`}
-          >
-            {saveStatus === 'success' ? (
-              <>
-                <Check className="w-5 h-5" />
-                Opgeslagen
-              </>
-            ) : saveStatus === 'error' ? (
-              <>
-                <X className="w-5 h-5" />
-                Fout
-              </>
-            ) : (
-              <>
-                <Save className="w-5 h-5" />
-                {saving ? 'Opslaan...' : 'Opslaan'}
-              </>
-            )}
-          </button>
+          <div className="flex items-center justify-between flex-wrap gap-4">
+            <ImportExportButtons
+              data={projects}
+              contentType="projects"
+              onImport={handleImport}
+            />
+            <button
+              onClick={saveProjects}
+              disabled={saving}
+              className={`inline-flex items-center gap-2 px-6 py-2 rounded-full font-semibold transition-all ${
+                saveStatus === 'success'
+                  ? 'bg-green-pastel text-white'
+                  : saveStatus === 'error'
+                  ? 'bg-red-500 text-white'
+                  : 'bg-blue-pastel text-gray-900 hover:brightness-105'
+              }`}
+            >
+              {saveStatus === 'success' ? (
+                <>
+                  <Check className="w-5 h-5" />
+                  Opgeslagen
+                </>
+              ) : saveStatus === 'error' ? (
+                <>
+                  <X className="w-5 h-5" />
+                  Fout
+                </>
+              ) : (
+                <>
+                  <Save className="w-5 h-5" />
+                  {saving ? 'Opslaan...' : 'Opslaan'}
+                </>
+              )}
+            </button>
+          </div>
         </div>
 
         <p className="text-gray-600 dark:text-gray-400 mb-6">

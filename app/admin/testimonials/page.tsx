@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Eye, EyeOff, Save, Plus, Trash2, Check, X, ArrowLeft, User, GripVertical, Link as LinkIcon, Quote } from 'lucide-react';
 import Link from 'next/link';
+import { ImportExportButtons } from '@/components/admin/ImportExportButtons';
 import {
   DndContext,
   closestCenter,
@@ -313,6 +314,27 @@ export default function AdminTestimonialsPage() {
     setIsAddingNew(false);
   };
 
+  const handleImport = (importedData: Testimonial[], mode: 'replace' | 'append') => {
+    if (mode === 'replace') {
+      // Replace all testimonials with imported data, re-assign order
+      const reorderedData = importedData.map((t, index) => ({
+        ...t,
+        order: index,
+      }));
+      setTestimonials(reorderedData);
+    } else {
+      // Append imported data to existing testimonials
+      const maxOrder = testimonials.length > 0 ? Math.max(...testimonials.map(t => t.order)) : -1;
+      const newTestimonials = importedData.map((t, index) => ({
+        ...t,
+        id: Date.now() + index, // Generate new IDs to avoid conflicts
+        order: maxOrder + index + 1,
+      }));
+      setTestimonials([...testimonials, ...newTestimonials]);
+    }
+    setSaveStatus('idle');
+  };
+
   // Redirect to main admin if not authenticated
   if (!isAuthenticated) {
     return (
@@ -343,46 +365,53 @@ export default function AdminTestimonialsPage() {
           </Link>
         </div>
 
-        <div className="flex items-center justify-between mb-10">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+        <div className="mb-10">
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
             Testimonials Beheren
           </h1>
-          <div className="flex items-center gap-4">
-            <button
-              onClick={addNewTestimonial}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-all"
-            >
-              <Plus className="w-5 h-5" />
-              Toevoegen
-            </button>
-            <button
-              onClick={saveTestimonials}
-              disabled={saving}
-              className={`inline-flex items-center gap-2 px-6 py-2 rounded-full font-semibold transition-all ${
-                saveStatus === 'success'
-                  ? 'bg-green-pastel text-white'
-                  : saveStatus === 'error'
-                  ? 'bg-red-500 text-white'
-                  : 'bg-blue-pastel text-gray-900 hover:brightness-105'
-              }`}
-            >
-              {saveStatus === 'success' ? (
-                <>
-                  <Check className="w-5 h-5" />
-                  Opgeslagen
-                </>
-              ) : saveStatus === 'error' ? (
-                <>
-                  <X className="w-5 h-5" />
-                  Fout
-                </>
-              ) : (
-                <>
-                  <Save className="w-5 h-5" />
-                  {saving ? 'Opslaan...' : 'Opslaan'}
-                </>
-              )}
-            </button>
+          <div className="flex items-center justify-between flex-wrap gap-4">
+            <ImportExportButtons
+              data={testimonials}
+              contentType="testimonials"
+              onImport={handleImport}
+            />
+            <div className="flex items-center gap-4">
+              <button
+                onClick={addNewTestimonial}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-full font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-all"
+              >
+                <Plus className="w-5 h-5" />
+                Toevoegen
+              </button>
+              <button
+                onClick={saveTestimonials}
+                disabled={saving}
+                className={`inline-flex items-center gap-2 px-6 py-2 rounded-full font-semibold transition-all ${
+                  saveStatus === 'success'
+                    ? 'bg-green-pastel text-white'
+                    : saveStatus === 'error'
+                    ? 'bg-red-500 text-white'
+                    : 'bg-blue-pastel text-gray-900 hover:brightness-105'
+                }`}
+              >
+                {saveStatus === 'success' ? (
+                  <>
+                    <Check className="w-5 h-5" />
+                    Opgeslagen
+                  </>
+                ) : saveStatus === 'error' ? (
+                  <>
+                    <X className="w-5 h-5" />
+                    Fout
+                  </>
+                ) : (
+                  <>
+                    <Save className="w-5 h-5" />
+                    {saving ? 'Opslaan...' : 'Opslaan'}
+                  </>
+                )}
+              </button>
+            </div>
           </div>
         </div>
 
