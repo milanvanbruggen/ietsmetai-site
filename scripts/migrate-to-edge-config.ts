@@ -6,12 +6,16 @@
 
 import fs from 'fs/promises';
 import path from 'path';
+import { config } from 'dotenv';
+
+// Load .env.local file
+config({ path: '.env.local' });
 
 const EDGE_CONFIG_ID = process.env.EDGE_CONFIG_ID;
-const EDGE_CONFIG_TOKEN = process.env.EDGE_CONFIG_TOKEN;
+const EDGE_CONFIG_TOKEN = process.env.TEMP_VERCEL_TOKEN || process.env.EDGE_CONFIG_TOKEN;
 
 if (!EDGE_CONFIG_ID || !EDGE_CONFIG_TOKEN) {
-  console.error('❌ Missing EDGE_CONFIG_ID or EDGE_CONFIG_TOKEN environment variables');
+  console.error('❌ Missing EDGE_CONFIG_ID or EDGE_CONFIG_TOKEN (or TEMP_VERCEL_TOKEN) environment variables');
   console.error('Please set these in your .env.local file or pass them as environment variables');
   process.exit(1);
 }
