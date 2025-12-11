@@ -190,13 +190,6 @@ export default function AdminPage() {
             </div>
           </Link>
         </div>
-
-        <div className="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-xl">
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            <strong>Let op:</strong> Wijzigingen worden opgeslagen in <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded">data/</code> bestanden. 
-            Vergeet niet om wijzigingen te committen naar Git als je wilt dat ze live komen op de website.
-          </p>
-        </div>
       </div>
     </div>
   );
