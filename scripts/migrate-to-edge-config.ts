@@ -64,8 +64,8 @@ async function main() {
 
   const migrations = [
     { key: 'testimonials', file: 'data/testimonials.json' },
-    // Add other data files here if needed
-    // { key: 'other-data', file: 'data/other.json' },
+    { key: 'roles', file: 'data/roles.json' },
+    { key: 'projects', file: 'data/projects.json' },
   ];
 
   let successCount = 0;
