@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import { promises as fs } from 'fs';
 import path from 'path';
+import { readData } from '@/lib/data-store';
 
 interface Testimonial {
   id: number;
@@ -20,19 +20,12 @@ interface TestimonialsData {
 
 const dataFilePath = path.join(process.cwd(), 'data', 'testimonials.json');
 
-async function getTestimonialsData(): Promise<TestimonialsData> {
-  try {
-    const data = await fs.readFile(dataFilePath, 'utf-8');
-    return JSON.parse(data);
-  } catch {
-    return { testimonials: [] };
-  }
-}
-
 // GET - returns all testimonials (for admin)
 export async function GET() {
   try {
-    const data = await getTestimonialsData();
+    const data = await readData<TestimonialsData>('testimonials', dataFilePath, {
+      testimonials: [],
+    });
     // Return all testimonials, sorted by order, with default focalPoint
     const allTestimonials = data.testimonials
       .map(testimonial => ({

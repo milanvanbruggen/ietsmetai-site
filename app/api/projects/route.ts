@@ -1,8 +1,6 @@
 import { NextResponse } from 'next/server';
-import { promises as fs } from 'fs';
 import path from 'path';
-
-const dataFilePath = path.join(process.cwd(), 'data', 'projects.json');
+import { readData, writeData } from '@/lib/data-store';
 
 export interface Project {
   id: number;
@@ -17,11 +15,12 @@ interface ProjectsData {
   projects: Project[];
 }
 
+const dataFilePath = path.join(process.cwd(), 'data', 'projects.json');
+
 // GET: Return visible projects for public display
 export async function GET() {
   try {
-    const fileContent = await fs.readFile(dataFilePath, 'utf-8');
-    const data: ProjectsData = JSON.parse(fileContent);
+    const data = await readData<ProjectsData>('projects', dataFilePath, { projects: [] });
     
     // Return only visible projects, sorted by order
     const visibleProjects = data.projects
@@ -46,17 +45,9 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
     
-    // Ensure data directory exists
-    const dataDir = path.dirname(dataFilePath);
-    try {
-      await fs.access(dataDir);
-    } catch {
-      await fs.mkdir(dataDir, { recursive: true });
-    }
-    
     const data: ProjectsData = { projects };
-    await fs.writeFile(dataFilePath, JSON.stringify(data, null, 2), 'utf-8');
-    
+    await writeData<ProjectsData>('projects', data, dataFilePath);
+
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Error saving projects:', error);

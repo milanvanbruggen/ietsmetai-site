@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import { promises as fs } from 'fs';
 import path from 'path';
+import { readData, writeData } from '@/lib/data-store';
 
 interface Role {
   id: number;
@@ -21,19 +21,10 @@ interface RolesData {
 
 const dataFilePath = path.join(process.cwd(), 'data', 'roles.json');
 
-async function getRolesData(): Promise<RolesData> {
-  try {
-    const data = await fs.readFile(dataFilePath, 'utf-8');
-    return JSON.parse(data);
-  } catch {
-    return { roles: [] };
-  }
-}
-
 // GET - returns visible roles for the public site
 export async function GET() {
   try {
-    const data = await getRolesData();
+    const data = await readData<RolesData>('roles', dataFilePath, { roles: [] });
     // Return only visible roles, sorted by order
     const visibleRoles = data.roles
       .filter(role => role.visible)
@@ -55,16 +46,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    // Ensure data directory exists
-    const dataDir = path.dirname(dataFilePath);
-    try {
-      await fs.access(dataDir);
-    } catch {
-      await fs.mkdir(dataDir, { recursive: true });
-    }
-
     const data: RolesData = { roles };
-    await fs.writeFile(dataFilePath, JSON.stringify(data, null, 2), 'utf-8');
+    await writeData<RolesData>('roles', data, dataFilePath);
     
     return NextResponse.json({ success: true });
   } catch (error) {

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import { promises as fs } from 'fs';
 import path from 'path';
+import { readData, writeData } from '@/lib/data-store';
 
 interface Testimonial {
   id: number;
@@ -20,19 +20,12 @@ interface TestimonialsData {
 
 const dataFilePath = path.join(process.cwd(), 'data', 'testimonials.json');
 
-async function getTestimonialsData(): Promise<TestimonialsData> {
-  try {
-    const data = await fs.readFile(dataFilePath, 'utf-8');
-    return JSON.parse(data);
-  } catch {
-    return { testimonials: [] };
-  }
-}
-
 // GET - returns visible testimonials for the public site
 export async function GET() {
   try {
-    const data = await getTestimonialsData();
+    const data = await readData<TestimonialsData>('testimonials', dataFilePath, {
+      testimonials: [],
+    });
     // Return only visible testimonials, sorted by order, with default focalPoint
     const visibleTestimonials = data.testimonials
       .filter(testimonial => testimonial.visible)
@@ -58,16 +51,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    // Ensure data directory exists
-    const dataDir = path.dirname(dataFilePath);
-    try {
-      await fs.access(dataDir);
-    } catch {
-      await fs.mkdir(dataDir, { recursive: true });
-    }
-
     const data: TestimonialsData = { testimonials };
-    await fs.writeFile(dataFilePath, JSON.stringify(data, null, 2), 'utf-8');
+    await writeData<TestimonialsData>('testimonials', data, dataFilePath);
     
     return NextResponse.json({ success: true });
   } catch (error) {

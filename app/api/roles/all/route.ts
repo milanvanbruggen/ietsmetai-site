@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import { promises as fs } from 'fs';
 import path from 'path';
+import { readData } from '@/lib/data-store';
 
 interface Role {
   id: number;
@@ -21,19 +21,10 @@ interface RolesData {
 
 const dataFilePath = path.join(process.cwd(), 'data', 'roles.json');
 
-async function getRolesData(): Promise<RolesData> {
-  try {
-    const data = await fs.readFile(dataFilePath, 'utf-8');
-    return JSON.parse(data);
-  } catch {
-    return { roles: [] };
-  }
-}
-
 // GET - returns all roles (for admin)
 export async function GET() {
   try {
-    const data = await getRolesData();
+    const data = await readData<RolesData>('roles', dataFilePath, { roles: [] });
     // Return all roles, sorted by order
     const allRoles = data.roles.sort((a, b) => a.order - b.order);
     return NextResponse.json(allRoles);

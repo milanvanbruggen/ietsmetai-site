@@ -19,11 +19,11 @@ export default function OverMijPage() {
           {/* Text - title first on mobile */}
           <div className="order-1 text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
-              Over mij
-            </h1>
+            Over mij
+          </h1>
             <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-4 sm:mb-6">
-              Van 13-jarige met een Quake clan site naar AI-adviseur
-            </p>
+            Van 13-jarige met een Quake clan site naar AI-adviseur
+          </p>
             {/* Photo - shown inline on mobile, after title/subtitle */}
             <div className="md:hidden mb-6">
               <div className="relative w-48 h-48 sm:w-56 sm:h-56 mx-auto rounded-2xl overflow-hidden shadow-lg">
@@ -35,11 +35,11 @@ export default function OverMijPage() {
                   style={{ objectPosition: 'center top' }}
                 />
               </div>
-            </div>
+        </div>
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg mb-4 sm:mb-6">
                 Ik was 13 of 14 jaar oud toen ik voor het eerst een website online zette. Niet omdat ik nou zo gefascineerd was door websites op zich, maar omdat ik een clan site wilde maken voor de groep vrienden waarmee ik Quake speelde.
-              </p>
+          </p>
               <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg mb-0">
                 Toen die site voor het eerst online stond voelde ik iets wat ik eigenlijk heel moeilijk kan omschrijven. Trots, ja. Maar vooral een soort vervulling. Het gevoel van: ik had een idee, en nu bestaat het echt. Dat gevoel ben ik blijven zoeken.
               </p>
@@ -63,7 +63,7 @@ export default function OverMijPage() {
       {/* Separator */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="border-t border-gray-200 dark:border-gray-800"></div>
-      </div>
+        </div>
 
       {/* Chapter 1: 2013 - Pixelpillow */}
       <section className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
@@ -75,13 +75,13 @@ export default function OverMijPage() {
             <div className="prose prose-lg dark:prose-invert max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 mt-0">
                 De start van Pixelpillow
-              </h2>
+          </h2>
               <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
-                Op 1 januari 2013 richtte ik samen met mijn compagnons Pixelpillow op. Bijna twaalf jaar lang bouwde ik dat bedrijf op. Van een klein bureau naar een organisatie met meerdere mensen, klanten, en verantwoordelijkheden.
-              </p>
+            Op 1 januari 2013 richtte ik samen met mijn compagnons Pixelpillow op. Bijna twaalf jaar lang bouwde ik dat bedrijf op. Van een klein bureau naar een organisatie met meerdere mensen, klanten, en verantwoordelijkheden.
+          </p>
               <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
                 Het was een periode van groeien, leren, en vooral veel maken. Websites, apps, merken. Voor klanten die ons vertrouwden om hun digitale visie waar te maken.
-              </p>
+          </p>
             </div>
           </div>
         </div>
@@ -97,7 +97,7 @@ export default function OverMijPage() {
             <div className="prose prose-lg dark:prose-invert max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 mt-0">
                 Jasper en de kunst van het uitvragen
-              </h2>
+          </h2>
               <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
                 Het eerste aha-moment kwam in januari 2021. Jasper.AI werd gelanceerd. Een tool waarmee je op basis van input hele blogs kon laten schrijven door AI. Ik was toen vooral bezig met content voor Pixelpillow.
               </p>
@@ -190,20 +190,20 @@ export default function OverMijPage() {
             </div>
             <div className="prose prose-lg dark:prose-invert max-w-2xl">
               <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 mt-0">
-                Waar ik nu sta
-              </h2>
+            Waar ik nu sta
+          </h2>
               <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
                 Na de verkoop had ik bewust besloten om het eerste half jaar niks te doen. Geen commitments. Geen druk. Gewoon experimenteren met vibe coding. Als hobby. Voor mezelf. Zonder dat het ergens toe moest leiden.
-              </p>
+          </p>
               <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
                 Maar tijdens de zomer veranderde dat. Het risico om in deze dynamische periode meteen een nieuw product te willen neerzetten leek me opeens niet zo&apos;n goed idee. Want de kans is groot dat een van de big tech bedrijven in Amerika datzelfde idee ook ontwikkelt. En dan ben je binnen een half jaar van de mat geveegd.
-              </p>
+          </p>
               <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
-                Dus mijn gedachte werd: ik zit de AI-storm even uit. Ik ga ondertussen advieswerk doen. Ik blijf scherp, ik verdien geld, ik help bedrijven met hun AI vraagstukken. En over een jaar of twee, als de ontwikkelingen een beetje zijn gesetteld, kijk ik wat ik voor bedrijf zou willen starten.
-              </p>
+            Dus mijn gedachte werd: ik zit de AI-storm even uit. Ik ga ondertussen advieswerk doen. Ik blijf scherp, ik verdien geld, ik help bedrijven met hun AI vraagstukken. En over een jaar of twee, als de ontwikkelingen een beetje zijn gesetteld, kijk ik wat ik voor bedrijf zou willen starten.
+          </p>
               <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
                 En vooral: ik heb nu de mentale bandbreedte die ik niet had gehad als ik Pixelpillow nog had. Die vrijheid om echt te experimenteren. Om nieuwe dingen te proberen. Om vier verschillende ideeën per maand uit te werken gewoon omdat je het leuk vindt.
-              </p>
+          </p>
             </div>
           </div>
         </div>
@@ -217,31 +217,31 @@ export default function OverMijPage() {
         <div className="max-w-6xl mx-auto">
           <div className="bg-gradient-to-r from-green-pastel/10 via-blue-pastel/10 to-orange-pastel/10 dark:from-green-pastel/20 dark:via-blue-pastel/20 dark:to-orange-pastel/20 p-6 sm:p-8 md:p-12 rounded-2xl text-center">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
-              Waarom ik bedrijven help met AI
-            </h2>
+            Waarom ik bedrijven help met AI
+          </h2>
             <p className="text-gray-700 dark:text-gray-300 mb-3 sm:mb-4 max-w-2xl mx-auto text-sm sm:text-base">
-              Ik zie dagelijks hoe organisaties worstelen met dezelfde vraag: waar begin je met AI? Welke kansen zijn er? En hoe zorg je dat het niet bij een experiment blijft, maar echt impact maakt?
-            </p>
+            Ik zie dagelijks hoe organisaties worstelen met dezelfde vraag: waar begin je met AI? Welke kansen zijn er? En hoe zorg je dat het niet bij een experiment blijft, maar echt impact maakt?
+          </p>
             <p className="text-gray-700 dark:text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto text-sm sm:text-base">
               Mijn aanpak is nuchter en praktisch. Geen theoretische frameworks of dikke rapporten die in een la verdwijnen. Dit proces heb ik jarenlang toegepast in mijn agency. Nu help ik andere organisaties ermee.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <Link
-                href="/proces"
+          <Link
+            href="/proces"
                 className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 btn-gradient-animated text-gray-900 rounded-full font-medium shadow-lg hover:shadow-xl text-sm sm:text-base"
-              >
+          >
                 <ListChecks className="w-5 h-5" />
                 Bekijk mijn bewezen aanpak
-              </Link>
-              <Link
+          </Link>
+          <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white rounded-full font-medium hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all text-sm sm:text-base"
-              >
+          >
                 <MessageCircle className="w-5 h-5" />
-                Laten we praten
-              </Link>
-            </div>
-          </div>
+            Laten we praten
+          </Link>
+        </div>
+      </div>
         </div>
       </section>
 

@@ -234,7 +234,7 @@ export default function Home() {
                 {/* Desktop dot */}
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-green-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 <div className="hidden md:block w-full md:w-1/2"></div>
-              </div>
+        </div>
 
               {/* Maand 4-5: Trainen & Kennis Borgen */}
               <div className="relative flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4">
@@ -360,7 +360,7 @@ export default function Home() {
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white rounded-full font-medium hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all text-sm sm:text-base"
-            >
+          >
               <MessageCircle className="w-5 h-5" />
               Stuur een bericht
             </Link>
