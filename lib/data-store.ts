@@ -52,13 +52,21 @@ async function writeEdgeConfigValue<T>(key: string, value: T): Promise<boolean> 
     });
 
     if (!res.ok) {
+      const errorText = await res.text();
       console.error(
         `Edge Config write failed for key "${key}" (status ${res.status}):`,
-        await res.text()
+        errorText
       );
+      // Log more details for debugging
+      console.error('Request details:', {
+        edgeConfigId,
+        hasToken: Boolean(edgeConfigToken),
+        tokenPrefix: edgeConfigToken?.substring(0, 10),
+      });
       return false;
     }
 
+    console.log(`✅ Successfully wrote to Edge Config for key "${key}"`);
     return true;
   } catch (error) {
     console.error(`Edge Config write error for key "${key}":`, error);

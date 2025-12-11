@@ -54,11 +54,12 @@ export async function POST(request: Request) {
 
     const data: TestimonialsData = { testimonials };
     await writeData<TestimonialsData>('testimonials', data, dataFilePath);
-    
+
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Error saving testimonials:', error);
-    return NextResponse.json({ error: 'Failed to save testimonials' }, { status: 500 });
+    const errorMessage = error instanceof Error ? error.message : 'Failed to save testimonials';
+    return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
 }
 

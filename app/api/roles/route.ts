@@ -49,11 +49,12 @@ export async function POST(request: Request) {
 
     const data: RolesData = { roles };
     await writeData<RolesData>('roles', data, dataFilePath);
-    
+
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Error saving roles:', error);
-    return NextResponse.json({ error: 'Failed to save roles' }, { status: 500 });
+    const errorMessage = error instanceof Error ? error.message : 'Failed to save roles';
+    return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
 }
 
