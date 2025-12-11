@@ -20,7 +20,7 @@ if (!EDGE_CONFIG_ID || !EDGE_CONFIG_TOKEN) {
 async function testWrite() {
   console.log('🧪 Testing Edge Config write...');
   console.log(`Edge Config ID: ${EDGE_CONFIG_ID}`);
-  console.log(`Token prefix: ${EDGE_CONFIG_TOKEN.substring(0, 10)}...`);
+  console.log(`Token prefix: ${EDGE_CONFIG_TOKEN?.substring(0, 10)}...`);
 
   // Use Vercel API endpoint with Edge Config token
   const apiUrl = `https://api.vercel.com/v1/edge-config/${EDGE_CONFIG_ID}/items`;
