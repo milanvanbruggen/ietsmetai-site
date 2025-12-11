@@ -170,8 +170,8 @@ export default function Home() {
           
           {/* Visual Timeline/Flow */}
           <div className="relative mb-6 sm:mb-8">
-            {/* Mobile connecting line - center with fade out */}
-            <div className="md:hidden absolute left-1/2 w-0.5 transform -translate-x-1/2 z-0" style={{ top: '1.5rem', bottom: '0' }}>
+            {/* Mobile connecting line - center with fade out, extends under CTA */}
+            <div className="md:hidden absolute left-1/2 w-0.5 transform -translate-x-1/2 z-0" style={{ top: '1.5rem', bottom: '-4rem' }}>
               <div className="h-full bg-gradient-to-b from-blue-pastel via-green-pastel via-orange-pastel via-green-pastel to-transparent"></div>
             </div>
             {/* Desktop connecting line - center */}
