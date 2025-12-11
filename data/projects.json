@@ -51,7 +51,7 @@
       "description": null,
       "language": "TypeScript",
       "isPrivate": false,
-      "visible": false,
+      "visible": true,
       "order": 5
     },
     {
