@@ -620,13 +620,6 @@ export default function AdminTestimonialsPage() {
             </SortableContext>
           </DndContext>
         )}
-
-        <div className="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-xl">
-          <p className="text-sm text-gray-600 dark:text-gray-400">
-            <strong>Tip:</strong> Testimonials worden opgeslagen in <code className="bg-gray-200 dark:bg-gray-700 px-1 rounded">data/testimonials.json</code>. 
-            Vergeet niet om wijzigingen op te slaan en te committen naar Git als je wilt dat ze live komen.
-          </p>
-        </div>
       </div>
     </div>
   );
