@@ -5,12 +5,12 @@ import { get } from '@vercel/edge-config';
 const isProd = process.env.NODE_ENV === 'production';
 // For reading: only need EDGE_CONFIG
 const hasEdgeConfigRead = isProd && Boolean(process.env.EDGE_CONFIG);
-// For writing: need EDGE_CONFIG_ID and EDGE_CONFIG_TOKEN
+// For writing: need EDGE_CONFIG_ID and VERCEL_TOKEN (Vercel API token)
 const hasEdgeConfigWrite = isProd &&
   Boolean(process.env.EDGE_CONFIG_ID) &&
-  Boolean(process.env.EDGE_CONFIG_TOKEN);
+  Boolean(process.env.VERCEL_TOKEN);
 const edgeConfigId = process.env.EDGE_CONFIG_ID;
-const edgeConfigToken = process.env.EDGE_CONFIG_TOKEN;
+const vercelToken = process.env.VERCEL_TOKEN;
 
 async function readEdgeConfigValue<T>(key: string): Promise<T | null> {
   if (!hasEdgeConfigRead) {
@@ -28,13 +28,13 @@ async function readEdgeConfigValue<T>(key: string): Promise<T | null> {
 }
 
 async function writeEdgeConfigValue<T>(key: string, value: T): Promise<boolean> {
-  if (!hasEdgeConfigWrite || !edgeConfigId || !edgeConfigToken) {
-    console.log(`Edge Config write not available for key "${key}" (hasWrite: ${hasEdgeConfigWrite}, hasId: ${Boolean(edgeConfigId)}, hasToken: ${Boolean(edgeConfigToken)})`);
+  if (!hasEdgeConfigWrite || !edgeConfigId || !vercelToken) {
+    console.log(`Edge Config write not available for key "${key}" (hasWrite: ${hasEdgeConfigWrite}, hasId: ${Boolean(edgeConfigId)}, hasToken: ${Boolean(vercelToken)})`);
     return false;
   }
 
   try {
-    // Use Vercel API endpoint with Edge Config token
+    // Use Vercel API endpoint with Vercel API token
     const apiUrl = `https://api.vercel.com/v1/edge-config/${edgeConfigId}/items`;
 
     console.log(`Writing to Edge Config via Vercel API for key "${key}"`);
@@ -42,7 +42,7 @@ async function writeEdgeConfigValue<T>(key: string, value: T): Promise<boolean> 
     const res = await fetch(apiUrl, {
       method: 'PATCH',
       headers: {
-        Authorization: `Bearer ${edgeConfigToken}`,
+        Authorization: `Bearer ${vercelToken}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
@@ -65,8 +65,8 @@ async function writeEdgeConfigValue<T>(key: string, value: T): Promise<boolean> 
       // Log more details for debugging
       console.error('Request details:', {
         edgeConfigId,
-        hasToken: Boolean(edgeConfigToken),
-        tokenPrefix: edgeConfigToken?.substring(0, 10),
+        hasToken: Boolean(vercelToken),
+        tokenPrefix: vercelToken?.substring(0, 10),
       });
       return false;
     }
