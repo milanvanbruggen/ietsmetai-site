@@ -69,8 +69,8 @@ export default function ProcesPage() {
           </div>
           
           <div className="relative">
-            {/* Mobile connecting line - center with fade out, extends under CTA */}
-            <div className="md:hidden absolute left-1/2 w-0.5 transform -translate-x-1/2 z-0" style={{ top: '1.5rem', bottom: '-6rem' }}>
+            {/* Mobile connecting line - center with fade out, extends under CTA (aligned with homepage) */}
+            <div className="md:hidden absolute left-1/2 w-0.5 transform -translate-x-1/2 z-0" style={{ top: '1.5rem', bottom: '-4rem' }}>
               <div className="h-full bg-gradient-to-b from-blue-pastel via-green-pastel via-orange-pastel via-green-pastel to-transparent"></div>
             </div>
             {/* Desktop connecting line - starts under first dot, fades out at end */}
@@ -455,7 +455,7 @@ export default function ProcesPage() {
       </div>
 
       {/* Timeline CTA */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-1 sm:mt-3 mb-16 sm:mb-24 lg:mb-32 flex justify-center text-center relative z-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 sm:mt-12 mb-16 sm:mb-24 lg:mb-32 flex justify-center text-center relative z-20">
         <Link
           href="/contact"
           className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 btn-gradient-animated text-gray-900 rounded-full font-semibold shadow-lg hover:shadow-xl text-sm sm:text-base"
