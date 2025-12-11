@@ -12,10 +12,10 @@ import { config } from 'dotenv';
 config({ path: '.env.local' });
 
 const EDGE_CONFIG_ID = process.env.EDGE_CONFIG_ID;
-const EDGE_CONFIG_TOKEN = process.env.EDGE_CONFIG_TOKEN;
+const VERCEL_TOKEN = process.env.VERCEL_TOKEN;
 
-if (!EDGE_CONFIG_ID || !EDGE_CONFIG_TOKEN) {
-  console.error('❌ Missing EDGE_CONFIG_ID or EDGE_CONFIG_TOKEN environment variables');
+if (!EDGE_CONFIG_ID || !VERCEL_TOKEN) {
+  console.error('❌ Missing EDGE_CONFIG_ID or VERCEL_TOKEN environment variables');
   console.error('Please set these in your .env.local file');
   process.exit(1);
 }
@@ -30,7 +30,7 @@ async function migrateFile(key: string, filePath: string) {
     const res = await fetch(`https://api.vercel.com/v1/edge-config/${EDGE_CONFIG_ID}/items`, {
       method: 'PATCH',
       headers: {
-        Authorization: `Bearer ${EDGE_CONFIG_TOKEN}`,
+        Authorization: `Bearer ${VERCEL_TOKEN}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
