@@ -86,7 +86,7 @@ export default function ProcesPage() {
               <div className="relative flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-8">
                 {/* Mobile dot */}
                 <div className="md:hidden absolute left-1/2 top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-blue-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start md:justify-end pl-0 md:pl-0 md:pr-20 relative z-10 -mt-0 md:mt-0">
+                <div className="w-full md:w-1/2 flex justify-center md:justify-end pl-0 md:pl-0 md:pr-20 relative z-10 -mt-0 md:mt-0">
                   <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-t-2xl rounded-b-none md:rounded-2xl border border-gray-200 dark:border-gray-800 border-b-0 md:border-b shadow-lg max-w-lg w-full">
                     <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
                       <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-blue-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
@@ -129,7 +129,7 @@ export default function ProcesPage() {
                 <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-blue-pastel" style={{ top: '50%' }}></div>
                 {/* Desktop dot */}
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-blue-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start pl-0 md:pl-20 relative z-10 -mt-0 md:-mt-8">
+                <div className="w-full md:w-1/2 flex justify-center md:justify-start pl-0 md:pl-20 relative z-10 -mt-0 md:-mt-8">
                   <div className="bg-[#EDF5FF] dark:bg-[#1E3A5F] p-4 sm:p-6 md:p-8 rounded-b-2xl rounded-t-none md:rounded-2xl border border-blue-pastel/30 border-t-0 md:border-t max-w-lg w-full shadow-lg">
                     <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">Output:</p>
                     <ul className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-2">
@@ -159,7 +159,7 @@ export default function ProcesPage() {
                 {/* Mobile dot */}
                 <div className="md:hidden absolute left-1/2 top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-green-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 {/* Phase block - order-1 on mobile, order-2 on desktop (right side) */}
-                <div className="order-1 md:order-2 w-full md:w-1/2 flex justify-start pl-0 md:pl-20 relative z-10 -mt-0 md:mt-0">
+                <div className="order-1 md:order-2 w-full md:w-1/2 flex justify-center md:justify-start pl-0 md:pl-20 relative z-10 -mt-0 md:mt-0">
                   <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-t-2xl rounded-b-none md:rounded-2xl border border-gray-200 dark:border-gray-800 border-b-0 md:border-b shadow-lg max-w-lg w-full">
                     <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
                       <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-green-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
@@ -203,7 +203,7 @@ export default function ProcesPage() {
                 {/* Desktop dot */}
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-green-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 {/* Output block - order-2 on mobile, order-1 on desktop (left side) */}
-                <div className="order-2 md:order-1 w-full md:w-1/2 flex justify-start md:justify-end pl-0 md:pl-0 md:pr-20 relative z-10 -mt-0 md:-mt-8">
+                <div className="order-2 md:order-1 w-full md:w-1/2 flex justify-center md:justify-end pl-0 md:pl-0 md:pr-20 relative z-10 -mt-0 md:-mt-8">
                   <div className="bg-[#EEF7EF] dark:bg-[#1E3F2E] p-4 sm:p-6 md:p-8 rounded-b-2xl rounded-t-none md:rounded-2xl border border-green-pastel/30 border-t-0 md:border-t max-w-lg w-full shadow-lg">
                     <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">Output:</p>
                     <ul className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-2">
@@ -232,7 +232,7 @@ export default function ProcesPage() {
               <div className="relative flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-8">
                 {/* Mobile dot */}
                 <div className="md:hidden absolute left-1/2 top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-orange-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start md:justify-end pl-0 md:pl-0 md:pr-20 relative z-10 -mt-0 md:mt-0">
+                <div className="w-full md:w-1/2 flex justify-center md:justify-end pl-0 md:pl-0 md:pr-20 relative z-10 -mt-0 md:mt-0">
                   <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-t-2xl rounded-b-none md:rounded-2xl border border-gray-200 dark:border-gray-800 border-b-0 md:border-b shadow-lg max-w-lg w-full">
                     <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
                       <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-orange-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
@@ -275,7 +275,7 @@ export default function ProcesPage() {
                 <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-orange-pastel" style={{ top: '50%' }}></div>
                 {/* Desktop dot */}
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-orange-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start pl-0 md:pl-20 relative z-10 -mt-0 md:-mt-8">
+                <div className="w-full md:w-1/2 flex justify-center md:justify-start pl-0 md:pl-20 relative z-10 -mt-0 md:-mt-8">
                   <div className="bg-[#FFF4ED] dark:bg-[#3F2E1E] p-4 sm:p-6 md:p-8 rounded-b-2xl rounded-t-none md:rounded-2xl border border-orange-pastel/30 border-t-0 md:border-t max-w-lg w-full shadow-lg">
                     <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">Output:</p>
                     <ul className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-2">
@@ -305,7 +305,7 @@ export default function ProcesPage() {
                 {/* Mobile dot */}
                 <div className="md:hidden absolute left-1/2 top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-green-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 {/* Phase block - order-1 on mobile, order-2 on desktop (right side) */}
-                <div className="order-1 md:order-2 w-full md:w-1/2 flex justify-start pl-0 md:pl-20 relative z-10">
+                <div className="order-1 md:order-2 w-full md:w-1/2 flex justify-center md:justify-start pl-0 md:pl-20 relative z-10">
                   <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-t-2xl rounded-b-none border border-gray-200 dark:border-gray-800 shadow-lg max-w-lg w-full">
                     <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
                       <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-green-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
@@ -349,7 +349,7 @@ export default function ProcesPage() {
                 {/* Desktop dot */}
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-green-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 {/* Output block - order-2 on mobile, order-1 on desktop (left side) */}
-                <div className="order-2 md:order-1 w-full md:w-1/2 flex justify-start md:justify-end pl-0 md:pl-0 md:pr-20 relative z-10 -mt-0 md:-mt-8">
+                <div className="order-2 md:order-1 w-full md:w-1/2 flex justify-center md:justify-end pl-0 md:pl-0 md:pr-20 relative z-10 -mt-0 md:-mt-8">
                   <div className="bg-[#EEF7EF] dark:bg-[#1E3F2E] p-4 sm:p-6 md:p-8 rounded-b-2xl rounded-t-none md:rounded-2xl border border-green-pastel/30 border-t-0 md:border-t max-w-lg w-full shadow-lg">
                     <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">Output:</p>
                     <ul className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-2">
@@ -378,7 +378,7 @@ export default function ProcesPage() {
               <div className="relative flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-8">
                 {/* Mobile dot */}
                 <div className="md:hidden absolute left-1/2 top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-blue-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start md:justify-end pl-0 md:pl-0 md:pr-20 relative z-10 -mt-0 md:mt-0">
+                <div className="w-full md:w-1/2 flex justify-center md:justify-end pl-0 md:pl-0 md:pr-20 relative z-10 -mt-0 md:mt-0">
                   <div className="bg-white dark:bg-black p-4 sm:p-6 md:p-8 rounded-t-2xl rounded-b-none md:rounded-2xl border border-gray-200 dark:border-gray-800 border-b-0 md:border-b shadow-lg max-w-lg w-full">
                     <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
                       <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-blue-pastel flex items-center justify-center text-white shadow-lg flex-shrink-0">
@@ -421,7 +421,7 @@ export default function ProcesPage() {
                 <div className="hidden md:block absolute left-1/2 w-[calc(50%-8rem)] border-t-2 border-dashed border-blue-pastel" style={{ top: '50%' }}></div>
                 {/* Desktop dot */}
                 <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-blue-pastel border-4 border-white dark:border-gray-900 shadow-lg z-10"></div>
-                <div className="w-full md:w-1/2 flex justify-start pl-0 md:pl-20 relative z-10 -mt-0 md:-mt-8">
+                <div className="w-full md:w-1/2 flex justify-center md:justify-start pl-0 md:pl-20 relative z-10 -mt-0 md:-mt-8">
                   <div className="bg-[#EDF5FF] dark:bg-[#1E3A5F] p-4 sm:p-6 md:p-8 rounded-b-2xl rounded-t-none md:rounded-2xl border border-blue-pastel/30 border-t-0 md:border-t max-w-lg w-full shadow-lg">
                     <p className="text-xs sm:text-sm font-semibold text-gray-900 dark:text-white mb-3 sm:mb-4">Output:</p>
                     <ul className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-2">
