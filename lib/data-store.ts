@@ -3,14 +3,23 @@ import path from 'path';
 import { get } from '@vercel/edge-config';
 
 const isProd = process.env.NODE_ENV === 'production';
-const hasEdgeConfig = isProd && Boolean(process.env.EDGE_CONFIG);
+// Only use Edge Config if explicitly enabled AND all required vars are present
+const hasEdgeConfig = isProd &&
+  Boolean(process.env.EDGE_CONFIG) &&
+  Boolean(process.env.EDGE_CONFIG_ID) &&
+  Boolean(process.env.EDGE_CONFIG_TOKEN);
 const edgeConfigId = process.env.EDGE_CONFIG_ID;
 const edgeConfigToken = process.env.EDGE_CONFIG_TOKEN;
 
 async function readEdgeConfigValue<T>(key: string): Promise<T | null> {
-  if (!hasEdgeConfig) return null;
+  if (!hasEdgeConfig) {
+    console.log(`Edge Config not available for key "${key}"`);
+    return null;
+  }
   try {
-    return (await get(key)) as T | null;
+    const value = await get(key);
+    console.log(`Edge Config read for key "${key}":`, value ? 'found' : 'not found');
+    return (value as T | null);
   } catch (error) {
     console.error(`Edge Config read error for key "${key}":`, error);
     return null;
@@ -77,11 +86,20 @@ export async function readData<T>(
   fallbackFilePath: string,
   defaultValue: T
 ): Promise<T> {
+  console.log(`Reading data for key "${key}", isProd: ${isProd}, hasEdgeConfig: ${hasEdgeConfig}`);
+
   // In production prefer Edge Config; in dev fallback to local files only
   if (hasEdgeConfig) {
     const fromEdge = await readEdgeConfigValue<T>(key);
-    if (fromEdge) return fromEdge;
+    if (fromEdge) {
+      console.log(`Successfully read from Edge Config for key "${key}"`);
+      return fromEdge;
+    }
+    console.log(`No data in Edge Config for key "${key}", using default value`);
+    return defaultValue;
   }
+
+  console.log(`Reading from file: ${fallbackFilePath}`);
   return readFileValue<T>(fallbackFilePath, defaultValue);
 }
 
