@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import { Github } from 'lucide-react';
 
 interface Project {
@@ -24,31 +27,41 @@ const languageColors: Record<string, string> = {
   PHP: '#777bb4',
 };
 
-async function getProjects(): Promise<Project[]> {
-  try {
-    // Use the API route which reads from Edge Config in production
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-    const res = await fetch(`${baseUrl}/api/projects`, {
-      cache: 'no-store', // Always get fresh data
-    });
+export default function GitHubProjects() {
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
 
-    if (!res.ok) {
-      console.error('Failed to fetch projects:', res.status);
-      return [];
+  useEffect(() => {
+    async function fetchProjects() {
+      try {
+        const res = await fetch('/api/projects');
+        const data = await res.json();
+        // API already returns only visible projects, sorted by order
+        setProjects(data);
+      } catch (error) {
+        console.error('Failed to fetch projects:', error);
+      }
+      setLoading(false);
     }
+    fetchProjects();
+  }, []);
 
-    const projects: Project[] = await res.json();
-
-    // API already returns only visible projects, sorted by order
-    return projects;
-  } catch (error) {
-    console.error('Error fetching projects:', error);
-    return [];
+  if (loading) {
+    return (
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="animate-pulse">
+            <div className="h-8 bg-gray-200 dark:bg-gray-800 rounded w-64 mb-8"></div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[1, 2, 3].map(i => (
+                <div key={i} className="h-40 bg-gray-200 dark:bg-gray-800 rounded-2xl"></div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
   }
-}
-
-export default async function GitHubProjects() {
-  const projects = await getProjects();
 
   if (projects.length === 0) {
     return null;
