@@ -3,17 +3,18 @@ import path from 'path';
 import { get } from '@vercel/edge-config';
 
 const isProd = process.env.NODE_ENV === 'production';
-// Only use Edge Config if explicitly enabled AND all required vars are present
-const hasEdgeConfig = isProd &&
-  Boolean(process.env.EDGE_CONFIG) &&
+// For reading: only need EDGE_CONFIG
+const hasEdgeConfigRead = isProd && Boolean(process.env.EDGE_CONFIG);
+// For writing: need EDGE_CONFIG_ID and EDGE_CONFIG_TOKEN
+const hasEdgeConfigWrite = isProd &&
   Boolean(process.env.EDGE_CONFIG_ID) &&
   Boolean(process.env.EDGE_CONFIG_TOKEN);
 const edgeConfigId = process.env.EDGE_CONFIG_ID;
 const edgeConfigToken = process.env.EDGE_CONFIG_TOKEN;
 
 async function readEdgeConfigValue<T>(key: string): Promise<T | null> {
-  if (!hasEdgeConfig) {
-    console.log(`Edge Config not available for key "${key}"`);
+  if (!hasEdgeConfigRead) {
+    console.log(`Edge Config read not available for key "${key}"`);
     return null;
   }
   try {
@@ -27,7 +28,10 @@ async function readEdgeConfigValue<T>(key: string): Promise<T | null> {
 }
 
 async function writeEdgeConfigValue<T>(key: string, value: T): Promise<boolean> {
-  if (!hasEdgeConfig || !edgeConfigId || !edgeConfigToken) return false;
+  if (!hasEdgeConfigWrite || !edgeConfigId || !edgeConfigToken) {
+    console.log(`Edge Config write not available for key "${key}" (hasWrite: ${hasEdgeConfigWrite}, hasId: ${Boolean(edgeConfigId)}, hasToken: ${Boolean(edgeConfigToken)})`);
+    return false;
+  }
 
   try {
     const res = await fetch(`https://api.vercel.com/v1/edge-config/${edgeConfigId}/items`, {
@@ -86,10 +90,10 @@ export async function readData<T>(
   fallbackFilePath: string,
   defaultValue: T
 ): Promise<T> {
-  console.log(`Reading data for key "${key}", isProd: ${isProd}, hasEdgeConfig: ${hasEdgeConfig}`);
+  console.log(`Reading data for key "${key}", isProd: ${isProd}, hasEdgeConfigRead: ${hasEdgeConfigRead}`);
 
   // In production prefer Edge Config; in dev fallback to local files only
-  if (hasEdgeConfig) {
+  if (hasEdgeConfigRead) {
     const fromEdge = await readEdgeConfigValue<T>(key);
     if (fromEdge) {
       console.log(`Successfully read from Edge Config for key "${key}"`);
@@ -108,11 +112,13 @@ export async function writeData<T>(
   value: T,
   fallbackFilePath: string
 ): Promise<boolean> {
+  console.log(`Writing data for key "${key}", isProd: ${isProd}, hasEdgeConfigWrite: ${hasEdgeConfigWrite}`);
+
   // Production: write to Edge Config; do not attempt filesystem writes (read-only in serverless)
-  if (hasEdgeConfig) {
+  if (hasEdgeConfigWrite) {
     const wroteEdge = await writeEdgeConfigValue(key, value);
     if (!wroteEdge) {
-      throw new Error('Failed to write to Edge Config');
+      throw new Error('Failed to write to Edge Config - check environment variables and token permissions');
     }
     return true;
   }
