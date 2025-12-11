@@ -40,9 +40,10 @@ export async function POST(request: Request) {
   try {
     const { password, roles } = await request.json();
     
-    // Check password
-    const adminPassword = process.env.ADMIN_PASSWORD || 'ietsmetai2024';
-    if (password !== adminPassword) {
+    // Check password (trim to avoid whitespace issues)
+    const adminPassword = (process.env.ADMIN_PASSWORD || 'ietsmetai2024').trim();
+    const providedPassword = (password || '').trim();
+    if (providedPassword !== adminPassword) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 

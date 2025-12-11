@@ -38,10 +38,11 @@ export async function POST(request: Request) {
   try {
     const { password, projects } = await request.json();
     
-    // Simple password check (set this in your environment or change it)
-    const adminPassword = process.env.ADMIN_PASSWORD || 'ietsmetai2024';
+    // Password check (trim to avoid accidental whitespace issues)
+    const adminPassword = (process.env.ADMIN_PASSWORD || 'ietsmetai2024').trim();
+    const providedPassword = (password || '').trim();
     
-    if (password !== adminPassword) {
+    if (providedPassword !== adminPassword) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
     
