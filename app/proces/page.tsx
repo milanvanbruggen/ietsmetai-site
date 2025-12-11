@@ -58,7 +58,7 @@ export default function ProcesPage() {
         <div className="border-t border-gray-200 dark:border-gray-800 my-10 sm:my-16"></div>
 
         {/* Visual Timeline with 5 Phases - Extended */}
-        <div className="mb-6 sm:mb-8">
+        <div>
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-8 text-center">
             Het traject: 6 maanden in 5 fases
           </h2>
@@ -67,8 +67,8 @@ export default function ProcesPage() {
               Een gestructureerde aanpak die quick wins combineert met strategische langetermijnvisie.
             </p>
           </div>
-          
-          <div className="relative">
+
+          <div className="relative mb-6 sm:mb-8">
             {/* Mobile connecting line - center with fade out, extends under CTA (aligned with homepage) */}
             <div className="md:hidden absolute left-1/2 w-0.5 transform -translate-x-1/2 z-0" style={{ top: '1.5rem', bottom: '-4rem' }}>
               <div className="h-full bg-gradient-to-b from-blue-pastel via-green-pastel via-orange-pastel via-green-pastel to-transparent"></div>
@@ -80,7 +80,7 @@ export default function ProcesPage() {
                 <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/80 to-transparent dark:from-black dark:via-black/80 pointer-events-none"></div>
               </div>
             </div>
-            
+
             <div className="space-y-4 sm:space-y-6 md:space-y-10">
               {/* Fase 1: Maand 1-2 - Kickstart & Analyse */}
               <div className="relative flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-8">
