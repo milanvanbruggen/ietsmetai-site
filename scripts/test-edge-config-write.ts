@@ -10,7 +10,7 @@ import { config } from 'dotenv';
 config({ path: '.env.local' });
 
 const EDGE_CONFIG_ID = process.env.EDGE_CONFIG_ID;
-const EDGE_CONFIG_TOKEN = process.env.TEMP_VERCEL_TOKEN || process.env.EDGE_CONFIG_TOKEN;
+const EDGE_CONFIG_TOKEN = process.env.EDGE_CONFIG_TOKEN;
 
 if (!EDGE_CONFIG_ID || !EDGE_CONFIG_TOKEN) {
   console.error('❌ Missing EDGE_CONFIG_ID or EDGE_CONFIG_TOKEN');
@@ -22,12 +22,10 @@ async function testWrite() {
   console.log(`Edge Config ID: ${EDGE_CONFIG_ID}`);
   console.log(`Token prefix: ${EDGE_CONFIG_TOKEN.substring(0, 10)}...`);
 
-  const isVercelApiToken = EDGE_CONFIG_TOKEN.startsWith('vercel_');
-  // Always use Vercel API endpoint - Edge Config tokens work with this endpoint too
+  // Use Vercel API endpoint with Edge Config token
   const apiUrl = `https://api.vercel.com/v1/edge-config/${EDGE_CONFIG_ID}/items`;
 
-  console.log(`\nToken type: ${isVercelApiToken ? 'Vercel API Token' : 'Edge Config Token'}`);
-  console.log(`API URL: ${apiUrl}`);
+  console.log(`\nAPI URL: ${apiUrl}`);
 
   // Test with a simple write
   const testData = {
