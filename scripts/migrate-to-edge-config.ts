@@ -56,7 +56,7 @@ async function migrateFile(key: string, filePath: string) {
 
 async function main() {
   console.log('🚀 Starting migration to Edge Config...');
-  console.log(`Using Edge Config ID: ${EDGE_CONFIG_ID.substring(0, 20)}...`);
+  console.log(`Using Edge Config ID: ${EDGE_CONFIG_ID!.substring(0, 20)}...`);
 
   const migrations = [
     { key: 'testimonials', file: 'data/testimonials.json' },
