@@ -455,7 +455,7 @@ export default function ProcesPage() {
       </div>
 
       {/* Timeline CTA */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 sm:mt-8 mb-16 sm:mb-24 lg:mb-32 flex justify-center text-center relative z-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-2 sm:mt-4 mb-16 sm:mb-24 lg:mb-32 flex justify-center text-center relative z-20">
         <Link
           href="/contact"
           className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 btn-gradient-animated text-gray-900 rounded-full font-semibold shadow-lg hover:shadow-xl text-sm sm:text-base"
