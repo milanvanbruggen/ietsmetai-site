@@ -1,6 +1,4 @@
 import { Github } from 'lucide-react';
-import { promises as fs } from 'fs';
-import path from 'path';
 
 interface Project {
   id: number;
@@ -9,10 +7,6 @@ interface Project {
   language: string | null;
   visible: boolean;
   order: number;
-}
-
-interface ProjectsData {
-  projects: Project[];
 }
 
 const languageColors: Record<string, string> = {
@@ -32,15 +26,23 @@ const languageColors: Record<string, string> = {
 
 async function getProjects(): Promise<Project[]> {
   try {
-    const dataFilePath = path.join(process.cwd(), 'data', 'projects.json');
-    const fileContent = await fs.readFile(dataFilePath, 'utf-8');
-    const data: ProjectsData = JSON.parse(fileContent);
-    
-    // Return only visible projects, sorted by order
-    return data.projects
-      .filter((p) => p.visible)
-      .sort((a, b) => a.order - b.order);
-  } catch {
+    // Use the API route which reads from Edge Config in production
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+    const res = await fetch(`${baseUrl}/api/projects`, {
+      cache: 'no-store', // Always get fresh data
+    });
+
+    if (!res.ok) {
+      console.error('Failed to fetch projects:', res.status);
+      return [];
+    }
+
+    const projects: Project[] = await res.json();
+
+    // API already returns only visible projects, sorted by order
+    return projects;
+  } catch (error) {
+    console.error('Error fetching projects:', error);
     return [];
   }
 }
