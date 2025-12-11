@@ -58,7 +58,7 @@ export default function ProcesPage() {
         <div className="border-t border-gray-200 dark:border-gray-800 my-10 sm:my-16"></div>
 
         {/* Visual Timeline with 5 Phases - Extended */}
-        <div className="mb-12 sm:mb-16">
+        <div className="mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-8 text-center">
             Het traject: 6 maanden in 5 fases
           </h2>
@@ -81,7 +81,7 @@ export default function ProcesPage() {
               </div>
             </div>
             
-            <div className="space-y-8 md:space-y-16">
+            <div className="space-y-4 sm:space-y-6 md:space-y-10">
               {/* Fase 1: Maand 1-2 - Kickstart & Analyse */}
               <div className="relative flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-8">
                 {/* Mobile dot */}
