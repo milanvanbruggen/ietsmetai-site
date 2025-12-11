@@ -23,16 +23,21 @@ export async function POST(request: Request) {
 
     // Check if RESEND_API_KEY is configured
     const resendApiKey = process.env.RESEND_API_KEY;
+    if (!resendApiKey) {
+      return NextResponse.json(
+        { error: 'Email versturen is niet geconfigureerd (RESEND_API_KEY ontbreekt)' },
+        { status: 500 }
+      );
+    }
 
-    if (resendApiKey) {
-      // Resend is configured, send email
-      const { Resend } = await import('resend');
-      const resend = new Resend(resendApiKey);
+    // Resend is configured, send email
+    const { Resend } = await import('resend');
+    const resend = new Resend(resendApiKey);
 
-      const fromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
-      const toEmail = process.env.RESEND_TO_EMAIL || 'info@milanvanbruggen.nl';
+    const fromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
+    const toEmail = process.env.RESEND_TO_EMAIL || 'info@milanvanbruggen.nl';
 
-      const emailHtml = `
+    const emailHtml = `
         <h2>Nieuw contactformulier bericht</h2>
         <p><strong>Naam:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
@@ -41,7 +46,7 @@ export async function POST(request: Request) {
         <p>${message.replace(/\n/g, '<br>')}</p>
       `;
 
-      const emailText = `
+    const emailText = `
 Nieuw contactformulier bericht
 
 Naam: ${name}
@@ -52,23 +57,28 @@ Bericht:
 ${message}
       `;
 
-      await resend.emails.send({
-        from: fromEmail,
-        to: toEmail,
-        replyTo: email,
-        subject: `Contactformulier: ${name}`,
-        html: emailHtml,
-        text: emailText,
-      });
-    } else {
-      // Resend not configured, just log (for development)
-      console.log('Contact form submission (Resend not configured):', {
-        name,
-        email,
-        phone: phone || 'Niet opgegeven',
-        message,
-        timestamp: new Date().toISOString(),
-      });
+    const { error: resendError } = await resend.emails.send({
+      from: fromEmail,
+      to: toEmail,
+      replyTo: email,
+      subject: `Contactformulier: ${name}`,
+      html: emailHtml,
+      text: emailText,
+    });
+
+    if (resendError) {
+      console.error('Resend email error:', resendError);
+      return NextResponse.json(
+        {
+          error: 'Kon email niet versturen, probeer het later opnieuw.',
+          // Expose extra detail only in non-production to help diagnose issues locally
+          detail:
+            process.env.NODE_ENV !== 'production'
+              ? resendError.message || 'Onbekende Resend fout'
+              : undefined,
+        },
+        { status: 502 }
+      );
     }
 
     return NextResponse.json({ success: true });
