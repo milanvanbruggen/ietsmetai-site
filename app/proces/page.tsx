@@ -58,7 +58,7 @@ export default function ProcesPage() {
         <div className="border-t border-gray-200 dark:border-gray-800 my-10 sm:my-16"></div>
 
         {/* Visual Timeline with 5 Phases - Extended */}
-        <div className="mb-8 sm:mb-12">
+        <div className="mb-6 sm:mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-8 text-center">
             Het traject: 6 maanden in 5 fases
           </h2>
