@@ -169,7 +169,7 @@ export default function Home() {
           </div>
           
           {/* Visual Timeline/Flow */}
-          <div className="relative mb-12 sm:mb-16">
+          <div className="relative mb-8 sm:mb-12">
             {/* Mobile connecting line - center with fade out */}
             <div className="md:hidden absolute left-1/2 w-0.5 transform -translate-x-1/2 z-0" style={{ top: '1.5rem', bottom: '0' }}>
               <div className="h-full bg-gradient-to-b from-blue-pastel via-green-pastel via-orange-pastel via-green-pastel to-transparent"></div>
@@ -179,9 +179,9 @@ export default function Home() {
               <div className="h-full bg-gradient-to-b from-blue-pastel via-green-pastel via-orange-pastel via-green-pastel via-blue-pastel to-transparent"></div>
             </div>
             
-            <div className="space-y-8 sm:space-y-12">
+            <div className="space-y-6 sm:space-y-8">
               {/* Maand 1-2: Kickstart & Analyse */}
-              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6">
                 {/* Mobile dot */}
                 <div className="md:hidden absolute left-1/2 top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-blue-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 <div className="w-full md:w-1/2 flex justify-start md:justify-end pl-0 md:pl-0 md:pr-20 relative z-10">
@@ -209,7 +209,7 @@ export default function Home() {
               </div>
 
               {/* Maand 3-4: Implementatie & Validatie */}
-              <div className="relative flex flex-col md:flex-row-reverse items-start md:items-center gap-4 md:gap-8">
+              <div className="relative flex flex-col md:flex-row-reverse items-start md:items-center gap-3 md:gap-6">
                 {/* Mobile dot */}
                 <div className="md:hidden absolute left-1/2 top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-green-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 <div className="w-full md:w-1/2 flex justify-start md:justify-start pl-0 md:pl-20 relative z-10">
@@ -237,7 +237,7 @@ export default function Home() {
               </div>
 
               {/* Maand 4-5: Trainen & Kennis Borgen */}
-              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6">
                 {/* Mobile dot */}
                 <div className="md:hidden absolute left-1/2 top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-orange-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 <div className="w-full md:w-1/2 flex justify-start md:justify-end pl-0 md:pl-0 md:pr-20 relative z-10">
@@ -265,7 +265,7 @@ export default function Home() {
         </div>
 
               {/* Maand 5: Monitoring & Doorontwikkeling */}
-              <div className="relative flex flex-col md:flex-row-reverse items-start md:items-center gap-4 md:gap-8">
+              <div className="relative flex flex-col md:flex-row-reverse items-start md:items-center gap-3 md:gap-6">
                 {/* Mobile dot */}
                 <div className="md:hidden absolute left-1/2 top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-green-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 <div className="w-full md:w-1/2 flex justify-start md:justify-start pl-0 md:pl-20 relative z-10">
@@ -293,7 +293,7 @@ export default function Home() {
               </div>
 
               {/* Maand 6: Afronding & Overdracht */}
-              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+              <div className="relative flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6">
                 {/* Mobile dot */}
                 <div className="md:hidden absolute left-1/2 top-4 -translate-x-1/2 w-5 h-5 rounded-full bg-blue-pastel border-2 border-white dark:border-gray-900 shadow-lg z-10"></div>
                 <div className="w-full md:w-1/2 flex justify-start md:justify-end pl-0 md:pl-0 md:pr-20 relative z-10">
