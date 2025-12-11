@@ -20,7 +20,7 @@ if (!EDGE_CONFIG_ID || !VERCEL_TOKEN) {
 async function checkEdgeConfigItems() {
   console.log('🔍 Checking Edge Config items via Vercel API...\n');
   console.log(`Edge Config ID: ${EDGE_CONFIG_ID}`);
-  console.log(`Token prefix: ${VERCEL_TOKEN.substring(0, 10)}...\n`);
+  console.log(`Token prefix: ${VERCEL_TOKEN?.substring(0, 10) || 'N/A'}...\n`);
 
   try {
     // Get all items from Edge Config
