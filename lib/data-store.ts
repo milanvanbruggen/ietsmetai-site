@@ -34,7 +34,15 @@ async function writeEdgeConfigValue<T>(key: string, value: T): Promise<boolean> 
   }
 
   try {
-    const res = await fetch(`https://api.vercel.com/v1/edge-config/${edgeConfigId}/items`, {
+    // Detect token type: Edge Config tokens are UUIDs, Vercel API tokens start with 'vercel_'
+    const isVercelApiToken = edgeConfigToken.startsWith('vercel_');
+    const apiUrl = isVercelApiToken
+      ? `https://api.vercel.com/v1/edge-config/${edgeConfigId}/items`
+      : `https://edge-config.vercel.com/${edgeConfigId}/items`;
+
+    console.log(`Using ${isVercelApiToken ? 'Vercel API' : 'Edge Config API'} for write operation`);
+
+    const res = await fetch(apiUrl, {
       method: 'PATCH',
       headers: {
         Authorization: `Bearer ${edgeConfigToken}`,
